@@ -1,0 +1,41 @@
+.main
+    display: grid
+    justify-content: center
+    text-align: center
+    gap: 1rem
+    justify-items: center
+    // border: 1px solid #000
+    .header
+        font-size: 28px
+    .text
+        font-size: 17px
+        width: 45ch
+
+.image_block
+    position: relative
+    display: grid
+    justify-content: center
+    align-items: center
+    transition: 0.4s
+
+    .image
+        display: block
+        height: 220px
+        width: 400px
+        cursor: pointer
+        transition: 0.4s
+
+    .read_more
+        display: none
+        position: absolute
+        top: 45%
+        left: 36%
+        font-size: 25px
+        color: #fff
+
+    &:hover
+        .image
+            filter: brightness(50%)
+            border-radius: 10px
+        .read_more
+            display: block

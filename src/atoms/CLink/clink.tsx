@@ -7,9 +7,9 @@ export const CLink: FC<CLinkProps> = (props) => {
 
 	return (
 		<div className={styles.main}>
-			<Link to={to} style={{ color: '#103054', fontSize: '20px', fontWeight: 500 }}>
+			<a href={to} style={{ color: '#103054', fontSize: '20px', fontWeight: 500 }}>
 				{children}
-			</Link>
+			</a>
 		</div>
 	)
 }
