@@ -1,0 +1,21 @@
+.main {
+	display: grid;
+	justify-content: center;
+	justify-items: center;
+	align-items: center;
+}
+
+.title {
+	margin-bottom: 10px;
+}
+
+.image {
+	border-radius: 10px;
+	height: 200px;
+	width: 500px;
+	margin-bottom: 10px;
+}
+
+.text, .history {
+    font-size: 18px;
+}

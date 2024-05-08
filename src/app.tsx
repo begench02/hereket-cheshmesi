@@ -1,8 +1,10 @@
 import './app.sass'
 import { FirstPage } from 'pages/first-page/first-page'
 import { Footer } from 'components/footer/footer'
-import { Header } from 'components/Header/header'
+import { Header } from 'components/header/header'
 import { PopularTours } from 'pages/popular-tours/popular-tours'
+import { Places } from 'pages/places/places'
+import { Contacts } from 'pages/contacts/contacts'
 
 export const App = () => {
 	return (
@@ -10,7 +12,11 @@ export const App = () => {
 			<Header />
 			<FirstPage />
 			<hr />
+			<Places />
+			<hr />
 			<PopularTours />
+			<hr />
+			<Contacts />
 			<hr />
 			<Footer />
 		</div>

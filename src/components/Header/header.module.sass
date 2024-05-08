@@ -1,3 +1,5 @@
+@use 'styles' as c
+
 .main
     position: sticky
     top: 0
@@ -12,7 +14,6 @@
 
 .logo
     font-size: 23px
-    font-weight: 600
     text-decoration: none
     cursor: pointer
 
@@ -21,3 +22,6 @@
     display: flex
     align-content: center
     gap: 2rem
+
+.link__active
+    color: c.$teal-color

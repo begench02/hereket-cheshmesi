@@ -3,6 +3,7 @@
 interface CssExports {
   'content': string;
   'header': string;
+  'main': string;
 }
 export const cssExports: CssExports;
 export default cssExports;

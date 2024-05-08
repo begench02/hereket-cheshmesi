@@ -5,6 +5,8 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import path from 'path'
 import TsconfigPathsWebpackPlugin from 'tsconfig-paths-webpack-plugin'
 
+console.log(__dirname)
+
 export const webpackCommon: Configuration = {
 	entry: ['./src/main.tsx'],
 	output: {
@@ -40,9 +42,10 @@ export const webpackCommon: Configuration = {
 					{ loader: 'postcss-loader' },
 					{
 						loader: 'sass-loader',
+
 						options: {
 							sassOptions: {
-								includePaths: [path.resolve(__dirname, 'src/styles')],
+								includePaths: [path.resolve(__dirname, '../src/')],
 							},
 						},
 					},
