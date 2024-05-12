@@ -1,0 +1,37 @@
+@use 'styles' as c
+
+.main
+    height: 700px
+    margin: 2rem 0
+    display: grid
+    // align-items: center
+    justify-content: start
+    background-image: url("assets/imgs/ashgabat.jpg")
+    background-size: 100% auto
+    background-repeat: no-repeat
+    background-position-y: 30%
+
+.content
+    color: #fff
+    display: inline-block
+    margin-top: 20%
+    margin-left: 3rem
+
+.title
+    font-size: 60px
+
+.subtitle
+    font-size: 30px
+
+.btn
+    margin-top: 1rem
+    padding: 1rem
+    border-radius: 10px
+    color: #fff
+    border: 1px solid #fff
+    background-color: transparent
+    cursor: pointer
+    transition: 0.6s
+    &:hover
+        background-color: #fff
+        color: c.$teal-color

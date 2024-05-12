@@ -7,7 +7,7 @@ import styles from './places.module.sass'
 
 export const Places = () => {
 	return (
-		<div className={styles.main}>
+		<div id='places' className={styles.main}>
 			<div className={styles.row}>
 				<div className={styles.image_block}>
 					<img src={Dehistan} alt='Merv' width={500} height={200} className={styles.image} />
