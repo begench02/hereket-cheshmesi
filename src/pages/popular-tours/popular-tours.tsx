@@ -2,13 +2,13 @@ import { TourCard, TourCardPropsType } from './tour-card/tour-card'
 import dayahatyn from 'assets/imgs/carousel/dayahatyn.jpg'
 import dinosaurPlateau from 'assets/imgs/carousel/dinosaur-plateau.jpg'
 import ekedeshik from 'assets/imgs/carousel/ekedeshik.jpg'
-import garCrator from 'assets/imgs/carousel/darvaza_gas_crater.jpg'
+import garCrator from 'assets/imgs/ahal/darvaza-gas-crater.jpg'
 import gonurDepe from 'assets/imgs/carousel/gonur-depe.jpg'
-import KowAta from 'assets/imgs/carousel/Kow Ata.jpg'
-import merv from 'assets/imgs/carousel/merv.jpeg'
-import nisa from 'assets/imgs/carousel/nisa.jpeg'
+import KowAta from 'assets/imgs/ahal/kow-ata.jpg'
+import merv from 'assets/imgs/mary/merv.jpeg'
+import nisa from 'assets/imgs/ahal/nisa.jpeg'
 import styles from './popular-tours.module.sass'
-import tombOfAhmadSanhar from 'assets/imgs/carousel/Tomb of Ahmad Sanjar.jpg'
+import tombOfAhmadSanhar from 'assets/imgs/mary/soltan-sanjar-mausoleum.jpg'
 
 export type TourCard = {
 	image: string

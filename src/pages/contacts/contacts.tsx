@@ -13,11 +13,21 @@ export const Contacts = () => {
 				</div>
 				<div className={styles.contact_block}>
 					<Phone />
-					<span className={styles.contact_text}>+993 65553461</span>
+					<span className={styles.contact_text}>+993 62277213</span>
 				</div>
 				<div className={styles.contact_block}>
 					<Email />
 					<span className={styles.contact_text}>info@cheshme@mail.ru</span>
+				</div>
+				<div className={styles.contact_block}>
+					<Email />
+					<span className={styles.contact_text}>bgeldyev7@gmail.com</span>
+				</div>
+				<div className={styles.contact_block}>
+					<Email />
+					<span className={styles.contact_text}>
+						744000, Туркменистан, город Ашхабад, улица Гарашсызлык 62
+					</span>
 				</div>
 			</div>
 		</div>
