@@ -12,6 +12,11 @@ interface CssExports {
   'image_block': string;
   'legend': string;
   'main': string;
+  'modal_history': string;
+  'modal_image': string;
+  'modal_main': string;
+  'modal_text': string;
+  'modal_title': string;
   'row': string;
   'subtitle': string;
   'title': string;

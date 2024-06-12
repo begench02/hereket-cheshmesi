@@ -3,12 +3,14 @@ import dayahatyn from 'assets/imgs/carousel/dayahatyn.jpg'
 import dinosaurPlateau from 'assets/imgs/carousel/dinosaur-plateau.jpg'
 import ekedeshik from 'assets/imgs/carousel/ekedeshik.jpg'
 import garCrator from 'assets/imgs/ahal/darvaza-gas-crater.jpg'
-import gonurDepe from 'assets/imgs/carousel/gonur-depe.jpg'
+import gonurDepe from 'assets/imgs/mary/gonur-depe.jpg'
 import KowAta from 'assets/imgs/ahal/kow-ata.jpg'
 import merv from 'assets/imgs/mary/merv.jpeg'
 import nisa from 'assets/imgs/ahal/nisa.jpeg'
 import styles from './popular-tours.module.sass'
 import tombOfAhmadSanhar from 'assets/imgs/mary/soltan-sanjar-mausoleum.jpg'
+import 'react-responsive-carousel/lib/styles/carousel.min.css' // requires a loader
+import { Carousel } from 'react-responsive-carousel'
 
 export type TourCard = {
 	image: string
@@ -85,13 +87,15 @@ const popularTours: TourCard[] = [
 
 export const PopularTours = () => {
 	return (
-		<div id='popular-tours' className={styles.main}>
+		<section id='popular-tours' className={styles.main}>
 			<h2 className={styles.header}>Popular Tours</h2>
 			<div className={styles.content}>
-				{popularTours.map((tour) => (
-					<TourCard key={tour.header} article={tour} />
-				))}
+				<Carousel centerMode={true} showArrows={false} infiniteLoop={true} emulateTouch={true} centerSlidePercentage={53}>
+					{popularTours.map((tour) => (
+						<TourCard key={tour.header} article={tour} />
+					))}
+				</Carousel>
 			</div>
-		</div>
+		</section>
 	)
 }

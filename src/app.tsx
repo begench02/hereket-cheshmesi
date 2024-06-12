@@ -1,4 +1,3 @@
-import './app.sass'
 import { PagesRouter } from './router'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 

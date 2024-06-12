@@ -27,6 +27,15 @@ export const Header = () => {
 						Places
 					</a>
 				</div>
+				<div className={styles.link__block}>
+					<a
+						href='#contacts'
+						className={clsx(styles.link__text, currentLink == '#contacts' && styles.link__active)}
+						onClick={(e: any) => setCurrentLink(e.target.hash)}
+					>
+						Contacts
+					</a>
+				</div>
 			</nav>
 			<div className={styles.logo}>
 				<img src={Logo} alt='Logo' width={140} height={100} />
@@ -48,15 +57,6 @@ export const Header = () => {
 						onClick={(e: any) => setCurrentLink(e.target.hash)}
 					>
 						About Us
-					</a>
-				</div>
-				<div className={styles.link__block}>
-					<a
-						href='#contacts'
-						className={clsx(styles.link__text, currentLink == '#contacts' && styles.link__active)}
-						onClick={(e: any) => setCurrentLink(e.target.hash)}
-					>
-						Contacts
 					</a>
 				</div>
 			</nav>

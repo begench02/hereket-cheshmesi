@@ -7,6 +7,7 @@ import { Places } from 'pages/places/places'
 import { PopularTours } from 'pages/popular-tours/popular-tours'
 import { RouteObject } from 'react-router-dom'
 import { MainLayout } from 'components/main-layout/main-layout'
+import styles from './app.module.sass'
 
 export const PagesRouter: RouteObject[] = [
 	{
@@ -16,19 +17,23 @@ export const PagesRouter: RouteObject[] = [
 			{
 				path: '/',
 				Component: () => (
-					<>
+					<div className={styles.content}>
 						<FirstPage />
-						<hr />
+						<div className={styles.line}></div>
+						{/* <hr /> */}
 						<Places />
-						<hr />
+						<div className={styles.line}></div>
+						{/* <hr /> */}
 						<PopularTours />
-						<hr />
+						<div className={styles.line}></div>
+						{/* <hr /> */}
 						<AboutUs />
-						<hr />
-						<Contacts />
-						<hr />
+						<div className={styles.line}></div>
+						{/* <hr /> */}
+						{/* <Contacts /> */}
+						{/* <hr /> */}
 						<Footer />
-					</>
+					</div>
 				),
 			},
 			{

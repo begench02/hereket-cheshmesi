@@ -3,7 +3,7 @@ import styles from './about-us.module.sass'
 
 export const AboutUs = () => {
 	return (
-		<div id='about-us' className={styles.main}>
+		<section id='about-us' className={styles.main}>
 			<div className={styles.content}>
 				<h2 className={styles.title}>ABOUT US</h2>
 				<p className={styles.subtitle}>
@@ -16,6 +16,6 @@ export const AboutUs = () => {
 					<button className={styles.btn}>CONTACT US</button>
 				</a>
 			</div>
-		</div>
+		</section>
 	)
 }
