@@ -1,11 +1,11 @@
+import 'react-responsive-carousel/lib/styles/carousel.min.css' // requires a loader
+import { Carousel } from 'react-responsive-carousel'
 import { CITY, places } from './places.data'
 import { clsx } from 'clsx'
 import { Link } from 'react-router-dom'
 import { useMemo, useState } from 'react'
 import Modal from 'react-modal'
 import styles from './places.module.sass'
-import 'react-responsive-carousel/lib/styles/carousel.min.css' // requires a loader
-import { Carousel } from 'react-responsive-carousel'
 
 const modalStyles = {
 	content: {

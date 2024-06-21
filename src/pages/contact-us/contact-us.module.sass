@@ -1,0 +1,116 @@
+@use 'styles' as s
+
+.main
+    margin: 12em 4em 0 4em
+    height: 80vh
+    display: grid
+    grid-template-columns: 1fr 1fr
+
+.map_container
+    height: 600px
+    width: 100%
+
+.form_container
+    margin-right: 4rem
+    padding: 0 2rem
+    display: grid
+    gap: 1rem
+
+.form_title
+    font-size: 40px
+
+.row
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: 1rem
+
+.input
+    height: 3rem
+    padding: 0 1rem
+    border: 1px solid s.$color-green
+    border-radius: 10px
+    outline-color: s.$color-green
+    font-size: 20px
+
+.input_phone
+    height: 3rem !important
+    width: 100%
+    border: 1px solid s.$color-green !important
+    outline-color: s.$color-green !important
+    border-top-right-radius: 10px !important
+    border-bottom-right-radius: 10px !important
+    font-size: 20px !important
+
+.input_phone__country_btn
+    height: 3rem
+    border: 1px solid s.$color-green !important
+    outline-color: s.$color-green !important
+
+.send_btn__container
+    justify-self: end
+
+$color-1: #2ecc71
+$color-2: #3498db
+.custom_radios
+    div
+        display: inline-block
+
+    input[type="radio"]
+        display: none
+        + label
+            color: #333
+            font-family: Arial, sans-serif
+            font-size: 14px
+            span
+                width: 40px
+                height: 40px
+                margin: -1px 4px 0 0
+                display: grid
+                justify-content: center
+                align-items: center
+                cursor: pointer
+                border-radius: 50%
+                box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33)
+                background-repeat: no-repeat
+                background-position: center
+                color: #fff
+                font-weight: bold
+                text-align: center
+                // line-height: 44px
+
+                img
+                    width: 15px
+                    height: 10px
+                    display: none
+                    opacity: 0
+                    transition: all .3s ease
+
+        &.yes
+            + label span
+                background-color: s.$color-green
+        &.yes:checked
+            + label span
+                border: none
+                outline: none
+                box-shadow: 0 0 10px s.$color-green
+                background-color: s.$color-green
+                p
+                    display: none
+                img
+                    display: block
+                    opacity: 1
+
+        &.no + label span
+            background-color: #D4604B
+
+        &.no:checked
+            + label span
+                border: none
+                outline: none
+                box-shadow: 0 0 10px #D4604B
+                background-color: #D4604B
+                p
+                    display: none
+                img
+                    display: block
+                    opacity: 1

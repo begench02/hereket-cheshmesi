@@ -1,0 +1,14 @@
+@use "styles" as s
+
+.input
+    height: 3rem
+    padding: 0 1rem
+    border: 1px solid s.$color-green
+    outline: none
+    border-radius: 6px
+    font-size: 20px
+
+.input:focus
+    box-shadow: 0 0 6px #488026
+    &:invalid:focus
+        box-shadow: 0 0 6px #fe7671

@@ -1,4 +1,5 @@
 import { Configuration } from 'webpack'
+import Dotenv from 'dotenv-webpack'
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
@@ -80,6 +81,7 @@ export const webpackCommon: Configuration = {
 	},
 	plugins: [
 		new ForkTsCheckerWebpackPlugin(),
+		new Dotenv(),
 		new HtmlWebpackPlugin({
 			template: 'index.html',
 			inject: true,

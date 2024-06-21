@@ -1,11 +1,51 @@
 .main
-    margin-bottom: 30px
+    margin-top: 120px
 
 .header
     text-align: center
     font-size: 40px
-    margin: 50px 0
 
 .content
     width: 100%
-    padding: 2rem 0
+
+.arrow_left
+    position: absolute
+    bottom: -7px
+    left: 47%
+    display: flex
+    justify-center: items-center
+    padding: 6px
+    opacity: 30
+    align-self: center
+    z-index: 9999
+    border-radius: 155px
+    path
+        fill: #000
+    &:hover
+        opacity: 100
+        cursor: pointer
+        z-index: 20
+
+.arrow_left_hidden
+    position: hidden
+
+.arrow_right
+    position: absolute
+    bottom: -7px
+    right: 47%
+    display: flex
+    justify-center: items-center
+    padding: 6px
+    opacity: 30
+    align-self: center
+    z-index: 9999
+    border-radius: 155px
+    path
+        fill: #000
+    &:hover
+        opacity: 100
+        cursor: pointer
+        z-index: 20
+
+.arrow_right_hidden
+    position: hidden

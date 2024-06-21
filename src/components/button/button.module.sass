@@ -1,0 +1,24 @@
+@use 'styles' as s
+
+.main
+    padding: 0.5rem 1.5rem
+    background-color: transparent
+    border-radius: 6px
+    cursor: pointer
+    font-size: 20px
+    font-weight: 300
+    transition: 1s
+
+.primary
+    border: 1px solid
+    &:hover
+        border-color: s.$color-green
+        color: s.$color-green
+
+.contained
+    background-color: s.$color-light-green
+    border: none
+    color: #fff
+    transition: 0.35s
+    &:hover
+        background-color: s.$color-green

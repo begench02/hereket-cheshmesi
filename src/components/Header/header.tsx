@@ -11,15 +11,6 @@ export const Header = () => {
 			<nav className={styles.nav__left}>
 				<div className={styles.link__block}>
 					<a
-						href='#'
-						className={clsx(styles.link__text, currentLink == '' && styles.link__active)}
-						onClick={(e: any) => setCurrentLink(e.target.hash)}
-					>
-						Home
-					</a>
-				</div>
-				<div className={styles.link__block}>
-					<a
 						href='#places'
 						className={clsx(styles.link__text, currentLink == '#places' && styles.link__active)}
 						onClick={(e: any) => setCurrentLink(e.target.hash)}
@@ -29,11 +20,11 @@ export const Header = () => {
 				</div>
 				<div className={styles.link__block}>
 					<a
-						href='#contacts'
-						className={clsx(styles.link__text, currentLink == '#contacts' && styles.link__active)}
+						href='#popular-tours'
+						className={clsx(styles.link__text, currentLink == '#popular-tours' && styles.link__active)}
 						onClick={(e: any) => setCurrentLink(e.target.hash)}
 					>
-						Contacts
+						Popular Tours
 					</a>
 				</div>
 			</nav>
@@ -43,11 +34,11 @@ export const Header = () => {
 			<nav className={styles.nav__right}>
 				<div className={styles.link__block}>
 					<a
-						href='#popular-tours'
-						className={clsx(styles.link__text, currentLink == '#popular-tours' && styles.link__active)}
+						href='#contact-us'
+						className={clsx(styles.link__text, currentLink == '#contacts' && styles.link__active)}
 						onClick={(e: any) => setCurrentLink(e.target.hash)}
 					>
-						Popular Tours
+						Contact us
 					</a>
 				</div>
 				<div className={styles.link__block}>

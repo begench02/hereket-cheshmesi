@@ -4,36 +4,42 @@ import AkhalTeke from 'assets/imgs/ashgabat/akhal-teke.jpg'
 import AltynAsyr from 'assets/imgs/ashgabat/altyn-asyr.jpg'
 import AltynTepe from 'assets/imgs/ahal/altyn-tepe.jpg'
 import Ashgabat from 'assets/imgs/ashgabat3.jpg'
+import AstanaBaba from 'assets/imgs/lebap/astana-baba.jpg'
+import Balkan from 'assets/imgs/balkan/balkan.jpg'
 import Berkarar from 'assets/imgs/ashgabat/berkarar.jpg'
+import CaveTownYekedeshik from 'assets/imgs/mary/cave-town-yekedeshik.jpg'
 import DarvazaGasCrater from 'assets/imgs/ahal/darvaza-gas-crater.jpg'
 import DarvazaWaterCrater from 'assets/imgs/ahal/darvaza-water-crater.jpg'
+import Dashoguz from 'assets/imgs/dashoguz/dashoguz.jpg'
 import Dehistan from 'assets/imgs/balkan/dehistan.jpg'
 import DinosaurPlateau from 'assets/imgs/carousel/dinosaur-plateau.jpg'
 import Ekedeshik from 'assets/imgs/carousel/ekedeshik.jpg'
 import ErtugrulGaziMosque from 'assets/imgs/ashgabat/ertugrul-gazi-mosque.jpg'
 import GeokTepe from 'assets/imgs/ahal/geok-tepe.jpg'
 import GonurDepe from 'assets/imgs/mary/gonur-depe.jpg'
+import GozliAta from 'assets/imgs/balkan/gozli-ata.jpg'
 import HistoricalMonumentAbiward from 'assets/imgs/ahal/abiward.jpg'
 import IndependenceMonument from 'assets/imgs/ashgabat/independence-monument.jpg'
-import KowAta from 'assets/imgs/ahal/kow-ata.jpg'
+import KapKutan from 'assets/imgs/lebap/kap-kutan.jpg'
+import Karakum from 'assets/imgs/balkan/karakum.jpg'
+import KaynarBaba from 'assets/imgs/lebap/kaynar-baba.jpg'
+import KowAta from 'assets/imgs/ahal/kow-ata.png'
+import Kyrkgyz from 'assets/imgs/lebap/kyrkgyz.jpg'
 import KyzKala from 'assets/imgs/mary/kyz-kala.jpg'
+import Lebap from 'assets/imgs/lebap/lebap.jpg'
+import MausoleumOfAlamberdar from 'assets/imgs/lebap/mausoleum-of-lamberdar.jpg'
 import Merv from 'assets/imgs/mary/merv.jpeg'
 import MonumentOfNeutrality from 'assets/imgs/ashgabat/neutrality-monument.jpg'
 import NationalMuseumOfTurkmenistan from 'assets/imgs/ashgabat/national-museum-of-turkmenistan.jpg'
-import Nisa from 'assets/imgs/ahal/nisa.jpeg'
-import Karakum from 'assets/imgs/balkan/karakum.jpg'
+import Nisa from 'assets/imgs/ahal/nisa.png'
+import ParauBibi from 'assets/imgs/balkan/parau-bibi.jpg'
 import SeyitJemaletdinMosque from 'assets/imgs/ahal/seyit-jemaletdin-mosque.jpg'
 import SoltanSanjar from 'assets/imgs/mary/soltan-sanjar-mausoleum.jpg'
 import TombOfKhojaYusufHamadani from 'assets/imgs/mary/tomb-of-khoja-yusuf-hamadani.jpg'
 import TurkmenCarpetMuseum from 'assets/imgs/ashgabat/turkmen-carpet-museum.jpg'
-import CaveTownYekedeshik from 'assets/imgs/mary/cave-town-yekedeshik.jpg'
-import Lebap from 'assets/imgs/lebap/lebap.jpg'
-import MausoleumOfAlamberdar from 'assets/imgs/lebap/mausoleum-of-lamberdar.jpg'
-import Dashoguz from 'assets/imgs/dashoguz/dashoguz.jpg'
-import Balkan from 'assets/imgs/balkan/balkan.jpg'
 import YangykalaCanyon from 'assets/imgs/balkan/yangykala-canyon.jpg'
-import ParauBibi from 'assets/imgs/balkan/parau-bibi.jpg'
-import GozliAta from 'assets/imgs/balkan/gozli-ata.jpg'
+import UmbarWaterfall from 'assets/imgs/lebap/umbar.jpg'
+import OasisDampla from 'assets/imgs/lebap/oasis-dampla.jpg'
 
 export type CITY = 'Ashgabat' | 'Ahal' | 'Mary' | 'Lebap' | 'Dashohuz' | 'Balkan'
 
@@ -252,24 +258,66 @@ export const places: Places[] = [
 				history:
 					"Today Astana Baba, located in the city of Kerki, is a modern village located just two kilometers from the Amu Darya. At the beginning of the last century, Ersar Turkmens lived here, engaged in agriculture, silkworm breeding, and making boats for fishermen. Local residents were excellent woodcarvers, potters, gunsmiths and blacksmiths. Workshops and shops of traders were located in large numbers around the busy bazaar, mosque and the main local shrine - the Alamberdar mausoleum. The city of Kerki, the first mention of which dates back to the 7th century and is associated with the Arab invasion of Central Asia.And next to Zemm stood the town of Maymarg, the obvious predecessor of Astana Baba. The ruins of the ancient citadel, called Omar-kala in Turkmen, were examined by another famous archaeologist, Viktor Pilipko. One of the most interesting finds made as a result of the excavations by Pilipko's team was a terracotta figurine of a goddess with cult attributes.",
 			},
+			{
+				id: uuidv4(),
+				name: 'Astana-Baba Mausoleum',
+				img: AstanaBaba,
+				history:
+					'Мавзолей Астана-баба, находится в нескольких километрах к западу от города Керки. Он объявлен историческим и культурным достоянием республики. Происхождение названия памятника точно неизвестно, как неизвестно и то, кем был Астана-баба. Возможно, оно происходит от арабских слов «астана» - «порог» и «баба» - «отец, святой человек». В Туркменистане используется и другое название – мавзолей Зейда Али и Зубейды Али. Памятник принято относить примерно к XI-XII векам.Внутри мавзолея находятся пять гробниц, появившихся в разные годы. Одни из них связана с историей дочери правителя БалхаЗейда Али – Зубейды. Она скончалась вскоре после свадьбы и отец решил увековечить ее память, построив мавзолей. Однако три попытки строительства не увенчались успехом, здание рушилось. Однажды к отцу во сне явился старец, который посоветовал строить мавзолей с использованием воды и глины из Мекки. Он послушался, к местной глине примешали глину, привезенную из святыни всех мусульман, а в колодец подлили воды из Мекки. Это помогло и мавзолей стоит по сей день.',
+			},
+			{
+				id: uuidv4(),
+				name: '«Кыркгыз» — место исполнения желаний',
+				img: Kyrkgyz,
+				history:
+					'Один из уникальных природных памятников Койтендага – знаменитый грот «Кыркгыз» («Сорок девушек»). Он расположен по пути к посёлку Ходжапиль. Здесь всегда много паломников и туристов. Десятки тысяч длинных лент украшают это священное место. По рассказам старцев, каждый, кто побывает в этом месте, может загадать желание. Для этого нужно обмакнуть лоскуток в глину и подкинуть к каменному своду. Если лента «приклеится» к своду горы, заветное желание непременно исполнится. По легенде из далёкого прошлого, когда-то в плодородной речной долине было селение, и трудолюбивые землепашцы не знали бед и печалей. Но пришли времена невзгод, враг вторгся в эти края. Спасти селение не удалось. Но и поработить дух сельчан никто не смог. Девушек, живших в этом селении, землепашцы отвели по горным тропам в ущелье. Но враги узнали их тайну и бросились на поиски юных красавиц. Скрываясь от врагов, каждую ночь девушки просили помощи у Неба. Небеса услышали их просьбу и, словно призрачный дым, девушки растворились в воздухе и чужеземцы никого не нашли. Лишь слегка заметные очертания горных скал, в чём-то напоминавшие силуэты юных красавиц, да ещё каменные чаши проступили на горных плитах, а родники наполнились кристально чистой водой. Это были слёзы растворившихся в дыме красавиц.',
+			},
+			{
+				id: uuidv4(),
+				name: 'Водопад Умбар-дере в Койтендаге',
+				img: UmbarWaterfall,
+				history:
+					'Водопад Умбар высотой в 27 метров, один из самых высоких в Туркменистане. Раскатистый гул падающей воды разносится далеко по ущелью. Хрустальная мантия горного водопада не похожа ни на один другой водный каскад страны. Несмотря на трудности пути, сюда съезжаются желающие увидеть достопримечательность необычайной красоты. Названием ущелье и водопад обязаны юноше по имени Умбар, которого отвесные стены укрыли от преследовавших врагов. Как гласит легенда, юноша был искусным воином и проявлял особое мужество, но в одной из схваток потерял всех товарищей. Пытаясь скрыться от преследователей, Умбар вышел на край глубокого ущелья и стал просить защиты у родных гор. Койтендаг, оценив смелость юноши, приблизил к нему противоположный край пропасти. Умбар, перепрыгнул бурлящий поток на высоте десятков метров над землёй. Повторить его поступок враги не осмелились, а ущелье так и осталось узким каньоном, рассекающим скалу.',
+			},
+			{
+				id: uuidv4(),
+				name: 'Пещера Кап-Кутан',
+				img: KapKutan,
+				history:
+					'Пещера Кап-Кутан располагается на юго-востоке Туркменистана, на склоне хребта Кугитангтау (юго-западный отрог Гиссарского хребта). Хребет вытянут с юга на север, постепенно повышаясь с 1000 до 3000 м; он представляет собой куэсту с пологим западным и крутым восточным склонами, сложенную верхнеюрскими известняками кугитангской свиты мощностью до 500 м. Стратиграфически выше известняков залегают гипсы и ангидриты гаурдакской свиты, которые сохранились фрагментарно в виде останков только у подножья южной части хребта.',
+			},
+			{
+				id: uuidv4(),
+				name: 'Dinosaur Plateau',
+				img: DinosaurPlateau,
+				history:
+					'Высоко в горах Койтендага расположено плато Динозавров, на котором можно найти множество огромных, леденящих душу, застывших навечно отпечатков этих огромных животных. Уверенность в том, что это не народный вымысел и не очередная сказка, дают заключения палеонтологов, нашедших при раскопках в прошлом веке останки этих существ на туркменской земле. У многих вызывает сомнение тот факт, что по истечении сотен миллионов лет следы древних ящеров не пропали, а продолжают четко вырисовываться на земле, удивляя своими размерами и глубиной. Объяснения ученых базируются на том, что ранее плато представляло собой дно водоема, и служило водопоем для животных. Поэтому и сохранились такие глубокие отпечатки. В настоящее время горное плато стало местом паломничества туристов из разных стран мира.',
+			},
+			{
+				id: uuidv4(),
+				name: 'Озеро Кайнар баба',
+				img: KaynarBaba,
+				history:
+					'Озеро Кайнар баба - известное место в предгорьях Хребта Кугитангтау, находящегося на юго-востоке Туркменистана в поселке Гарлык. Здесь находится сероводородный источник, а также небольшое озеро. Озеро Кайнар баба – настоящее место паломничества. Неподалёку оказываются святые мавзолеи, и путники сначала поклоняются святым, происходят омовения в озере. Оно сильно минерализовано, и издавна названо в народе «кипящий родник». Озеро в диаметре всего двадцать пять метров, вода в нем такая чистая, кажется будто дно озера усыпано жемчужинами.Озеро Кайнар баба – средство неразгаданных тайн и настоящих чудес, снискавших ему явную популярность. Температура воды в роднике, питающем озеро, сохраняется постоянной на отметке 22 С. Недалеко от источника находится культовое захоронение старца Кайнара баба. Людская молва бережно хранит память о его добрых деяниях. Говорят, Кайнар баба в совершенстве владел искусством исцелять недуги, и у всех вернулось здоровье и радость жизни.',
+			},
 		],
 	},
-	// {
-	// 	id: uuidv4(),
-	// 	cityName: 'Dashohuz',
-	// 	cityImg: Dashoguz,
-	// 	cityHistory:
-	// 		'Dashoguzvelayat- is an administrative-territorial unit in the north of Turkmenistan, one of the five velayats of the country. It borders in the northwest, north and northeast with Karakalpakstan and the Khorezm region of Uzbekistan, in the south with Ahalvelayat, in the southeast with Lebapvelayat and in the southwest with Balkan velayat.',
-	// 	places: [
-	// 		{
-	// 			id: uuidv4(),
-	// 			name: 'Oasis Damla',
-	// 			img: 
-	// 			history:
-	// 				"Damla Oasis is one of the most remote oases of the Yomud and Teke tribes in the heart of the Karakum Desert. Away from the main road, this breathtaking place is characterized by flat-roofed villages and yurts that can be found in almost every home. You can witness the simple and beautiful traditions of nomads, transporting a rare visitor to the past. To get to a small settlement, you need to cross to the Northern Karakum Desert and cross the Uzboy - the former bed of the Amu Darya River. The challenging route through dunes and salt marshes tests even the most experienced driver, who makes a refreshing stop at the oasis of Bekouri halfway. This venture gives the Silk Road explorer an authentic experience of what travel and life in the desert have always meant to its nomadic inhabitants. Damla is approximately 4 hours' drive from the main Ashgabat-Dashoguz highway and can be visited on a two-day trek from Ashgabat with an overnight stay in tents or with nomadic families",
-	// 		},
-	// 	],
-	// },
+	{
+		id: uuidv4(),
+		cityName: 'Dashohuz',
+		cityImg: Dashoguz,
+		cityHistory:
+			'Dashoguzvelayat- is an administrative-territorial unit in the north of Turkmenistan, one of the five velayats of the country. It borders in the northwest, north and northeast with Karakalpakstan and the Khorezm region of Uzbekistan, in the south with Ahalvelayat, in the southeast with Lebapvelayat and in the southwest with Balkan velayat.',
+		places: [
+			{
+				id: uuidv4(),
+				name: 'Oasis Damla',
+				img: OasisDampla,
+				history:
+					"Damla Oasis is one of the most remote oases of the Yomud and Teke tribes in the heart of the Karakum Desert. Away from the main road, this breathtaking place is characterized by flat-roofed villages and yurts that can be found in almost every home. You can witness the simple and beautiful traditions of nomads, transporting a rare visitor to the past. To get to a small settlement, you need to cross to the Northern Karakum Desert and cross the Uzboy - the former bed of the Amu Darya River. The challenging route through dunes and salt marshes tests even the most experienced driver, who makes a refreshing stop at the oasis of Bekouri halfway. This venture gives the Silk Road explorer an authentic experience of what travel and life in the desert have always meant to its nomadic inhabitants. Damla is approximately 4 hours' drive from the main Ashgabat-Dashoguz highway and can be visited on a two-day trek from Ashgabat with an overnight stay in tents or with nomadic families",
+			},
+		],
+	},
 	{
 		id: uuidv4(),
 		cityName: 'Balkan',

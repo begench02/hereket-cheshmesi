@@ -4,6 +4,7 @@ interface CssExports {
   'header': string;
   'image': string;
   'image_block': string;
+  'image_block__current': string;
   'main': string;
   'read_more': string;
   'text': string;

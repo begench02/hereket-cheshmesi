@@ -7,16 +7,33 @@ html
     scroll-behavior: smooth
 
 body
-    font-family: 'Rubik', sans-serif
+    // font-family: "Roboto Mono", monospace
+    // font-family: 'Rubik', sans-serif
+    font-family: "Quicksand", sans-serif
     font-optical-sizing: auto
     font-style: normal
-    background-color: #E8FBFF
+    background-color: #F9FAFC
+    -webkit-font-smoothing: antialiased
+    &::webkit-scrollbar
+        width: 15px
+    &::webkit-scrollbar-track
+        background: red
 
 .main
     position: relative
 
 .content
     height: 100vh
+
+::-webkit-scrollbar
+    width: 10px
+
+::-webkit-scrollbar-track
+    background: #d1e5ff
+
+::-webkit-scrollbar-thumb
+    border-radius: 10px
+    background: #48A626
 
 section
     min-height: 100vh

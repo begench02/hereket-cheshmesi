@@ -1,37 +1,131 @@
 @use 'styles' as c
 
 .main
-    height: 100vh
-    margin: 2rem 0
-    display: grid
-    // align-items: center
+    min-height: 45vh
     justify-content: start
-    background-image: url("assets/imgs/ashgabat.jpg")
-    background-size: 100% auto
-    background-repeat: no-repeat
-    background-position-y: 30%
 
 .content
-    color: #fff
-    display: inline-block
-    margin-top: 20%
+    color: #000
+    display: grid
+    grid-template-columns: 1fr 1fr
+    justify-content: center
+    margin: 5% 0
     margin-left: 3rem
+    height: 90%
 
-.title
-    font-size: 60px
+.content__text
+    justify-self: center
+    .title
+        font-size: 60px
+    .subtitle
+        font-size: 30px
+    .btn
+        margin-top: 1rem
+        padding: 1rem
+        border-radius: 10px
+        color: #000
+        border: 1px solid #000
+        background-color: transparent
+        cursor: pointer
+        transition: 0.6s
+        &:hover
+            background-color: #fff
+            color: c.$color-green
+            border-color: c.$color-green
 
-.subtitle
-    font-size: 30px
+.content__img
+    background-image: url("assets/imgs/ashgabat6.jpg")
+    background-size: 100% auto
+    background-repeat: no-repeat
+    width: 80%
+    height: 750px
+    border-radius: 20px
+    justify-self: center
 
-.btn
-    margin-top: 1rem
-    padding: 1rem
-    border-radius: 10px
-    color: #fff
-    border: 1px solid #fff
-    background-color: transparent
+.accordion
+    margin: 60px auto
+    .accordion_content
+        color: #555
+        padding: 0 10px
+        line-height: 26px
+        max-height: 0
+        overflow: hidden
+        transition: 0.5s
+
+.accordion
+    li
+        display: grid
+        align-items: start
+        list-style: none
+        width: 100%
+        margin: 20px
+        margin-left: 0
+        border-radius: 8px
+        box-shadow: -10px 10px 23px 9px rgba(0, 0, 0, 0.17)
+        background-color: transparent
+    p
+        text-indent: 20px
+        color: #979B9B
+        margin: 10px 0
+
+.accordion li label
+    display: flex
+    align-items: center
+    padding: 10px
+    font-size: 18px
+    font-weight: 500
     cursor: pointer
-    transition: 0.6s
-    &:hover
-        background-color: #fff
-        color: c.$orange-color
+    font-size: 22px
+    &:hover span
+        transform: rotate(90deg)
+    &:hover span:last-child
+        left: 50%
+        right: 50%
+
+.accordion input[type="checkbox"]:checked + label + .accordion_content
+    max-height: 600px
+    padding: 10px
+
+.accordion input[type="checkbox"]:checked + label
+    span
+        transform: rotate(90deg)
+    span:last-child
+        left: 50%
+        right: 50%
+
+input[type="checkbox"]
+    display: none
+
+.accordion_header
+    display: flex
+    cursor: pointer
+
+.accordion_header_input
+    position: absolute
+
+.accordion_button
+    background: transparent
+    width: 50px
+    height: 50px
+    border: 0
+    font-size: 1.5em
+    position: relative
+
+.accordion_button span
+    position: absolute
+    transition: 300ms
+    background: white
+    border-radius: 2px
+    background-color: #48A626
+
+.accordion_button span:first-child
+    top: 25%
+    bottom: 25%
+    width: 10%
+    left: 45%
+
+.accordion_button span:last-child
+    left: 25%
+    right: 25%
+    height: 10%
+    top: 45%
