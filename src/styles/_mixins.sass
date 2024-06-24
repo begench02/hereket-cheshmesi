@@ -1,0 +1,10 @@
+@mixin hover($bg-color)
+    transition: 0.6s ease-in
+    &:hover
+        background-color: $bg-color
+
+@mixin input-focus($color)
+    &:focus
+        box-shadow: 0 0 6px #488026
+    &:invalid:focus
+        box-shadow: 0 0 6px #fe7671

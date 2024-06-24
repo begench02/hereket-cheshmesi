@@ -5,13 +5,15 @@ import { NumberInput } from 'components/input/number-input/number-input'
 import { PhoneInput } from 'react-international-phone'
 import { Radio } from 'components/radio/radio'
 import { Select } from 'components/select/select'
-import { useForm } from 'react-hook-form'
-import { useState } from 'react'
+import { FormProvider, useForm } from 'react-hook-form'
+import { DetailedHTMLProps, HTMLAttributes, MouseEvent, MouseEventHandler, useState } from 'react'
 import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps'
 import email from 'assets/imgs/icons/email.png'
 import locationMarker from 'assets/imgs/icons/location-marker.png'
 import phoneImg from 'assets/imgs/icons/phone.png'
 import styles from './contact-us.module.sass'
+import clsx from 'clsx'
+import { DateInput } from 'components/input/date-input/date-input'
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>
 const MapMarkerLocation = {
@@ -19,7 +21,7 @@ const MapMarkerLocation = {
 	zoom: 12,
 }
 
-type ContactForm = {
+type ContactValues = {
 	name: string
 	homeCountry: string
 	email: string
@@ -46,7 +48,11 @@ const entranceOptions = [
 
 export const ContactUs = () => {
 	const [phone, setPhone] = useState('')
-	const { register, handleSubmit } = useForm()
+	const methods = useForm<ContactValues>()
+
+	const onFormSubmit = (formData: ContactValues) => {
+		console.log('Form data: ', formData)
+	}
 
 	return (
 		<div className={styles.main}>
@@ -82,86 +88,112 @@ export const ContactUs = () => {
 						</div>
 						<div className={styles.contacts__phone_text}>
 							<p>Phone number: </p>
-							<p>- 993 65 553461</p>
-							<p>- 993 62 277213</p>
+							<p
+								onClick={(event: any) =>
+									console.log('Event: ', event.target.innerText.replace(/\s/g, ''))
+								}
+							>
+								+993 65 553461
+							</p>
+							<p
+								onClick={(event: any) =>
+									console.log('Event: ', event.target.innerText.replace(/\s/g, ''))
+								}
+							>
+								+993 62 277213
+							</p>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div>
-				<div className={styles.form_container}>
-					<h3 className={styles.form_title}>Let's Get in touch</h3>
-					<div className={styles.row}>
-						<Input placeholder='What is your name?' {...register('name')} className={styles.input} />
-						<Input placeholder='Your home country' {...register('home-country')} className={styles.input} />
-					</div>
-					<div className={styles.row}>
-						<input placeholder='Your email address' {...register('email')} className={styles.input} />
-						<PhoneInput
-							defaultCountry='ru'
-							value={phone}
-							onChange={(phone) => setPhone(phone)}
-							style={{ width: '100%' }}
-							inputClassName={styles.input_phone}
-							countrySelectorStyleProps={{ buttonClassName: styles.input_phone__country_btn }}
-						/>
-					</div>
-					<div className={styles.row}>
-						<input
-							placeholder='What is (are) the purpose of your travel to Turkmenistan?'
-							className={styles.input}
-						/>
-					</div>
-					<div>
-						<Radio options={['Yes', 'No']} label='Have you visited Turkmenistan before?' />
-					</div>
-					<div>
-						<h2>When do you intend to visit Turkmenistan? *</h2>
-						<input type='date' placeholder='mm/dd/yyyy' />
-					</div>
-					<div>
-						<div>
-							<NumberInput placeholder='2' />
+				<FormProvider {...methods}>
+					<form onSubmit={methods.handleSubmit(onFormSubmit)} className={styles.form_container}>
+						<h3 className={styles.form_title}>Let's Get in touch</h3>
+						<div className={clsx(styles.row, styles.row_two_elements)}>
+							<Input placeholder='What is your name?' name='name' className={styles.input} />
+							<Input placeholder='Your home country' name='homeCountry' className={styles.input} />
 						</div>
-						<div></div>
-					</div>
-					<div>
-						<Select options={entranceOptions} />
-					</div>
-					<div>
-						<Select options={entranceOptions} />
-					</div>
-					<div>
-						<Radio
-							label='What is your preferred type of accommodation? *'
-							options={['Hotel', 'Camping', 'Combination']}
-						/>
-					</div>
-					<div>
-						<Radio label='What hotel category do you prefer?' options={['Budget', 'Standard', 'Comfort']} />
-					</div>
-					<div>
-						<Radio
-							label='What type of hotel rooms do you prefer?'
-							options={['Single', 'Double', 'Triple']}
-						/>
-					</div>
-					<div>
-						<Radio
-							label='What meal plan do you prefer? *'
-							options={['Bed and breakfast', 'Lunch only', 'Dinner only', 'Full board']}
-						/>
-					</div>
-					<div>
-						<Radio
-							label='What type of transport do you prefer? *'
-							options={['Road', 'Air', 'Off-road', 'Train', 'Combination']}
-						/>
-					</div>
-					<div className={styles.send_btn__container}>
-						<Button variant='contained'>Send</Button>
-					</div>
-				</div>
+						<div className={clsx(styles.row, styles.row_two_elements)}>
+							<Input placeholder='Your email address' name='email' className={styles.input} />
+							<PhoneInput
+								defaultCountry='ru'
+								value={phone}
+								onChange={(phone) => setPhone(phone)}
+								style={{ width: '100%' }}
+								inputClassName={styles.input_phone}
+								countrySelectorStyleProps={{ buttonClassName: styles.input_phone__country_btn }}
+							/>
+						</div>
+						<div className={clsx(styles.row)}>
+							<Input
+								placeholder='What is (are) the purpose of your travel to Turkmenistan?'
+								fullWidth
+								name='purpose'
+								className={styles.input}
+							/>
+						</div>
+						<div className={styles.row}>
+							<Radio
+								options={['Yes', 'No']}
+								label='Have you visited Turkmenistan before?'
+								name='visitedBefore'
+							/>
+						</div>
+						<div className={styles.row}>
+							<div>
+								<h3>When do you intend to visit Turkmenistan? *</h3>
+								<DateInput />
+							</div>
+						</div>
+						<div>
+							<NumberInput
+								placeholder='2'
+								label='How many days do you wish to spend in Turkmenistan? *'
+							/>
+						</div>
+						<div className={styles.row}>{/* <NumberInput placeholder='2' /> */}</div>
+						<div>
+							<Select options={entranceOptions} />
+						</div>
+						<div>
+							<Select options={entranceOptions} />
+						</div>
+						{/* <div>
+							<Radio
+								label='What is your preferred type of accommodation? *'
+								options={['Hotel', 'Camping', 'Combination']}
+							/>
+						</div>
+						<div>
+							<Radio
+								label='What hotel category do you prefer?'
+								options={['Budget', 'Standard', 'Comfort']}
+							/>
+						</div>
+						<div>
+							<Radio
+								label='What type of hotel rooms do you prefer?'
+								options={['Single', 'Double', 'Triple']}
+							/>
+						</div>
+						<div>
+							<Radio
+								label='What meal plan do you prefer? *'
+								options={['Bed and breakfast', 'Lunch only', 'Dinner only', 'Full board']}
+							/>
+						</div>
+						<div>
+							<Radio
+								label='What type of transport do you prefer? *'
+								options={['Road', 'Air', 'Off-road', 'Train', 'Combination']}
+							/>
+						</div> */}
+						<div className={styles.send_btn__container}>
+							<Button variant='contained'>Send</Button>
+						</div>
+					</form>
+				</FormProvider>
 			</div>
 		</div>
 	)

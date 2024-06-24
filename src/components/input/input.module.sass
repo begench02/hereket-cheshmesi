@@ -1,6 +1,7 @@
 @use "styles" as s
 
 .input
+    @include s.input-focus(s.$color-green)
     height: 3rem
     padding: 0 1rem
     border: 1px solid s.$color-green
@@ -8,8 +9,3 @@
     border-radius: 6px
     font-size: 20px
     color: s.$color_text_gray
-
-.input:focus
-    box-shadow: 0 0 6px #488026
-    &:invalid:focus
-        box-shadow: 0 0 6px #fe7671

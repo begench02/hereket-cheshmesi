@@ -19,6 +19,8 @@ interface CssExports {
   'main': string;
   'map__container': string;
   'row': string;
+  'row_three': string;
+  'row_two_elements': string;
   'send_btn__container': string;
 }
 export const cssExports: CssExports;

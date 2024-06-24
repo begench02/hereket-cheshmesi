@@ -1,5 +1,9 @@
 @use 'styles' as s
 
 .main
-    border-color: s.$color-green !important
-
+    border: 1px solid s.$color-green
+    border-radius: 5px
+    input
+        border: none
+    &:focus-within
+        box-shadow: 0 0 10px s.$color-green

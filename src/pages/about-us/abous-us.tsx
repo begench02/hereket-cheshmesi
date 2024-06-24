@@ -1,5 +1,3 @@
-import { NavLink } from 'react-router-dom'
-import Ashgabat from 'assets/imgs/ashgabat3.jpg'
 import styles from './about-us.module.sass'
 
 export const AboutUs = () => {
