@@ -3,10 +3,10 @@ import clsx from 'clsx'
 import styles from './button.module.sass'
 
 export const Button: FC<ButtonProps> = (props) => {
-	const { children, variant = 'primary', className, style } = props
+	const { children, variant = 'primary', fullWidth = false, className, style } = props
 
 	return (
-		<button className={clsx(styles.main, styles[variant], className)} style={style}>
+		<button className={clsx(styles.main, styles[variant], className)} style={{ ...style, width: '100%' }}>
 			{children}
 		</button>
 	)
@@ -15,6 +15,7 @@ export const Button: FC<ButtonProps> = (props) => {
 type ButtonProps = {
 	children: ReactNode
 	variant?: Variant
+	fullWidth?: boolean
 	className?: string
 	style?: CSSProperties
 }

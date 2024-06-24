@@ -1,0 +1,75 @@
+@use 'styles' as s
+
+.visited_before
+    div
+        display: inline-block
+
+    input[type="radio"]
+        display: none
+        border-color: s.$color-green
+
+        + label
+            margin-top: 10px
+            margin-right: 22px
+            display: flex
+            align-items: center
+            gap: 0.5rem
+            color: #333
+            font-family: Arial, sans-serif
+            font-size: 20px
+            span
+                width: 30px
+                height: 30px
+                margin: -1px 4px 0 0
+                display: grid
+                justify-content: center
+                align-items: center
+                cursor: pointer
+                border-radius: 50%
+                border: 1px dashed s.$color-green
+                box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33)
+                background-repeat: no-repeat
+                background-position: center
+                color: #fff
+                font-weight: bold
+                text-align: center
+
+                .check__img
+                    width: 14px
+                    height: 14px
+                    display: none
+                    opacity: 0
+                    transition: all .3s ease
+
+        &.yes
+            + label span
+                color: #000
+                border-color: s.$color-green
+        &.yes:checked
+            + label span
+                border: none
+                outline: none
+                box-shadow: 0 0 10px s.$color-green
+                p
+                    display: none
+                .check__img
+                    display: block
+                    opacity: 1
+
+        &.no + label span
+            background-color: #D4604B
+
+        &.no:checked
+            + label span
+                border: none
+                outline: none
+                box-shadow: 0 0 10px #D4604B
+                background-color: #D4604B
+                p
+                    display: none
+                .check__img
+                    display: block
+                    opacity: 1
+
+.visited_before__title
+    margin-right: 1em

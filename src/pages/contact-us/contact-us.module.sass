@@ -6,9 +6,29 @@
     display: grid
     grid-template-columns: 1fr 1fr
 
-.map_container
+.map__container
     height: 600px
     width: 100%
+
+.contacts__container
+    margin-top: 10px
+    min-height: 320px
+    .contacts__location, .contacts__email, .contacts__phone
+        display: flex
+        align-items: center
+        margin: 2rem 0
+        .contacts__location_icon, .contacts__email_icon, .contacts__phone_icon
+            img
+                width: 100px
+                height: 100px
+                margin-right: 40px
+        .contacts__email_icon, .contacts__phone_icon
+            img
+                height: 70px
+    .contacts__location_text, .contacts__email_text, .contacts__phone_text
+        // color: s.$color-green
+        font-size: 24px
+        font-weight: 600
 
 .form_container
     margin-right: 4rem
@@ -47,70 +67,4 @@
     outline-color: s.$color-green !important
 
 .send_btn__container
-    justify-self: end
-
-$color-1: #2ecc71
-$color-2: #3498db
-.custom_radios
-    div
-        display: inline-block
-
-    input[type="radio"]
-        display: none
-        + label
-            color: #333
-            font-family: Arial, sans-serif
-            font-size: 14px
-            span
-                width: 40px
-                height: 40px
-                margin: -1px 4px 0 0
-                display: grid
-                justify-content: center
-                align-items: center
-                cursor: pointer
-                border-radius: 50%
-                box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33)
-                background-repeat: no-repeat
-                background-position: center
-                color: #fff
-                font-weight: bold
-                text-align: center
-                // line-height: 44px
-
-                img
-                    width: 15px
-                    height: 10px
-                    display: none
-                    opacity: 0
-                    transition: all .3s ease
-
-        &.yes
-            + label span
-                background-color: s.$color-green
-        &.yes:checked
-            + label span
-                border: none
-                outline: none
-                box-shadow: 0 0 10px s.$color-green
-                background-color: s.$color-green
-                p
-                    display: none
-                img
-                    display: block
-                    opacity: 1
-
-        &.no + label span
-            background-color: #D4604B
-
-        &.no:checked
-            + label span
-                border: none
-                outline: none
-                box-shadow: 0 0 10px #D4604B
-                background-color: #D4604B
-                p
-                    display: none
-                img
-                    display: block
-                    opacity: 1
+    justify-self: stretch
