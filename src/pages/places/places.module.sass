@@ -1,8 +1,9 @@
 @use 'styles' as c
 
 .main
+    position: relative
     min-height: 50vh
-    margin: 4rem 20rem
+    padding: 4rem 4rem 4rem 35rem
 
 .row
     display: grid
@@ -32,7 +33,7 @@
     color: c.$color-gray
 
 .subtitle
-    font-size: 20px
+    font-size: 24px
     color: c.$light-color-gray
 
 .buttons
@@ -47,6 +48,7 @@
     font-weight: 700
     border-radius: 10px
     cursor: pointer
+    text-transform: uppercase
 
 .btn__light
     color: c.$color-green
@@ -106,3 +108,10 @@
 
 .modal_text, .modal_history
     font-size: 18px
+
+.airplane
+    position: absolute
+    left: 40px
+    top: 200px
+    // bottom: -240px
+    // z-index: -99

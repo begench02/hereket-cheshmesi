@@ -2,6 +2,7 @@
 // Please do not change this file!
 interface CssExports {
   'aaa': string;
+  'airplane': string;
   'btn': string;
   'btn__gray': string;
   'btn__light': string;

@@ -1,0 +1,28 @@
+{
+	"places": "Places",
+	"popular_tours": "Popular Tours",
+	"contact_us": "Contact Us",
+	"about_us": "About Us",
+	"turkmenistan": "Turkmenistan",
+	"yes": "Yes",
+	"no": "No",
+	"section": {
+		"places": {
+			"title": "Awesome Places",
+			"subtitle": "Traveling is a great opportunity to get know fascinating countries and friendly people"
+		},
+		"about_us": {
+			"subtitle": "Out travel company specializes in creating unforgettable experience for our clients by offering personalized and unique travel packages tailored to their preferences"
+		}
+	},
+	"page": {
+		"contact_us": {
+			"name": "What is your name?",
+			"country": "What is your home country?",
+			"email": "What is your email?",
+			"phone": "What is your phone number?",
+			"purpose": "What is (are) the purpose of your travel to Turkmenistan?",
+			"visited_before": "Have you visited Turkmenistan before?"
+		}
+	}
+}

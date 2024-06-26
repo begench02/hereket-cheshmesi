@@ -13,9 +13,8 @@ const theme = (theme) => ({
 })
 
 const colorStyles = {
-	control: (styles) => ({ ...styles, border: 'none' }),
+	control: (styles) => ({ ...styles, border: 'none', minHeight: '50px' }),
 	option: (styles, { _, isDisabled, isFocused, isSelected, isActive }) => {
-		console.log('Is active: ', isActive)
 		return {
 			...styles,
 			color: isActive || isSelected ? '#fff' : '#000',

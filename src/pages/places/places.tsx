@@ -6,6 +6,9 @@ import { Link } from 'react-router-dom'
 import { useMemo, useState } from 'react'
 import Modal from 'react-modal'
 import styles from './places.module.sass'
+// @ts-ignore
+import Airplane from 'assets/imgs/gifs/airplane.gif'
+import { useTranslation } from 'react-i18next'
 
 const modalStyles = {
 	content: {
@@ -21,6 +24,7 @@ const modalStyles = {
 }
 
 export const Places = () => {
+	const { t } = useTranslation()
 	const [currentCity, setCurrentCity] = useState<CITY>('Ashgabat')
 	const [openModal, setModalOpen] = useState('')
 
@@ -85,16 +89,10 @@ export const Places = () => {
 					<p className={styles.legend}>{currentPlace.cityName}</p>
 				</div>
 				<div className={styles.aaa}>
-					<h2 className={styles.title}>Awesome places</h2>
-					<p className={styles.subtitle}>
-						Traveling is a great opportunity to get know
-						<br /> fascinating countries and friendly people
-					</p>
+					<h2 className={styles.title}>{t('section.places.title')}</h2>
+					<p className={styles.subtitle}>{t('section.places.subtitle')}</p>
 					<div className={styles.buttons}>
-						<button className={clsx(styles.btn, styles.btn__light)}>CONTACT US</button>
-						<button className={clsx(styles.btn, styles.btn__gray)}>
-							<Link to='/gallery'>GALLERY</Link>
-						</button>
+						<button className={clsx(styles.btn, styles.btn__light)}>{t('contact_us')}</button>
 					</div>
 				</div>
 			</div>
@@ -122,6 +120,7 @@ export const Places = () => {
 					</div>
 				))}
 			</div>
+			<img src={Airplane} className={styles.airplane} />
 		</section>
 	)
 }

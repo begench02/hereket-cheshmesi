@@ -5,26 +5,26 @@
     justify-content: space-between
     align-items: stretch
 
-.input
+.number_input
     width: 100%
     border-radius: 0
-
-.btn
-    display: grid
-    justify-content: center
-    align-content: center
-    width: 4rem
-    border: none
-    outline: none
-    font-size: 34px
-    cursor: pointer
-    z-index: 10
-    background-color: s.$color-green
-    color: #fff
-
-.btn__minus
-    border-top-left-radius: 10px
-    border-bottom-left-radius: 10px
-.btn__plus
-    border-top-right-radius: 10px
-    border-bottom-right-radius: 10px
+    &__input
+        @include s.input()
+    &__button
+        display: grid
+        justify-content: center
+        align-content: center
+        width: 4rem
+        border: none
+        outline: none
+        font-size: 34px
+        cursor: pointer
+        z-index: 10
+        background-color: s.$color-green
+        color: #fff
+    &__button_minus
+        border-top-left-radius: 10px
+        border-bottom-left-radius: 10px
+    &__button_plus
+        border-top-right-radius: 10px
+        border-bottom-right-radius: 10px

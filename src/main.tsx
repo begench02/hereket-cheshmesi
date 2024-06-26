@@ -1,10 +1,12 @@
-import { APIProvider } from '@vis.gl/react-google-maps'
+import './i18n'
 import { App } from './app'
 import { createRoot } from 'react-dom/client'
+import { Toaster } from 'react-hot-toast'
 
 const domNode = document.getElementById('root')!
 createRoot(domNode).render(
-	<APIProvider apiKey={process.env.GOOGLE_MAP_API_KEY}>
+	<>
 		<App />
-	</APIProvider>,
+		<Toaster />
+	</>,
 )

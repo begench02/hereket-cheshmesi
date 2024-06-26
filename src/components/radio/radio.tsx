@@ -4,19 +4,18 @@ import styles from './radio.module.sass'
 import { useFormContext } from 'react-hook-form'
 
 export const Radio: FC<RadioProps> = (props) => {
-	const { label, options, inputProps, name } = props
+	const { options, inputProps, name } = props
 	const { register } = useFormContext()
 
 	return (
 		<div className={styles.visited_before}>
-			<h3 className={styles.visited_before__title}>{label}</h3>
 			{options.map((option) => (
 				<div>
 					<input
 						type='radio'
 						id={option}
 						className={styles.yes}
-						name={label}
+						name={name}
 						value={option}
 						{...register(name)}
 						{...inputProps}
@@ -34,7 +33,6 @@ export const Radio: FC<RadioProps> = (props) => {
 }
 
 type RadioProps = {
-	label: string
 	options: string[]
 	name?: string
 	inputProps?: any

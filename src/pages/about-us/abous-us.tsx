@@ -1,17 +1,15 @@
+import { useTranslation } from 'react-i18next'
 import styles from './about-us.module.sass'
 
 export const AboutUs = () => {
+	const { t } = useTranslation()
+
 	return (
 		<section id='about-us' className={styles.main}>
 			<div className={styles.content}>
 				<div className={styles.content__text}>
-					<h2 className={styles.title}>ABOUT US</h2>
-					<p className={styles.subtitle}>
-						Out travel company specializes in creating
-						<br /> unforgettable experience for out clients by
-						<br /> offering personalized and unique travel
-						<br /> packages tailored to their preferences
-					</p>
+					<h2 className={styles.title}>{t('about_us')}</h2>
+					<p className={styles.subtitle}>{t('section.about_us.subtitle')}</p>
 					<ul className={styles.accordion}>
 						<li>
 							<input type='checkbox' name='accordion' id='included services' />

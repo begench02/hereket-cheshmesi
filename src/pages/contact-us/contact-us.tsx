@@ -1,24 +1,25 @@
 import 'react-international-phone/style.css'
 import { Button } from 'components/button/button'
-import { Input } from 'components/input/input'
+import { DateInput } from 'components/input/date-input/date-input'
+import { useState } from 'react'
+import { FormProvider, useForm } from 'react-hook-form'
+import { TextInput } from 'components/input/text-input/text-input'
 import { NumberInput } from 'components/input/number-input/number-input'
 import { PhoneInput } from 'react-international-phone'
 import { Radio } from 'components/radio/radio'
 import { Select } from 'components/select/select'
-import { FormProvider, useForm } from 'react-hook-form'
-import { DetailedHTMLProps, HTMLAttributes, MouseEvent, MouseEventHandler, useState } from 'react'
 import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps'
+import clsx from 'clsx'
 import email from 'assets/imgs/icons/email.png'
 import locationMarker from 'assets/imgs/icons/location-marker.png'
 import phoneImg from 'assets/imgs/icons/phone.png'
 import styles from './contact-us.module.sass'
-import clsx from 'clsx'
-import { DateInput } from 'components/input/date-input/date-input'
+import toast from 'react-hot-toast'
+import { useTranslation } from 'react-i18next'
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>
-const MapMarkerLocation = {
+const mapLocation = {
 	center: [37.9869, 58.3608],
-	zoom: 12,
+	zoom: 8,
 }
 
 type ContactValues = {
@@ -47,6 +48,7 @@ const entranceOptions = [
 ]
 
 export const ContactUs = () => {
+	const { t } = useTranslation()
 	const [phone, setPhone] = useState('')
 	const methods = useForm<ContactValues>()
 
@@ -56,49 +58,76 @@ export const ContactUs = () => {
 
 	return (
 		<div className={styles.main}>
-			<div className={styles.map__container}>
+			<div>
 				<YMaps>
-					<Map defaultState={MapMarkerLocation} width='900px' height='600px'>
-						<Placemark geometry={[37.9869, 58.3608]} />
+					<Map defaultState={mapLocation} width='100%' height='600px'>
+						<Placemark geometry={mapLocation.center} />
 					</Map>
 				</YMaps>
-				<div className={styles.contacts__container}>
-					<div className={styles.contacts__location}>
-						<div className={styles.contacts__location_icon}>
-							<img src={locationMarker} alt='Location Marker' />
-						</div>
-						<div className={styles.contacts__location_text}>
+				<div className={styles.contacts}>
+					<div className={styles.contact}>
+						<img src={locationMarker} alt='Location Marker' className={styles.contact__icon} />
+						<div className={styles.contact__text}>
 							<p>Address: </p>
-							<p>- 744000, Туркменистан, город Ашхабад, улица Гарашсызлык 62</p>
+							<p
+								onClick={(event: any) => {
+									const address = event.target.innerText.trim().substring(1)
+									navigator.clipboard.writeText(address)
+									toast.success('Address copied', { position: 'bottom-right' })
+								}}
+								className={styles.text_copy}
+							>
+								- 744000, Туркменистан, город Ашхабад, улица Гарашсызлык 62
+							</p>
 						</div>
 					</div>
-					<div className={styles.contacts__email}>
-						<div className={styles.contacts__email_icon}>
-							<img src={email} alt='Email' />
-						</div>
-						<div className={styles.contacts__email_text}>
+					<div className={styles.contact}>
+						<img src={email} alt='Email' className={clsx(styles.contact__icon, styles.email__icon)} />
+						<div className={styles.contact__text}>
 							<p>Email: </p>
-							<p>- info@cheshme@mail.ru</p>
-							<p>- bgeldyev7@gmail.com</p>
+							<p
+								onClick={(event: any) => {
+									const email = event.target.innerText.replace(/\s/g, '').substring(1)
+									navigator.clipboard.writeText(email)
+									toast.success('Email copied', { position: 'bottom-right' })
+								}}
+								className={styles.text_copy}
+							>
+								- info@cheshme@mail.ru
+							</p>
+							<p
+								onClick={(event: any) => {
+									const email = event.target.innerText.replace(/\s/g, '').substring(1)
+									navigator.clipboard.writeText(email)
+									toast.success('Email copied', { position: 'bottom-right' })
+								}}
+								className={styles.text_copy}
+							>
+								- bgeldyev7@gmail.com
+							</p>
 						</div>
 					</div>
-					<div className={styles.contacts__phone}>
-						<div className={styles.contacts__phone_icon}>
-							<img src={phoneImg} alt='Phone' />
-						</div>
-						<div className={styles.contacts__phone_text}>
+					<div className={styles.contact}>
+						<img src={phoneImg} alt='Phone' className={clsx(styles.contact__icon, styles.phone__icon)} />
+						<div className={styles.contact__text}>
 							<p>Phone number: </p>
 							<p
-								onClick={(event: any) =>
-									console.log('Event: ', event.target.innerText.replace(/\s/g, ''))
-								}
+								onClick={(event: any) => {
+									const phone = event.target.innerText.replace(/\s/g, '')
+									navigator.clipboard.writeText(phone)
+									toast.success('Phone copied', { position: 'bottom-right' })
+								}}
+								className={styles.text_copy}
 							>
 								+993 65 553461
 							</p>
 							<p
-								onClick={(event: any) =>
-									console.log('Event: ', event.target.innerText.replace(/\s/g, ''))
-								}
+								onClick={(event: any) => {
+									const phone = event.target.innerText.replace(/\s/g, '')
+									navigator.clipboard.writeText(phone)
+									toast.success('Phone copied', { position: 'bottom-right' })
+								}}
+								className={styles.text_copy}
 							>
 								+993 62 277213
 							</p>
@@ -108,87 +137,80 @@ export const ContactUs = () => {
 			</div>
 			<div>
 				<FormProvider {...methods}>
-					<form onSubmit={methods.handleSubmit(onFormSubmit)} className={styles.form_container}>
-						<h3 className={styles.form_title}>Let's Get in touch</h3>
-						<div className={clsx(styles.row, styles.row_two_elements)}>
-							<Input placeholder='What is your name?' name='name' className={styles.input} />
-							<Input placeholder='Your home country' name='homeCountry' className={styles.input} />
+					<form onSubmit={methods.handleSubmit(onFormSubmit)} className={styles.form}>
+						<h3 className={styles.form__title}>{t('contact_us')}</h3>
+						<div className={styles.flex}>
+							<TextInput placeholder={t('page.contact_us.name')} name='name' />
+							<TextInput placeholder={t('page.contact_us.country')} name='homeCountry' />
 						</div>
-						<div className={clsx(styles.row, styles.row_two_elements)}>
-							<Input placeholder='Your email address' name='email' className={styles.input} />
-							<PhoneInput
-								defaultCountry='ru'
-								value={phone}
-								onChange={(phone) => setPhone(phone)}
-								style={{ width: '100%' }}
-								inputClassName={styles.input_phone}
-								countrySelectorStyleProps={{ buttonClassName: styles.input_phone__country_btn }}
-							/>
-						</div>
-						<div className={clsx(styles.row)}>
-							<Input
-								placeholder='What is (are) the purpose of your travel to Turkmenistan?'
-								fullWidth
-								name='purpose'
-								className={styles.input}
-							/>
-						</div>
-						<div className={styles.row}>
-							<Radio
-								options={['Yes', 'No']}
-								label='Have you visited Turkmenistan before?'
-								name='visitedBefore'
-							/>
-						</div>
-						<div className={styles.row}>
-							<div>
-								<h3>When do you intend to visit Turkmenistan? *</h3>
-								<DateInput />
-							</div>
+						<div className={styles.flex}>
+							<TextInput placeholder={t('page.contact_us.email')} name='email' />
+							<TextInput placeholder={t('page.contact_us.phone')} name='homeCountry' />
+							{/* 
+							<div className={styles.test_block}>
+								<PhoneInput
+									defaultCountry='ru'
+									value={phone}
+									onChange={(phone) => setPhone(phone)}
+									style={{ width: '100%', height: '100%' }}
+									className={styles.input_phone__container}
+									inputClassName={styles.input_phone__input}
+									countrySelectorStyleProps={{ buttonClassName: styles.input_phone__country_btn }}
+								/>
+							</div> */}
 						</div>
 						<div>
+							<TextInput
+								placeholder='What is (are) the purpose of your travel to Turkmenistan?'
+								name='purpose'
+							/>
+						</div>
+						<div>
+							<p className={styles.label}>Have you visited Turkmenistan before?</p>
+							<Radio options={['Yes', 'No']} name='visitedBefore' />
+						</div>
+						<div>
+							<p className={styles.label}>When do you intend to visit Turkmenistan? *</p>
+							<DateInput />
+						</div>
+						{/* <div>
 							<NumberInput
 								placeholder='2'
 								label='How many days do you wish to spend in Turkmenistan? *'
 							/>
-						</div>
-						<div className={styles.row}>{/* <NumberInput placeholder='2' /> */}</div>
-						<div>
-							<Select options={entranceOptions} />
-						</div>
-						<div>
-							<Select options={entranceOptions} />
-						</div>
-						{/* <div>
-							<Radio
-								label='What is your preferred type of accommodation? *'
-								options={['Hotel', 'Camping', 'Combination']}
-							/>
-						</div>
-						<div>
-							<Radio
-								label='What hotel category do you prefer?'
-								options={['Budget', 'Standard', 'Comfort']}
-							/>
-						</div>
-						<div>
-							<Radio
-								label='What type of hotel rooms do you prefer?'
-								options={['Single', 'Double', 'Triple']}
-							/>
-						</div>
-						<div>
-							<Radio
-								label='What meal plan do you prefer? *'
-								options={['Bed and breakfast', 'Lunch only', 'Dinner only', 'Full board']}
-							/>
-						</div>
-						<div>
-							<Radio
-								label='What type of transport do you prefer? *'
-								options={['Road', 'Air', 'Off-road', 'Train', 'Combination']}
-							/>
 						</div> */}
+						<div>
+							<p className={styles.label}>Where do you plan to enter Turkmenistan? *</p>
+							<Select options={entranceOptions} />
+						</div>
+						<div>
+							<p className={styles.label}>Where do you plan to exit Turkmenistan? *</p>
+							<Select options={entranceOptions} />
+						</div>
+						<div>
+							<p className={styles.label}>What is your preferred type of accommodation? *</p>
+							<Radio options={['Hotel', 'Camping', 'Combination']} name='accommodation-type' />
+						</div>
+						<div>
+							<p className={styles.label}>What hotel category do you prefer?</p>
+							<Radio options={['Budget', 'Standard', 'Comfort']} name='hotel-category' />
+						</div>
+						<div>
+							<p className={styles.label}>What type of hotel rooms do you prefer?</p>
+							<Radio options={['Single', 'Double', 'Triple']} name='hotel-rooms' />
+						</div>
+						<div>
+							<p className={styles.label}>What meal plan do you prefer? *</p>
+							<Radio
+								options={['Bed and breakfast', 'Lunch only', 'Dinner only', 'Full board']}
+								name='meal-plan'
+							/>
+						</div>
+						<div>
+							<p className={styles.label}>What type of transport do you prefer? *</p>
+							<Radio options={['Road', 'Air', 'Off-road', 'Train', 'Combination']} name='transport' />
+						</div>
+
 						<div className={styles.send_btn__container}>
 							<Button variant='contained'>Send</Button>
 						</div>

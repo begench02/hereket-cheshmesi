@@ -1,76 +1,93 @@
 @use 'styles' as s
 
 .main
-    margin: 12em 4em 0 4em
-    height: 80vh
+    margin: 12em 4em 4em
+    min-height: 80vh
     display: grid
     grid-template-columns: 1fr 1fr
 
-.map__container
-    height: 600px
-    width: 100%
-
-.contacts__container
+.contacts
     margin-top: 10px
     min-height: 320px
-    .contacts__location, .contacts__email, .contacts__phone
-        display: flex
-        align-items: center
-        margin: 2rem 0
-        .contacts__location_icon, .contacts__email_icon, .contacts__phone_icon
-            img
-                width: 100px
-                height: 100px
-                margin-right: 40px
-        .contacts__email_icon, .contacts__phone_icon
-            img
-                height: 70px
-    .contacts__location_text, .contacts__email_text, .contacts__phone_text
-        // color: s.$color-green
+
+.contact
+    display: flex
+    align-items: center
+    margin: 2rem 0
+    &__icon
+        width: 100px
+        height: 100px
+        margin-right: 40px
+    &__text
         font-size: 24px
         font-weight: 600
 
-.form_container
+.email__icon, .phone__icon
+    height: 70px
+
+.form
     margin-right: 4rem
     padding: 0 2rem
     display: grid
     gap: 1rem
-
-.form_title
-    font-size: 40px
+    &__title
+        font-size: 40px
+        text-transform: uppercase
 
 .row
+    display: flex
+    gap: 1rem
+
+.flex
+    display: flex
     gap: 1rem
 
 .row_two_elements
-    display: grid
-    grid-template-columns: 1fr 1fr
+    display: flex
+    justify-content: space-between
+    gap: 1rem
 
 .row_three
     grid-column-start: 1
     grid-column-end: 3
 
-.input
-    height: 3rem
-    padding: 0 1rem
-    border: 1px solid s.$color-green
-    border-radius: 10px
-    outline-color: s.$color-green
-    font-size: 20px
+.label
+    font-size: 24px
+    font-weight: 600
+    margin-bottom: 0.5rem
 
-.input_phone
-    height: 3rem !important
+.input_phone__container
     width: 100%
+
+.input_phone__input
+    @include s.input-focus()
     border: 1px solid s.$color-green !important
     outline-color: s.$color-green !important
-    border-top-right-radius: 10px !important
-    border-bottom-right-radius: 10px !important
+    border-top-right-radius: 6px !important
+    border-bottom-right-radius: 6px !important
     font-size: 20px !important
+    padding-left: 1.2rem !important
 
 .input_phone__country_btn
-    height: 3rem
+    height: 100%
+    // width: 100%
     border: 1px solid s.$color-green !important
     outline-color: s.$color-green !important
 
 .send_btn__container
+    margin-top: 1rem
     justify-self: stretch
+
+.test_block
+    @include s.input-focus()
+    height: 3rem
+    width: 100%
+    // padding-left: 1rem
+    border: 1px solid s.$color-green
+    outline: none
+    border-radius: 6px
+    font-size: 20px
+    color: s.$color_text_gray
+
+.text_copy
+    @include s.hover-text(s.$color-green)

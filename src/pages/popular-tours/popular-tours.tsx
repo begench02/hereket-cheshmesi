@@ -17,6 +17,7 @@ import clsx from 'clsx'
 import { useState } from 'react'
 import { v4 } from 'uuid'
 
+
 export type TourCard = {
 	image: string
 	header: string
@@ -144,6 +145,7 @@ export const PopularTours = () => {
 					))}
 				</Carousel>
 			</div>
+			{/* <img src={Airplane} alt='Airplane' className={styles.airplane} /> */}
 		</section>
 	)
 }

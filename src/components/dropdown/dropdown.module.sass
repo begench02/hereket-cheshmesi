@@ -1,0 +1,38 @@
+@use 'styles' as s
+
+.dropdown
+    position: relative
+    font-size: 20px
+    &__image
+        padding-bottom: 0.6rem
+        width: 40px
+        display: block
+    &:hover
+        .menu
+            display: block
+
+.menu
+    position: absolute
+    display: none
+    width: 120%
+    background-color: s.$color-light-green
+    border-radius: 6px
+    z-index: 999
+    cursor: pointer
+    &__item
+        width: 100%
+        display: block
+        padding: 0.5rem
+        text-align: center
+        &:hover
+            @include s.hover-block(s.$color-green)
+        &--first
+            border-top-left-radius: 6px
+            border-top-right-radius: 6px
+        &--last
+            border-bottom-left-radius: 6px
+            border-bottom-right-radius: 6px
+
+.menu__image
+    width: 30px
+    cursor: pointer

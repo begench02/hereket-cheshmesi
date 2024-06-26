@@ -1,10 +1,33 @@
-@mixin hover($bg-color)
-    transition: 0.6s ease-in
-    &:hover
-        background-color: $bg-color
+@use './_colors' as c
 
-@mixin input-focus($color)
+@mixin hover()
+    cursor: pointer
+    transition: 0.6s
+
+@mixin hover-block($color)
+    @include hover()
+    &:hover
+        background-color: $color
+
+@mixin hover-text($color)
+    @include hover()
+    &:hover
+        color: $color
+
+/* -------- Input -------- */
+@mixin input()
+    @include input-focus()
+    height: 50px
+    width: 100%
+    padding-left: 1rem
+    border: 1px solid c.$color-green
+    border-radius: 6px
+    outline: none
+    font-size: 20px
+    color: c.$color_text_gray
+
+@mixin input-focus()
     &:focus
-        box-shadow: 0 0 6px #488026
+        box-shadow: 0 0 6px c.$color-green
     &:invalid:focus
         box-shadow: 0 0 6px #fe7671
