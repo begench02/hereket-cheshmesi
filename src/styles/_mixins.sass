@@ -29,5 +29,7 @@
 @mixin input-focus()
     &:focus
         box-shadow: 0 0 6px c.$color-green
-    &:invalid:focus
-        box-shadow: 0 0 6px #fe7671
+    &--error
+        border-color: c.$color-error !important
+    &--error:focus
+        box-shadow: 0 0 6px c.$color-error !important

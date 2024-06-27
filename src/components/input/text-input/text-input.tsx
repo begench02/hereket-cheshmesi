@@ -4,15 +4,18 @@ import clsx from 'clsx'
 import styles from './text-input.module.sass'
 
 export const TextInput: FC<InputProps> = (props) => {
-	const { placeholder, style, fullWidth = false, className, name, ...rest } = props
-	const { register } = useFormContext()
+	const { placeholder, required = false, style, fullWidth = false, className, name, ...rest } = props
+	const {
+		register,
+		formState: { errors },
+	} = useFormContext()
 
 	return (
 		<input
 			placeholder={placeholder}
-			className={clsx(styles.text_input, className)}
+			className={clsx(styles.text_input, errors[name] && styles['text_input--error'], className)}
 			style={style}
-			{...register(name)}
+			{...register(name, { required })}
 			{...rest}
 		/>
 	)
@@ -20,6 +23,7 @@ export const TextInput: FC<InputProps> = (props) => {
 
 type InputProps = {
 	name: string
+	required?: boolean
 	placeholder?: string
 	fullWidth?: boolean
 	style?: CSSProperties

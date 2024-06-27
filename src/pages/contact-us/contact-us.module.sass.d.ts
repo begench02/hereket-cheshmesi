@@ -12,14 +12,14 @@ interface CssExports {
   'input_phone__container': string;
   'input_phone__country_btn': string;
   'input_phone__input': string;
+  'input_phone__input--error': string;
   'label': string;
   'main': string;
   'phone__icon': string;
   'row': string;
-  'row_three': string;
-  'row_two_elements': string;
   'send_btn__container': string;
   'test_block': string;
+  'test_block--error': string;
   'text_copy': string;
 }
 export const cssExports: CssExports;

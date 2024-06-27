@@ -39,17 +39,9 @@
     gap: 1rem
 
 .flex
-    display: flex
-    gap: 1rem
-
-.row_two_elements
-    display: flex
-    justify-content: space-between
-    gap: 1rem
-
-.row_three
-    grid-column-start: 1
-    grid-column-end: 3
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: 10px
 
 .label
     font-size: 24px
@@ -67,6 +59,7 @@
     border-bottom-right-radius: 6px !important
     font-size: 20px !important
     padding-left: 1.2rem !important
+    &--error
 
 .input_phone__country_btn
     height: 100%
@@ -79,15 +72,8 @@
     justify-self: stretch
 
 .test_block
+    // width: 100%
     @include s.input-focus()
-    height: 3rem
-    width: 100%
-    // padding-left: 1rem
-    border: 1px solid s.$color-green
-    outline: none
-    border-radius: 6px
-    font-size: 20px
-    color: s.$color_text_gray
 
 .text_copy
     @include s.hover-text(s.$color-green)

@@ -2,7 +2,7 @@ import 'react-international-phone/style.css'
 import { Button } from 'components/button/button'
 import { DateInput } from 'components/input/date-input/date-input'
 import { useState } from 'react'
-import { FormProvider, useForm } from 'react-hook-form'
+import { Controller, FormProvider, useForm } from 'react-hook-form'
 import { TextInput } from 'components/input/text-input/text-input'
 import { NumberInput } from 'components/input/number-input/number-input'
 import { PhoneInput } from 'react-international-phone'
@@ -16,6 +16,9 @@ import phoneImg from 'assets/imgs/icons/phone.png'
 import styles from './contact-us.module.sass'
 import toast from 'react-hot-toast'
 import { useTranslation } from 'react-i18next'
+import { api } from 'src/api'
+import { is_phone_valid } from 'src/utils'
+import { Textarea } from 'components/input/textarea/textarea'
 
 const mapLocation = {
 	center: [37.9869, 58.3608],
@@ -27,6 +30,8 @@ type ContactValues = {
 	homeCountry: string
 	email: string
 	phone: string
+	enterFrom: string
+	exitFrom: string
 }
 
 const entranceOptions = [
@@ -49,10 +54,12 @@ const entranceOptions = [
 
 export const ContactUs = () => {
 	const { t } = useTranslation()
+	// const is_phone_valid = ;
 	const [phone, setPhone] = useState('')
 	const methods = useForm<ContactValues>()
 
 	const onFormSubmit = (formData: ContactValues) => {
+		api.post('user', formData)
 		console.log('Form data: ', formData)
 	}
 
@@ -140,38 +147,49 @@ export const ContactUs = () => {
 					<form onSubmit={methods.handleSubmit(onFormSubmit)} className={styles.form}>
 						<h3 className={styles.form__title}>{t('contact_us')}</h3>
 						<div className={styles.flex}>
-							<TextInput placeholder={t('page.contact_us.name')} name='name' />
+							<TextInput placeholder={t('page.contact_us.name')} name='name' required />
 							<TextInput placeholder={t('page.contact_us.country')} name='homeCountry' />
 						</div>
 						<div className={styles.flex}>
 							<TextInput placeholder={t('page.contact_us.email')} name='email' />
-							<TextInput placeholder={t('page.contact_us.phone')} name='homeCountry' />
-							{/* 
+
 							<div className={styles.test_block}>
-								<PhoneInput
-									defaultCountry='ru'
-									value={phone}
-									onChange={(phone) => setPhone(phone)}
-									style={{ width: '100%', height: '100%' }}
-									className={styles.input_phone__container}
-									inputClassName={styles.input_phone__input}
-									countrySelectorStyleProps={{ buttonClassName: styles.input_phone__country_btn }}
+								<Controller
+									name='phone'
+									control={methods.control}
+									rules={{ required: true, validate: is_phone_valid }}
+									render={({ field: { onChange, value } }) => (
+										<PhoneInput
+											defaultCountry='ru'
+											value={value}
+											onChange={onChange}
+											required={true}
+											style={{ width: '100%', height: '100%' }}
+											inputStyle={{ width: '100%', height: '100%', boxSizing: 'border-box' }}
+											className={styles.input_phone__container}
+											inputClassName={clsx(
+												styles.input_phone__input,
+												methods.formState.errors['phone'] &&
+													styles['input_phone__input--error'],
+											)}
+											countrySelectorStyleProps={{
+												buttonClassName: styles.input_phone__country_btn,
+											}}
+										/>
+									)}
 								/>
-							</div> */}
+							</div>
 						</div>
 						<div>
-							<TextInput
-								placeholder='What is (are) the purpose of your travel to Turkmenistan?'
-								name='purpose'
-							/>
+							<TextInput placeholder={t('page.contact_us.purpose')} name='purpose' />
 						</div>
 						<div>
-							<p className={styles.label}>Have you visited Turkmenistan before?</p>
-							<Radio options={['Yes', 'No']} name='visitedBefore' />
+							<p className={styles.label}>{t('page.contact_us.visited_before')}</p>
+							<Radio options={[t('yes'), t('no')]} name='visitedBefore' />
 						</div>
 						<div>
-							<p className={styles.label}>When do you intend to visit Turkmenistan? *</p>
-							<DateInput />
+							<p className={styles.label}></p>
+							<DateInput name='visitTime' required placeholder={t('page.contact_us.date')} />
 						</div>
 						{/* <div>
 							<NumberInput
@@ -180,37 +198,94 @@ export const ContactUs = () => {
 							/>
 						</div> */}
 						<div>
-							<p className={styles.label}>Where do you plan to enter Turkmenistan? *</p>
-							<Select options={entranceOptions} />
-						</div>
-						<div>
-							<p className={styles.label}>Where do you plan to exit Turkmenistan? *</p>
-							<Select options={entranceOptions} />
-						</div>
-						<div>
-							<p className={styles.label}>What is your preferred type of accommodation? *</p>
-							<Radio options={['Hotel', 'Camping', 'Combination']} name='accommodation-type' />
-						</div>
-						<div>
-							<p className={styles.label}>What hotel category do you prefer?</p>
-							<Radio options={['Budget', 'Standard', 'Comfort']} name='hotel-category' />
-						</div>
-						<div>
-							<p className={styles.label}>What type of hotel rooms do you prefer?</p>
-							<Radio options={['Single', 'Double', 'Triple']} name='hotel-rooms' />
-						</div>
-						<div>
-							<p className={styles.label}>What meal plan do you prefer? *</p>
-							<Radio
-								options={['Bed and breakfast', 'Lunch only', 'Dinner only', 'Full board']}
-								name='meal-plan'
+							<p className={styles.label}>{t('page.contact_us.enter')}</p>
+							<Controller
+								control={methods.control}
+								name='enterFrom'
+								render={({ field: { onChange, value } }) => (
+									<Select
+										options={entranceOptions}
+										value={entranceOptions.find((c) => c.value === value)}
+										onChange={onChange}
+									/>
+								)}
 							/>
 						</div>
 						<div>
-							<p className={styles.label}>What type of transport do you prefer? *</p>
-							<Radio options={['Road', 'Air', 'Off-road', 'Train', 'Combination']} name='transport' />
+							<p className={styles.label}>{t('page.contact_us.exit')}</p>
+							<Controller
+								control={methods.control}
+								name='exitFrom'
+								render={({ field: { onChange, value } }) => (
+									<Select
+										options={entranceOptions}
+										value={entranceOptions.find((c) => c.value === value)}
+										onChange={onChange}
+									/>
+								)}
+							/>
+						</div>
+						<div>
+							<p className={styles.label}>{t('page.contact_us.accommodation_type')}</p>
+							<Radio
+								options={[
+									t('page.contact_us.hotel'),
+									t('page.contact_us.camping'),
+									t('page.contact_us.combination'),
+								]}
+								name='accommodationType'
+							/>
+						</div>
+						<div>
+							<p className={styles.label}>{t('page.contact_us.hotel_category')}</p>
+							<Radio
+								options={[
+									t('page.contact_us.budget'),
+									t('page.contact_us.standard'),
+									t('page.contact_us.comfort'),
+								]}
+								name='hotelCategory'
+							/>
+						</div>
+						<div>
+							<p className={styles.label}>{t('page.contact_us.hotel_rooms')}</p>
+							<Radio
+								options={[
+									t('page.contact_us.single'),
+									t('page.contact_us.double'),
+									t('page.contact_us.triple'),
+								]}
+								name='hotelRooms'
+							/>
+						</div>
+						<div>
+							<p className={styles.label}>{t('page.contact_us.meal')}</p>
+							<Radio
+								options={[
+									t('page.contact_us.lunch_only'),
+									t('page.contact_us.dinner_only'),
+									t('page.contact_us.full_board'),
+								]}
+								name='mealPlan'
+							/>
+						</div>
+						<div>
+							<p className={styles.label}>{t('page.contact_us.transport_type')}</p>
+							<Radio
+								options={[
+									t('page.contact_us.road'),
+									t('page.contact_us.air'),
+									t('page.contact_us.off_road'),
+									t('page.contact_us.train'),
+									t('page.contact_us.combination'),
+								]}
+								name='transport'
+							/>
 						</div>
 
+						<div>
+							<Textarea placeholder={t('page.contact_us.message')} />
+						</div>
 						<div className={styles.send_btn__container}>
 							<Button variant='contained'>Send</Button>
 						</div>

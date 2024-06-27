@@ -6,6 +6,8 @@
 	"turkmenistan": "Turkmenistan",
 	"yes": "Yes",
 	"no": "No",
+	"combination": "Combination",
+	"date": "mm/dd/yyyy",
 	"section": {
 		"places": {
 			"title": "Awesome Places",
@@ -17,12 +19,37 @@
 	},
 	"page": {
 		"contact_us": {
-			"name": "What is your name?",
-			"country": "What is your home country?",
-			"email": "What is your email?",
-			"phone": "What is your phone number?",
+			"name": "What is your name?*",
+			"country": "What is your home country?*",
+			"email": "What is your email?*",
+			"phone": "What is your phone number?*",
 			"purpose": "What is (are) the purpose of your travel to Turkmenistan?",
-			"visited_before": "Have you visited Turkmenistan before?"
+			"visited_before": "Have you visited Turkmenistan before?",
+			"visit_time": "When do you intend to visit Turkmenistan?",
+			"enter": "Where do you plan to enter Turkmenistan?",
+			"exit": "Where do you plan to exit Turkmenistan?",
+			"accommodation_type": "What is your preferred type of accommodation?",
+			"hotel": "Hotel",
+			"camping": "Camping",
+			"hotel_category": "What hotel category do you prefer?",
+			"budget": "Budget",
+			"standard": "Standard",
+			"comfort": "Comfort",
+			"hotel_rooms": "What type of hotel rooms do you prefer?",
+			"single": "Single",
+			"double": "Double",
+			"triple": "Triple",
+			"meal": "What meal plan do you prefer?",
+			"lunch_only": "Lunch only",
+			"dinner_only": "Dinner only",
+			"full_board": "Full board",
+			"transport_type": "What type of transport do you prefer?",
+			"road": "Road",
+			"air": "Air",
+			"off_road": "Off-road",
+			"train": "Train",
+			"combination": "Combination",
+			"message": "Are there any other comments that can help us prepare appropriate feedback to you?"
 		}
 	}
 }

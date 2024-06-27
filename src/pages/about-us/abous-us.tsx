@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import { motion } from 'framer-motion'
 import styles from './about-us.module.sass'
 
 export const AboutUs = () => {
@@ -7,7 +8,7 @@ export const AboutUs = () => {
 	return (
 		<section id='about-us' className={styles.main}>
 			<div className={styles.content}>
-				<div className={styles.content__text}>
+				<motion.div className={styles.content__text}>
 					<h2 className={styles.title}>{t('about_us')}</h2>
 					<p className={styles.subtitle}>{t('section.about_us.subtitle')}</p>
 					<ul className={styles.accordion}>
@@ -130,8 +131,14 @@ export const AboutUs = () => {
 					<a href='#contacts'>
 						<button className={styles.btn}>CONTACT US</button>
 					</a>
-				</div>
-				<div className={styles.content__img}></div>
+				</motion.div>
+				<motion.div
+					initial={{ x: '100%', opacity: 0 }}
+					whileInView={{ x: 0, opacity: 1 }}
+					viewport={{ once: true }}
+					transition={{ duration: 1.5 }}
+					className={styles.content__img}
+				></motion.div>
 			</div>
 		</section>
 	)

@@ -23,11 +23,13 @@ const colorStyles = {
 }
 
 export const Select: FC<SelectProps> = (props) => {
-	const { options } = props
+	const { options, value, onChange } = props
 
 	return (
 		<ReactSelect
 			options={options}
+			value={value}
+			onChange={(val) => onChange(val.value)}
 			defaultValue={options[0]}
 			theme={theme}
 			//@ts-ignore
@@ -39,6 +41,8 @@ export const Select: FC<SelectProps> = (props) => {
 
 type SelectProps = {
 	options: Option[]
+	value: Option
+	onChange: (val: string) => void
 }
 
 type Option = {
