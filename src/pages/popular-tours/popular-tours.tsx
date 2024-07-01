@@ -17,13 +17,12 @@ import clsx from 'clsx'
 import { useState } from 'react'
 import { v4 } from 'uuid'
 
-
 export type TourCard = {
 	image: string
 	header: string
 	text: string
 	history: string
-	id: number
+	id: string
 }
 
 const popularTours: TourCard[] = [
@@ -102,7 +101,7 @@ const popularTours: TourCard[] = [
 ]
 
 export const PopularTours = () => {
-	const [currentIndex, setCurrentIndex] = useState<number>(popularTours[0].id)
+	const [currentIndex, setCurrentIndex] = useState<string>(popularTours[0].id)
 
 	return (
 		<section id='popular-tours' className={styles.main}>

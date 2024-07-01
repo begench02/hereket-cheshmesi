@@ -13,6 +13,7 @@ interface CssExports {
   'input_phone__country_btn': string;
   'input_phone__input': string;
   'input_phone__input--error': string;
+  'input_phone__input-error': string;
   'label': string;
   'main': string;
   'phone__icon': string;
@@ -20,6 +21,7 @@ interface CssExports {
   'send_btn__container': string;
   'test_block': string;
   'test_block--error': string;
+  'test_block-error': string;
   'text_copy': string;
 }
 export const cssExports: CssExports;

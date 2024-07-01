@@ -3,6 +3,7 @@
 interface CssExports {
   'date_input': string;
   'date_input--error': string;
+  'date_input-error': string;
 }
 export const cssExports: CssExports;
 export default cssExports;

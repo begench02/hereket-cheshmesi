@@ -3,6 +3,7 @@
 interface CssExports {
   'textarea': string;
   'textarea--error': string;
+  'textarea-error': string;
 }
 export const cssExports: CssExports;
 export default cssExports;
