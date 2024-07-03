@@ -1,9 +1,9 @@
-import { useTranslation } from 'react-i18next'
+import { FC } from 'react'
 import clsx from 'clsx'
-import Cookie from 'js-cookie'
 import russia from 'assets/imgs/icons/russia.png'
 import styles from './dropdown.module.sass'
 import unitedStates from 'assets/imgs/icons/united-states.png'
+import { useTranslation } from 'react-i18next'
 
 type Language = 'en' | 'ru'
 const languages: Record<Language, string> = {
@@ -15,7 +15,6 @@ export const Dropdown = () => {
 	const { i18n } = useTranslation()
 
 	const changeLanguage = (newLanguage: Language) => {
-		Cookie.set('lang', newLanguage)
 		i18n.changeLanguage(newLanguage)
 	}
 

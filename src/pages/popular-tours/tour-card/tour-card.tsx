@@ -24,5 +24,5 @@ export const TourCard = (props: TourCardPropsType) => {
 
 export type TourCardPropsType = {
 	article: TourCardType
-	index: string
+	index: number
 }

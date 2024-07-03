@@ -1,35 +1,47 @@
-@use 'styles' as s
+@use 'styles' as c
 
-.header
+.main
     position: absolute
+    background-color: rgba(0, 0, 0, 0.15)
     top: 0
     left: 0
-    width: 100%
     padding: 1rem 0
+    width: 100%
+    z-index: 10
     display: grid
     grid-template-columns: 40% 20% 40%
     justify-content: center
     align-items: center
-    background-color: rgba(0, 0, 0, 0.15)
-    z-index: 10
-    &__logo
-        justify-self: center
 
-.nav
+.logo
+    justify-self: center
+
+.logo__text
+    font-size: 23px
+    text-decoration: none
+    cursor: pointer
+
+.nav__left
     display: flex
     justify-self: center
     gap: 5rem
-    &__left
-        margin-left: 2rem
-    &__right
-        margin-right: 2rem
+    margin-left: 2rem
 
-.link
+.nav__right
+    display: flex
+    justify-self: center
+    gap: 5rem
+    margin-right: 2rem
+
+.link__block
     color: #fff
     font-size: 20px
-    &__text
-        color: #fff
-        font-size: 30px
-        text-decoration: none
-        &--active
-            color: #48A626
+
+.link__text
+    color: #fff
+    font-size: 30px
+    // font-weight: 500
+    text-decoration: none
+
+.link__active
+    color: #48A626

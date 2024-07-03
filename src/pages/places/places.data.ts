@@ -1,6 +1,5 @@
 import { v4 as uuidv4 } from 'uuid'
 import AbuSaidMeikheneMausoleum from 'assets/imgs/ahal/abu-said-meikhene-mausoleum.jpg'
-import Ahal from 'assets/imgs/ahal/ahal.jpg'
 import AkhalTeke from 'assets/imgs/ashgabat/akhal-teke.jpg'
 import AltynAsyr from 'assets/imgs/ashgabat/altyn-asyr.jpg'
 import AltynTepe from 'assets/imgs/ahal/altyn-tepe.jpg'
@@ -33,14 +32,14 @@ import Merv from 'assets/imgs/mary/merv.jpeg'
 import MonumentOfNeutrality from 'assets/imgs/ashgabat/neutrality-monument.jpg'
 import NationalMuseumOfTurkmenistan from 'assets/imgs/ashgabat/national-museum-of-turkmenistan.jpg'
 import Nisa from 'assets/imgs/ahal/nisa.png'
-import OasisDampla from 'assets/imgs/lebap/oasis-dampla.jpg'
 import ParauBibi from 'assets/imgs/balkan/parau-bibi.jpg'
 import SeyitJemaletdinMosque from 'assets/imgs/ahal/seyit-jemaletdin-mosque.jpg'
 import SoltanSanjar from 'assets/imgs/mary/soltan-sanjar-mausoleum.jpg'
 import TombOfKhojaYusufHamadani from 'assets/imgs/mary/tomb-of-khoja-yusuf-hamadani.jpg'
 import TurkmenCarpetMuseum from 'assets/imgs/ashgabat/turkmen-carpet-museum.jpg'
-import UmbarWaterfall from 'assets/imgs/lebap/umbar.jpg'
 import YangykalaCanyon from 'assets/imgs/balkan/yangykala-canyon.jpg'
+import UmbarWaterfall from 'assets/imgs/lebap/umbar.jpg'
+import OasisDampla from 'assets/imgs/lebap/oasis-dampla.jpg'
 
 export type CITY = 'Ashgabat' | 'Ahal' | 'Mary' | 'Lebap' | 'Dashohuz' | 'Balkan'
 
@@ -125,7 +124,7 @@ export const places: Places[] = [
 	{
 		id: uuidv4(),
 		cityName: 'Ahal',
-		cityImg: Ahal,
+		cityImg: Ashgabat,
 		cityHistory:
 			'Ahalvelayat- is an administrative unit in the south of Turkmenistan. Initially, the administrative center of the velayat was the city of Ashgabat, but later it was transferred to a separate administrative unit, and Anau became the center.',
 		places: [

@@ -1,27 +1,20 @@
 {
 	"places": "Places",
-	"tours": "Tours",
+	"popular_tours": "Popular Tours",
 	"contact_us": "Contact Us",
 	"about_us": "About Us",
 	"turkmenistan": "Turkmenistan",
 	"yes": "Yes",
 	"no": "No",
 	"combination": "Combination",
-	"address": "Address",
-	"email": "Email",
-	"phone": "Phone number",
+	"date": "mm/dd/yyyy",
 	"section": {
 		"places": {
 			"title": "Awesome Places",
 			"subtitle": "Traveling is a great opportunity to get know fascinating countries and friendly people"
 		},
 		"about_us": {
-			"subtitle": "Out travel company specializes in creating unforgettable experience for our clients by offering personalized and unique travel packages tailored to their preferences",
-			"included_services": "Included services",
-			"visa_support": "Visa support (Letter of Invitation, State Registration, Travel Pass)",
-			"transfers": "Airport and train station transfers as mentioned in the table under “program”",
-			"transport": "Overland transport as per program per AC vehicles as in the table under “itinerary”; 1-3 passengers per regular sedan car; 4-7 passengers per regular minibus; 1-4 passengers per jeep",
-			"airline_tickets": "Domestic airline tickets (economy seats, Boeing 737 aircraft) as in the table under “itinerary”"
+			"subtitle": "Out travel company specializes in creating unforgettable experience for our clients by offering personalized and unique travel packages tailored to their preferences"
 		}
 	},
 	"page": {

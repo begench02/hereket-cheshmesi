@@ -3,7 +3,6 @@
 interface CssExports {
   'text_input': string;
   'text_input--error': string;
-  'text_input-error': string;
 }
 export const cssExports: CssExports;
 export default cssExports;

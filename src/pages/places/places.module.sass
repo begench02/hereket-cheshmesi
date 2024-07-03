@@ -1,0 +1,117 @@
+@use 'styles' as c
+
+.main
+    position: relative
+    min-height: 50vh
+    padding: 4rem 4rem 4rem 35rem
+
+.row
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: 2em
+
+.image_block
+    position: relative
+    .image
+        border: 2px solid c.$light-color-gray
+        border-radius: 10px
+        width: 100%
+    .legend
+        display: none
+        position: absolute
+        bottom: 20px
+        right: 30px
+        font-size: 30px
+        color: #fff
+        z-index: 9999
+
+.aaa
+    text-align: end
+
+.title
+    font-size: 50px
+    color: c.$color-gray
+
+.subtitle
+    font-size: 24px
+    color: c.$light-color-gray
+
+.buttons
+    margin-top: 1rem
+    display: flex
+    justify-content: end
+    gap: 1rem
+
+.btn
+    background-color: #fff
+    padding: 1rem 2rem
+    font-weight: 700
+    border-radius: 10px
+    cursor: pointer
+    text-transform: uppercase
+
+.btn__light
+    color: c.$color-green
+    border: 1px solid c.$color-green
+
+.btn__gray
+    color: c.$light-color-gray
+    border: 1px solid c.$light-color-gray
+
+.gallery
+    margin-top: 2rem
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    flex-wrap: wrap
+    justify-items: stretch
+    gap: 2rem
+    .gallery_image
+        position: relative
+        flex: 1
+        width: 400px
+        cursor: pointer
+        .image
+            width: 100%
+            height: 200px
+            border-radius: 10px
+            border: 2px solid c.$light-color-gray
+
+        .legend
+            display: none
+            position: absolute
+            bottom: 20px
+            right: 40px
+            font-size: 30px
+            color: #fff
+            text-align: center
+        &:hover
+            .image
+                filter: brightness(50%)
+            .legend
+                display: block
+
+.modal_main
+    display: grid
+    justify-content: center
+    justify-items: center
+    align-items: center
+    z-index: 9999
+
+.modal_title
+    margin-bottom: 10px
+
+.modal_image
+    border-radius: 10px
+    height: 200px
+    width: 500px
+    margin-bottom: 10px
+
+.modal_text, .modal_history
+    font-size: 18px
+
+.airplane
+    position: absolute
+    left: 40px
+    top: 200px
+    // bottom: -240px
+    // z-index: -99

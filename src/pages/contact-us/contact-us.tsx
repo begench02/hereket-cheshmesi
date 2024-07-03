@@ -1,17 +1,13 @@
 import 'react-international-phone/style.css'
-import { api } from 'src/api'
 import { Button } from 'components/button/button'
-import { Controller, FormProvider, useForm } from 'react-hook-form'
 import { DateInput } from 'components/input/date-input/date-input'
-import { is_phone_valid } from 'src/utils'
+import { useState } from 'react'
+import { Controller, FormProvider, useForm } from 'react-hook-form'
+import { TextInput } from 'components/input/text-input/text-input'
 import { NumberInput } from 'components/input/number-input/number-input'
 import { PhoneInput } from 'react-international-phone'
 import { Radio } from 'components/radio/radio'
 import { Select } from 'components/select/select'
-import { Textarea } from 'components/input/textarea/textarea'
-import { TextInput } from 'components/input/text-input/text-input'
-import { useState } from 'react'
-import { useTranslation } from 'react-i18next'
 import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps'
 import clsx from 'clsx'
 import email from 'assets/imgs/icons/email.png'
@@ -19,6 +15,10 @@ import locationMarker from 'assets/imgs/icons/location-marker.png'
 import phoneImg from 'assets/imgs/icons/phone.png'
 import styles from './contact-us.module.sass'
 import toast from 'react-hot-toast'
+import { useTranslation } from 'react-i18next'
+import { api } from 'src/api'
+import { is_phone_valid } from 'src/utils'
+import { Textarea } from 'components/input/textarea/textarea'
 
 const mapLocation = {
 	center: [37.9869, 58.3608],
@@ -75,7 +75,7 @@ export const ContactUs = () => {
 					<div className={styles.contact}>
 						<img src={locationMarker} alt='Location Marker' className={styles.contact__icon} />
 						<div className={styles.contact__text}>
-							<p>{t('address')}: </p>
+							<p>Address: </p>
 							<p
 								onClick={(event: any) => {
 									const address = event.target.innerText.trim().substring(1)
@@ -91,7 +91,7 @@ export const ContactUs = () => {
 					<div className={styles.contact}>
 						<img src={email} alt='Email' className={clsx(styles.contact__icon, styles.email__icon)} />
 						<div className={styles.contact__text}>
-							<p>{t('email')}: </p>
+							<p>Email: </p>
 							<p
 								onClick={(event: any) => {
 									const email = event.target.innerText.replace(/\s/g, '').substring(1)
@@ -117,7 +117,7 @@ export const ContactUs = () => {
 					<div className={styles.contact}>
 						<img src={phoneImg} alt='Phone' className={clsx(styles.contact__icon, styles.phone__icon)} />
 						<div className={styles.contact__text}>
-							<p>{t('phone')}: </p>
+							<p>Phone number: </p>
 							<p
 								onClick={(event: any) => {
 									const phone = event.target.innerText.replace(/\s/g, '')
@@ -169,8 +169,8 @@ export const ContactUs = () => {
 											className={styles.input_phone__container}
 											inputClassName={clsx(
 												styles.input_phone__input,
-												styles['input_phone__input--error'] &&
-													methods.formState.errors['phone'],
+												methods.formState.errors['phone'] &&
+													styles['input_phone__input--error'],
 											)}
 											countrySelectorStyleProps={{
 												buttonClassName: styles.input_phone__country_btn,

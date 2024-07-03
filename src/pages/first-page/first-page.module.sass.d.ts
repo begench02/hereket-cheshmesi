@@ -2,13 +2,9 @@
 // Please do not change this file!
 interface CssExports {
   'content': string;
-  'dots': string;
-  'dots__dot': string;
-  'dots__dot--active': string;
-  'image': string;
   'main': string;
-  'navigation': string;
-  'navigation__button': string;
+  'subtitle': string;
+  'title': string;
 }
 export const cssExports: CssExports;
 export default cssExports;
