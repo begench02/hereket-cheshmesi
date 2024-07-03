@@ -12,7 +12,7 @@ export const AboutUs = () => {
 				<motion.div className={styles.content__text}>
 					<h2 className={styles.title}>{t('about_us')}</h2>
 					<p className={styles.subtitle}>{t('section.about_us.subtitle')}</p>
-					<ul className={styles.accordion}>
+					{/* <ul className={styles.accordion}>
 						<li>
 							<input type='checkbox' name='accordion' id='included services' />
 							<label htmlFor='included services'>
@@ -112,7 +112,7 @@ export const AboutUs = () => {
 								</p>
 							</div>
 						</li>
-					</ul>
+					</ul> */}
 					<Link to='/contact-us'>
 						<button className={styles.btn}>{t('contact_us')}</button>
 					</Link>

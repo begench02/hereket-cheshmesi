@@ -4,6 +4,7 @@ interface CssExports {
   'main': string;
   'tour_description': string;
   'tour_description__button': string;
+  'tour_description__duration': string;
   'tour_description__subtitle': string;
   'tour_description__title': string;
   'tour_image': string;

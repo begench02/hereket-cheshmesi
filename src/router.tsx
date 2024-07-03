@@ -9,6 +9,7 @@ import { PopularTours } from 'pages/popular-tours/popular-tours'
 import { RouteObject } from 'react-router-dom'
 import { Tours } from 'pages/tours/tours'
 import styles from './app.module.sass'
+import { Tour } from 'pages/tours/tour/tour'
 
 export const PagesRouter: RouteObject[] = [
 	{
@@ -28,8 +29,12 @@ export const PagesRouter: RouteObject[] = [
 				),
 			},
 			{
-				path: '/tours',
-				element: <Tours />,
+				path: 'tours',
+				Component: Tours,
+			},
+			{
+				path: 'tours/:id',
+				Component: Tour,
 			},
 			{
 				path: '/contact-us',
