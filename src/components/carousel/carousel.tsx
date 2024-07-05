@@ -38,6 +38,7 @@ export const Carousel: FC<CarouselProps> = (props) => {
 				onDragStart={onDragStart}
 				onDragEnd={onDragEnd}
 				className={styles.content}
+				transition={{ type: 'Tween' }}
 			>
 				<Images imageIndex={imageIndex} />
 			</motion.div>

@@ -4,6 +4,9 @@ import { Tour as TourType, getTour } from '../tours.data'
 import { useMemo } from 'react'
 import { useParams } from 'react-router-dom'
 import styles from './tour.module.sass'
+import Clock from 'assets/imgs/icons/clock.svg'
+import Calendar from 'assets/imgs/icons/calendar.svg'
+import Group from 'assets/imgs/icons/group.svg'
 
 const IncludedServices = [
 	'Visa support (Invitation) and registration in Turkmenistan on arrival.',
@@ -30,22 +33,30 @@ export const Tour = () => {
 
 	return (
 		<div className={styles.main}>
-			<Timeline tour={tour} />
+			<h2 className={styles.title}>{tour.title}</h2>
 			<div className={styles.tour_description}>
-				<h2 className={styles.tour_description__name}>{tour.title}</h2>
-				<div>
-					<p>Duration: {tour.duration}</p>
-					<p>Pediod: Year routed</p>
-					<p>Group size: 1 to 12 people</p>
+				<div className={styles.tour_description__details}>
+					<div>
+						<Clock width={40} />
+						Duration: {tour.duration}
+					</div>
+					<div>
+						<Calendar width={40} />
+						Pediod: Year routed
+					</div>
+					<div>
+						<Group width={40} /> Group size: 1 to 12 people
+					</div>
+				</div>
+				<div className={styles.accordions}>
+					<Accordion options={{ title: 'Included services', elements: IncludedServices }} />
+					<Accordion
+						options={{ title: 'Not included services', elements: NotIncludedServices }}
+						variant='error'
+					/>
 				</div>
 			</div>
-			<div className={styles.accordion}>
-				<Accordion options={{ title: 'Included services', elements: IncludedServices }} />
-				<Accordion
-					options={{ title: 'Not included services', elements: NotIncludedServices }}
-					variant='error'
-				/>
-			</div>
+			<Timeline tour={tour} />
 		</div>
 	)
 }

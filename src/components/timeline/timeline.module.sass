@@ -1,7 +1,7 @@
 @use "styles" as s
 
 .timeline
-    margin: 15rem auto
+    margin-top: 4rem
     max-width: 1200px
     position: relative
     &::after
@@ -15,8 +15,9 @@
         left: 50%
         margin-left: 3px
         z-index: -1
-        animation: moveline 3s linear forwards
-        animation-delay: 1.5s
+        animation: moveline linear forwards
+        animation-duration: inherit
+        animation-delay: 1s
 
 @keyframes moveline
     0%
@@ -29,7 +30,7 @@
     position: relative
     width: 50%
     animation: movedown 1s linear forwards
-    animation-delay: 1.5s
+    animation-delay: 1s
     opacity: 0
     img
         border-top-left-radius: 10px
@@ -44,12 +45,6 @@
     100%
         opacity: 1
         transform: translateY(0px)
-
-.container:nth-child(2)
-    animation-delay: 2.5s
-
-.container:nth-child(3)
-    animation-delay: 3.5s
 
 .text_box
     padding: 20px 30px

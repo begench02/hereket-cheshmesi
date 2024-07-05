@@ -10,13 +10,14 @@ export const Timeline: FC<TimelineProps> = (props) => {
 
 	return (
 		<div>
-			<div className={styles.timeline}>
+			<div className={styles.timeline} style={{ animationDuration: `${tour.days.length}s` }}>
 				{tour.days.map((day, index) => (
 					<div
 						className={clsx(
 							styles.container,
 							index % 2 === 0 ? styles.left_container : styles.right_container,
 						)}
+						style={{ animationDelay: `${index + 1}s` }}
 					>
 						<Carousel
 							emulateTouch={true}

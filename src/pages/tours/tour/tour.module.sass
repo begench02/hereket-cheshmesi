@@ -1,20 +1,31 @@
+@use 'styles' as s
+
 .main
+    display: grid
+    justify-content: center
+    margin-top: 18vh
     min-height: 100vh
 
-.section_one
-    margin-top: 15vh
-    display: grid
-    grid-template-columns: 2fr 1fr
-    min-height: 85vh
+.title
+    font-size: 50px
+    text-align: center
 
 .tour_description
-    height: 1000px
-    background-color: yellow
-    &__name
-        text-align: center
-        font-size: 50px
-    
+    margin-top: 2rem
+    display: grid
+    align-items: center
+    grid-template-columns: 1fr 1fr
+    justify-items: center
+    justify-content: center
+    text-align: center
+    &__details
+        font-size: 26px
+        text-align: start
+        div
+            display: flex
+            align-items: center
+            padding: 5px 0
 
-.accordion
-    width: 1000px
-    margin: 50px auto
+.accordions
+    display: grid
+    width: 600px
