@@ -2,8 +2,8 @@
 
 .main
     position: relative
-    height: 500px
-    width: 600px
+    height: 600px
+    width: 800px
     overflow: hidden
 
 .content
@@ -15,15 +15,15 @@
 
 .image
     aspect-ratio: 16 / 9
-    width: 600px
-    height: 400px
+    height: 500px
+    width: 800px
     flex-shrink: 0
     border-radius: 20px
     background-color: #777
     object-fit: cover
 
 .dots
-    margin-top: 20px
+    margin-top: 5px
     display: flex
     justify-content: center
     gap: 10px
@@ -31,6 +31,7 @@
         height: 0.75rem
         width: 0.75rem
         border-radius: 50%
+        border: 1px solid #000
         background-color: #fff
         &--active
             background-color: s.$color-green
@@ -41,6 +42,7 @@
     align-self: center
     gap: 2rem
     &__button
+        margin-top: 1rem
         display: grid
         align-items: center
         border-radius: 50%

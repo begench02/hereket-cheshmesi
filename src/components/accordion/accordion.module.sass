@@ -1,7 +1,9 @@
+@use 'styles' as s
+
 .accordion
     margin: 60px auto
     .accordion_content
-        color: #555
+        color: s.$color-gray
         padding: 0 10px
         line-height: 26px
         max-height: 0
@@ -67,13 +69,16 @@ input[type="checkbox"]
     border: 0
     font-size: 1.5em
     position: relative
+    &--error
+        span
+            background-color: s.$color-red !important
 
 .accordion_button span
     position: absolute
     transition: 300ms
     background: white
     border-radius: 2px
-    background-color: #48A626
+    background-color: s.$color-green
 
 .accordion_button span:first-child
     top: 25%

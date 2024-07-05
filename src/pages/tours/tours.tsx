@@ -29,11 +29,12 @@ export const Tours = () => {
 					<h1 className={styles.tour_description__title}>{title}</h1>
 					<p className={styles.tour_description__duration}>{duration}</p>
 					<p className={styles.tour_description__subtitle}>{description}</p>
-					<Button variant='contained' className={styles.tour_description__button}>
-						<Link to={`/tours/${id}`}>
+
+					<Link to={`/tours/${id}`} className={styles.tour_description__button}>
+						<Button variant='contained'>
 							Explore <ArrowRight style={{ marginLeft: '15px' }} />
-						</Link>
-					</Button>
+						</Button>
+					</Link>
 				</motion.div>
 			</div>
 		</AnimatePresence>

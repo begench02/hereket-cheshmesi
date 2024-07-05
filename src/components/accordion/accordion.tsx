@@ -1,9 +1,11 @@
 import { FC } from 'react'
+import clsx from 'clsx'
 import styles from './accordion.module.sass'
 
 export const Accordion: FC<AccordionProps> = (props) => {
 	const {
 		options: { title, elements },
+		variant = 'success',
 	} = props
 
 	return (
@@ -11,7 +13,12 @@ export const Accordion: FC<AccordionProps> = (props) => {
 			<li>
 				<input type='checkbox' name='accordion' id={title} />
 				<label htmlFor={title}>
-					<button className={styles.accordion_button}>
+					<button
+						className={clsx(
+							styles.accordion_button,
+							variant === 'error' && styles['accordion_button--error'],
+						)}
+					>
 						<span></span>
 						<span></span>
 					</button>
@@ -32,4 +39,5 @@ type AccordionProps = {
 		title: string
 		elements: string[]
 	}
+	variant?: 'success' | 'error'
 }

@@ -58,5 +58,16 @@
 			"combination": "Combination",
 			"message": "Are there any other comments that can help us prepare appropriate feedback to you?"
 		}
+	},
+	"included_services": {
+		"visa_support": "Visa support (Invitation) and registration in Turkmenistan on arrival",
+		"transport": "Transport throughout the tour",
+		"guide": "Accompanied by an English-speaking tour guide",
+		"additional": "Registration in Ashgabat city; Entrance fees: Horse Hippodrome, Nisa Fortress, National Museum, Merv Museum and Kone Urgench Museum Complex; 1.5lt of water per person per day; Tourist Fee"
+	},
+	"not_included_services": {
+		"airline_tickets": "Airline tickets for international flights",
+		"visa_fees": "Turkmenistan tourist visa per person (subject to change; depends on nationality) and migration tax per person (subject to change; depends on nationality);"
+		
 	}
 }

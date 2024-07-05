@@ -3,6 +3,7 @@
 interface CssExports {
   'accordion': string;
   'accordion_button': string;
+  'accordion_button--error': string;
   'accordion_content': string;
   'accordion_header': string;
   'accordion_header_input': string;
