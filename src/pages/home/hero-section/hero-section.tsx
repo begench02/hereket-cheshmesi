@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import styles from './hero-section.module.sass'
 
 export const HeroSection = () => {
-	const { t } = useTranslation('')
+	const { t } = useTranslation()
 
 	return (
 		<section className={styles.main}>
@@ -29,7 +29,7 @@ export const HeroSection = () => {
 					transition={{ duration: 0.5, delay: 1 }}
 					className={styles.content__subtitle}
 				>
-					Hereket cheshmesi
+					Hereket cheshmesi (HCh) <br />travel agency
 				</motion.div>
 			</div>
 		</section>

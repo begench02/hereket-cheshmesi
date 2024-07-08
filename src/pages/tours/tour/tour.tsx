@@ -1,12 +1,14 @@
 import { Accordion } from 'components/accordion/accordion'
 import { Timeline } from 'components/timeline/timeline'
 import { Tour as TourType, getTour } from '../tours.data'
-import { useMemo } from 'react'
+import { useLayoutEffect, useMemo } from 'react'
 import { useParams } from 'react-router-dom'
 import styles from './tour.module.sass'
 import Clock from 'assets/imgs/icons/clock.svg'
 import Calendar from 'assets/imgs/icons/calendar.svg'
 import Group from 'assets/imgs/icons/group.svg'
+import { Button } from 'components/button/button'
+import { TourEnroll } from './tour-enroll/tour-enroll'
 
 const IncludedServices = [
 	'Visa support (Invitation) and registration in Turkmenistan on arrival.',
@@ -28,13 +30,21 @@ export const Tour = () => {
 	const { id } = useParams()
 
 	const tour = useMemo(() => {
-		return getTour(id)
+		return getTour(+id)
 	}, [useParams])
+
+	useLayoutEffect(() => {
+		window.scrollTo(0, 0)
+	})
 
 	return (
 		<div className={styles.main}>
-			<h2 className={styles.title}>{tour.title}</h2>
+			<div className={styles.timeline}>
+				<Timeline tour={tour} />
+			</div>
 			<div className={styles.tour_description}>
+				<h2 className={styles.title}>{tour.title}</h2>
+				<div className={styles.line} />
 				<div className={styles.tour_description__details}>
 					<div>
 						<Clock width={40} />
@@ -48,6 +58,7 @@ export const Tour = () => {
 						<Group width={40} /> Group size: 1 to 12 people
 					</div>
 				</div>
+				<div className={styles.line} />
 				<div className={styles.accordions}>
 					<Accordion options={{ title: 'Included services', elements: IncludedServices }} />
 					<Accordion
@@ -55,8 +66,12 @@ export const Tour = () => {
 						variant='error'
 					/>
 				</div>
+				<div className={styles.line} />
+
+				<div className={styles.enroll}>
+					<TourEnroll tourId={id} />
+				</div>
 			</div>
-			<Timeline tour={tour} />
 		</div>
 	)
 }

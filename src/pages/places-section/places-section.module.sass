@@ -1,7 +1,6 @@
 @use 'styles' as s
 
 .main
-    position: relative
     min-height: 50vh
     padding: 4em 20em
 
@@ -35,6 +34,7 @@
         color: s.$light-color-gray
     &__button
         display: block
+        float: right
         margin-top: 0.8rem
 
 .gallery
@@ -88,10 +88,3 @@
 
 .modal_text, .modal_history
     font-size: 18px
-
-.airplane
-    position: absolute
-    left: 40px
-    top: 200px
-    // bottom: -240px
-    // z-index: -99

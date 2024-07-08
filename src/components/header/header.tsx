@@ -14,15 +14,6 @@ export const Header = () => {
 		<header className={styles.header}>
 			<nav className={clsx(styles.nav, styles.nav__left)}>
 				<div className={styles.link}>
-					<a
-						href='#places'
-						className={clsx(styles.link__text, currentLink == '#places' && styles['link__text--active'])}
-						onClick={(e: any) => setCurrentLink(e.target.hash)}
-					>
-						{t('places')}
-					</a>
-				</div>
-				<div className={styles.link}>
 					<Link
 						to='/tours'
 						className={clsx(
@@ -49,15 +40,6 @@ export const Header = () => {
 					>
 						{t('contact_us')}
 					</Link>
-				</div>
-				<div className={styles.link}>
-					<a
-						href='#about-us'
-						className={clsx(styles.link__text, currentLink == '#about-us' && styles['link--active'])}
-						onClick={(e: any) => setCurrentLink(e.target.hash)}
-					>
-						{t('about_us')}
-					</a>
 				</div>
 				<Dropdown />
 			</nav>

@@ -13,49 +13,39 @@ import DarvazaGasCrater from 'assets/imgs/ahal/darvaza-gas-crater.jpg'
 import DarvazaWaterCrater from 'assets/imgs/ahal/darvaza-water-crater.jpg'
 import Dashoguz from 'assets/imgs/dashoguz/dashoguz.jpg'
 import Dehistan from 'assets/imgs/balkan/dehistan.jpg'
-import DinosaurPlateau from 'assets/imgs/carousel/dinosaur-plateau.jpg'
+import DinosaurPlateau from 'assets/imgs/lebap/dinosaur-plateau.jpg'
 import Ekedeshik from 'assets/imgs/carousel/ekedeshik.jpg'
 import ErtugrulGaziMosque from 'assets/imgs/ashgabat/ertugrul-gazi-mosque.jpg'
 import GeokTepe from 'assets/imgs/ahal/geok-tepe.jpg'
 import GonurDepe from 'assets/imgs/mary/gonur-depe.jpg'
 import GozliAta from 'assets/imgs/balkan/gozli-ata.jpg'
 import HistoricalMonumentAbiward from 'assets/imgs/ahal/abiward.jpg'
+import ilArslanMausolem from 'assets/imgs/dashoguz/il-arslan-mausoleum.jpg'
 import IndependenceMonument from 'assets/imgs/ashgabat/independence-monument.jpg'
 import KapKutan from 'assets/imgs/lebap/kap-kutan.jpg'
 import Karakum from 'assets/imgs/balkan/karakum.jpg'
 import KaynarBaba from 'assets/imgs/lebap/kaynar-baba.jpg'
 import KowAta from 'assets/imgs/ahal/kow-ata.png'
+import KutlugTimurMinaret from 'assets/imgs/dashoguz/kutlug-timur-minaret.jpg'
 import Kyrkgyz from 'assets/imgs/lebap/kyrkgyz.jpg'
 import KyzKala from 'assets/imgs/mary/kyz-kala.jpg'
 import Lebap from 'assets/imgs/lebap/lebap.jpg'
-import MausoleumOfAlamberdar from 'assets/imgs/lebap/mausoleum-of-lamberdar.jpg'
+import MausoleumOfAlamberdar from 'assets/imgs/lebap/alamberdar-mausoleum.jpg'
 import Merv from 'assets/imgs/mary/merv.jpeg'
 import MonumentOfNeutrality from 'assets/imgs/ashgabat/neutrality-monument.jpg'
+import najmAlDinKubraMausoleum from 'assets/imgs/dashoguz/najm-al-din-kubra-ausoleum.jpg'
 import NationalMuseumOfTurkmenistan from 'assets/imgs/ashgabat/national-museum.jpg'
 import Nisa from 'assets/imgs/ahal/nisa.png'
 import OasisDampla from 'assets/imgs/lebap/oasis-dampla.jpg'
 import ParauBibi from 'assets/imgs/balkan/parau-bibi.jpg'
 import SeyitJemaletdinMosque from 'assets/imgs/ahal/seyit-jemaletdin-mosque.jpg'
 import SoltanSanjar from 'assets/imgs/mary/soltan-sanjar-mausoleum.jpg'
+import SoltanTekeshMausoleum from 'assets/imgs/dashoguz/sultan-tekesh-mausoleum.jpg'
 import TombOfKhojaYusufHamadani from 'assets/imgs/mary/tomb-of-khoja-yusuf-hamadani.jpg'
+import turabekKhanumMausoleum from 'assets/imgs/dashoguz/turabek-khanum-mausoleum.jpg'
 import TurkmenCarpetMuseum from 'assets/imgs/ashgabat/turkmen-carpet-museum.jpg'
 import UmbarWaterfall from 'assets/imgs/lebap/umbar.jpg'
 import YangykalaCanyon from 'assets/imgs/balkan/yangykala-canyon.jpg'
-
-export type CITY = 'Ashgabat' | 'Ahal' | 'Mary' | 'Lebap' | 'Dashohuz' | 'Balkan'
-
-type Places = {
-	id: string
-	cityName: CITY
-	cityImg: string
-	cityHistory: string
-	places: {
-		name: string
-		img: string
-		history: string
-		id: string
-	}[]
-}
 
 export const places: Places[] = [
 	{
@@ -68,20 +58,27 @@ export const places: Places[] = [
 			{
 				id: uuidv4(),
 				name: 'Berkarar',
+				// name_ru: 'Беркарар',
 				img: Berkarar,
 				history:
 					'The Berkarar shopping center is the largest shopping and entertainment center in Turkmenistan. The complex is located in the southern part of Ashgabat, at the intersection of 10 YilAbadanchylyk and Ataturk avenues. Built in 2014]. The total area is 17.5 hectares. Next to the shopping and entertainment center there is also an adjacent 12-story round tower of the Berkarar business center',
+				// history_ru:
+				// 	'ТЦ «Беркарар» — крупнейший в Туркменистане торгово-развлекательный центр. Комплекс расположен в южной части Ашхабада, на пересечении проспектов 10 йылАбаданчылык и Ататюрка. Построен в 2014 году]. Общая площадь составляет 17,5 га. Рядом с торгово-развлекательным центром разместилась и смежная с ним 12-этажная круглая башня делового центра «Беркарар».',
 			},
 			{
 				id: uuidv4(),
 				name: 'Ertugrul Gazi Mosque',
+				// name_ru: 'Мечеть Эртогрулгазы',
 				img: ErtugrulGaziMosque,
 				history:
 					'Ertogrulgazy Mosque is one of the most beautiful mosques in Ashgabat, built in the Turkish style, and is the largest in the city. The mosque has four minarets. One of the first mosques built after Turkmenistan gained independence, in the early 1990s. Named after the Turkic ruler Ertogrul.',
+				// history_ru:
+				// 	'Мечеть Эртогрулгазы—одна из самых красивых мечетей Ашхабада, построенная в турецком стиле, является самой большой в городе. Мечеть насчитывает четыре минарета. Одна из первых мечетей, построенных после обретения независимости Туркменистана, в начале 1990-х годов. Названа в честь тюркского правителя Эртогрула.',
 			},
 			{
 				id: uuidv4(),
 				name: 'Turkmen Carpet Museum',
+				// name_ru: ''
 				img: TurkmenCarpetMuseum,
 				history:
 					'The carpet in Turkmenistan is a state symbol. In order to preserve, revive and creatively develop the ancient traditions of Turkmen carpet weaving, in 1993, by decree of the President of Turkmenistan, the National Carpet Museum was created. It is located in the center of Ashgabat. The total area of ​​the museum is 15,000 sq.m. A third of this area – 5000 sq.m. – is allocated for exhibition halls. The exhibition consists of 8,000 exhibits, the main part of which dates back to the 17th-19th centuries. The collection is replenished annually. It presents the smallest carpet, in the form of a key holder, and the largest, with an area of ​​301 sq.m., which is included in the Guinness Book of Records.',
@@ -312,10 +309,45 @@ export const places: Places[] = [
 		places: [
 			{
 				id: uuidv4(),
+				name: 'Najm al-Din Kubra Mausoleum',
+				img: najmAlDinKubraMausoleum,
+				history:
+					'A unique architectural structure, built around the 12th-13th centuries, is the main monument of the “360” memorial complex; it is also popularly called “Sih-Kabirmazary”, which literally means “Tomb of the Great Sheikh”. This is a tombstone, installed, according to legend, over the grave of the great sheikh of Sufism Najemeddin Kubra (1145-1221), who founded the khanaka and the Sufi brotherhood “Kubrawiyya” in Gurganj. Nadzhimetdinwas called “Kubra”, i.e. the greatest of the great, close to God, a friend of the Almighty, which is why Muslims consider this building sacred. Therefore, this place still attracts a lot of religious pilgrims.The mausoleum has survived to us, reaching almost intact. Historical evidence speaks of the glorious fall of the Sufi sheikh Nadzhimetdin Kubra. It says that Khorezmshah Muhammad II, based on a false denunciation, gave the order to execute one of Kubra’s best students, after which Saint Kubra became very angry and sent a terrible curse on Khorezm. The curse soon came true - the once powerful and invincible state fell in a matter of months as a result of the Mongol invasion.Kubra himself and his 360 disciples came out to defend the city from the invaders, who died in a nervous battle. This battle was Najimetdin’s last feat for the glory of Islam: the Mongol warrior cut off the head of the great saint with a sword. On the site of the patriotic feat, the martyr’s cemetery was founded, where the mausoleum of Nadzhimetdin Kubra now stands.',
+			},
+			{
+				id: uuidv4(),
+				name: 'Turabek Khanum Mausoleum',
+				img: turabekKhanumMausoleum,
+				history:
+					'Mausoleum of Tyurabek-Khanym (also: Mausoleum of Torebeg-Khanym) is a medieval mausoleum located on the territory of the Kone-Urgench National Historical and Cultural Museum-Reserve in the city of Kone-Urgench, Turkmenistan. The mausoleum was built in honor of TyurabekKhanum, who was the daughter of the Golden Horde khan Uzbek Khan and the wife of his Khorezm governor from the Kungrat family Kutlug-Timur, which later became the tomb of the Sufi-Kungrat dynasty (1359-1388).',
+			},
+			{
+				id: uuidv4(),
+				name: 'Il-Arslan Mausoleum',
+				img: ilArslanMausolem,
+				history:
+					'Tajad-DinIl-Arslan (fullname - Tajad-Duniyawa-d-DinAbu-l-FathIlArslanibnAtsyz; d. March 7, 1172) - Khorezmshah, sonofKhorezmshahAlaad-DinAtsyzfromtheAnushtegeniddynasty. Reignedfrom 1156 to 1172. ThenicknameIlArslan, translatedfromTurkic, meanslionofthepeople. In 1152, Il-ArslanbecametherulerofthecityofJenda, conqueredbyhisfatherinthelowerreachesoftheSyrDarya. In 1156, afterthedeathofShahAtsiz, Il-ArslanascendedthethroneofKhorezm. Like his father, he did not pay tribute to the Seljuk Sultan Sanjar and the Karakitays.Just a few months after Il-Arslan came to power, in 1157, Sanjar died, which allowed Khorezm to be completely freed from Seljuk influence. Inthe 1160s, Il-ArslanannexedDehistanandthesurroundingareatothepossessionsofKhorezm. HemanagedtosubjugateseveralcitiesofKhorasan, hetriedtosubjugatepartofthecitiesoftheIraqiSultanate, Transoxiana. In 1172, hesuccessfullyrepelledtheKarakitaicampaignagainstKhorezm. Soonafterthis, Il-Arslandied, andhissonsAlaad-DinTekeshandJalalad-DinSultanShahbegantofightforthethrone.',
+			},
+			{
+				id: uuidv4(),
+				name: 'Minaret of Kutlug-Timur',
+				img: KutlugTimurMinaret,
+				history:
+					'Reaching a height of 60 meters, the minaret of Kutlug-Timuris considered the tallest in all of Central Asia. It was built in 1011 under the governor of the khans of the Golden Horde.The minaret is a conical column. The slender, thinning round trunk is dissected by eighteen belts (stripes) painted with ornaments and three belts of inscriptions in “Kufi”. At the top of the minaret, nests from wooden beams have been preserved, on which a lantern facing in all directions, topped with a decorative cornice, was once installed.From here the muezzin called the faithful to prayer. The top of the minaret is reached by 145 steps of an internal spiral staircase, which begins at a height of about 7 meters from ground level, which probably corresponded to the level of the flat roof of the mosque. Scientists are still arguing about the age of the minaret. Some believe that the foundation and construction of the minaret were carried out during the reign of Kutlug-Timur, by order of the ruler himself. Others that began to build it under Shah Mamus (11th century). There is also information that it was built during the time of Sultan Mahmud of Ghazni (998-1030).It has only been established that it was he who survived the destruction of the city by the Mongols in 1221, but the dome of the minaret, which represents a valuable example of architecture, was badly damaged and was subsequently restored. The Kutlug-Timur minaret lacks the rich decor of Central Asian minarets of the 11th-12th centuries, but surpasses them in the boldness of its designs : height and slender proportions.',
+			},
+			{
+				id: uuidv4(),
+				name: 'Soltan Tekesh Mausoleum',
+				img: SoltanTekeshMausoleum,
+				history:
+					'One of the few surviving monuments of pre-Mongol Urgench - the mausoleum of KhorezmshahTekesh (Sultan-Tekesh) - was built in 1220 according to the type of tombs that was then very common in Khorezm. This is the mausoleum of the ruler of Gurganj - Tekesh, who died in 1200. KhorezmshahTekesh was a very odious person, he managed to unite a huge territory, stretching from the Aral Sea in the north to the Persian Gulf in the south and from the Pamirs in the east to the Iranian Plateau in the west. In 1172, in order to take the throne, he turned to his former enemies - the Karakitai - for help, who agreed in exchange for an annual tribute help him overthrow his brother from the throne, and then, having already received power over Khorezm, he ordered the death of his mother.The mausoleum of KhorezmshahTekesh once towered over the city to a height of 30 meters and was a kind of beacon in the desert. Weary travelers wandering through the hot desert saw him from afar and thus received a signal to end the difficult journey.',
+			},
+			{
+				id: uuidv4(),
 				name: 'Oasis Damla',
 				img: OasisDampla,
 				history:
-					"Damla Oasis is one of the most remote oases of the Yomud and Teke tribes in the heart of the Karakum Desert. Away from the main road, this breathtaking place is characterized by flat-roofed villages and yurts that can be found in almost every home. You can witness the simple and beautiful traditions of nomads, transporting a rare visitor to the past. To get to a small settlement, you need to cross to the Northern Karakum Desert and cross the Uzboy - the former bed of the Amu Darya River. The challenging route through dunes and salt marshes tests even the most experienced driver, who makes a refreshing stop at the oasis of Bekouri halfway. This venture gives the Silk Road explorer an authentic experience of what travel and life in the desert have always meant to its nomadic inhabitants. Damla is approximately 4 hours' drive from the main Ashgabat-Dashoguz highway and can be visited on a two-day trek from Ashgabat with an overnight stay in tents or with nomadic families",
+					"Damla Oasis is one of the most remote oases of the Yomud and Teke tribes in the heart of the Karakum Desert. Away from the main road, this breathtaking place is characterized by flat-roofed villages and yurts that can be found in almost every home. You can witness the simple and beautiful traditions of nomads, transporting a rare visitor to the past. To get to a small settlement, you need to cross to the Northern Karakum Desert and cross the Uzboy - the former bed of the Amu Darya River. The challenging route through dunes and salt marshes tests even the most experienced driver, who makes a refreshing stop at the oasis of Bekouri halfway. This venture gives the Silk Road explorer an authentic experience of what travel and life in the desert have always meant to its nomadic inhabitants. Damla is approximately 4 hours' drive from the main Ashgabat-Dashoguz highway and can be visited on a two-day trek from Ashgabat with an overnight stay in tents or with nomadic families.",
 			},
 		],
 	},
@@ -364,3 +396,18 @@ export const places: Places[] = [
 		],
 	},
 ]
+
+export type CITY = 'Ashgabat' | 'Ahal' | 'Mary' | 'Lebap' | 'Dashohuz' | 'Balkan'
+
+type Places = {
+	id: string
+	cityName: CITY
+	cityImg: string
+	cityHistory: string
+	places: {
+		id: string
+		name: string
+		img: string
+		history: string
+	}[]
+}

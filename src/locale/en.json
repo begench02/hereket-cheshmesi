@@ -10,6 +10,10 @@
 	"address": "Address",
 	"email": "Email",
 	"phone": "Phone number",
+	"inputs": {
+		"name": "What is your name? *",
+		"email": "What is your email? *"
+	},
 	"section": {
 		"places": {
 			"title": "Awesome Places",
@@ -68,6 +72,5 @@
 	"not_included_services": {
 		"airline_tickets": "Airline tickets for international flights",
 		"visa_fees": "Turkmenistan tourist visa per person (subject to change; depends on nationality) and migration tax per person (subject to change; depends on nationality);"
-		
 	}
 }

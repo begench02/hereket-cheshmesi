@@ -10,7 +10,7 @@ import { Radio } from 'components/radio/radio'
 import { Select } from 'components/select/select'
 import { Textarea } from 'components/input/textarea/textarea'
 import { TextInput } from 'components/input/text-input/text-input'
-import { useState } from 'react'
+import { useLayoutEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps'
 import clsx from 'clsx'
@@ -54,9 +54,12 @@ const entranceOptions = [
 
 export const ContactUs = () => {
 	const { t } = useTranslation()
-	// const is_phone_valid = ;
 	const [phone, setPhone] = useState('')
 	const methods = useForm<ContactValues>()
+
+	useLayoutEffect(() => {
+		window.scrollTo(0, 0)
+	})
 
 	const onFormSubmit = (formData: ContactValues) => {
 		api.post('user', formData)

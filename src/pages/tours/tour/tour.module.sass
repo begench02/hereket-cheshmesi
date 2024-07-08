@@ -2,23 +2,20 @@
 
 .main
     display: grid
-    justify-content: center
-    margin-top: 18vh
+    grid-template-columns: 3fr 1.5fr
+    padding-top: 18vh
     min-height: 100vh
 
-.title
-    font-size: 50px
-    text-align: center
+.timeline
+    justify-self: center
 
 .tour_description
-    margin-top: 2rem
-    display: grid
+    margin: 2rem 2rem 0 0
     align-items: center
-    grid-template-columns: 1fr 1fr
     justify-items: center
     justify-content: center
-    text-align: center
     &__details
+        margin: 1rem 0
         font-size: 26px
         text-align: start
         div
@@ -26,6 +23,18 @@
             align-items: center
             padding: 5px 0
 
+.title
+    font-size: 35px
+    margin-bottom: 1rem
+
+.line
+    margin: 1rem 0
+    height: 3px
+    background-color: s.$color-green
+
 .accordions
     display: grid
     width: 600px
+
+.enroll
+    margin-top: 1rem

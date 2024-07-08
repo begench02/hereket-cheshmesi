@@ -2,7 +2,10 @@
 // Please do not change this file!
 interface CssExports {
   'accordions': string;
+  'enroll': string;
+  'line': string;
   'main': string;
+  'timeline': string;
   'title': string;
   'tour_description': string;
   'tour_description__details': string;

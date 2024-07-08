@@ -5,7 +5,6 @@ import styles from './button.module.sass'
 export const Button: FC<ButtonProps> = (props) => {
 	const { children, variant = 'primary', fullWidth = false, className, style } = props
 
-	console.log('Variant: ', variant)
 	return (
 		<button
 			className={clsx(styles.main, styles[variant], className)}

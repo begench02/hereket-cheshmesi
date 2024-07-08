@@ -7,9 +7,9 @@ import { MainLayout } from 'components/main-layout/main-layout'
 import { PlacesSection } from 'pages/places-section/places-section'
 import { PopularTours } from 'pages/popular-tours/popular-tours'
 import { RouteObject } from 'react-router-dom'
+import { Tour } from 'pages/tours/tour/tour'
 import { Tours } from 'pages/tours/tours'
 import styles from './app.module.sass'
-import { Tour } from 'pages/tours/tour/tour'
 
 export const PagesRouter: RouteObject[] = [
 	{
@@ -24,7 +24,6 @@ export const PagesRouter: RouteObject[] = [
 						<PlacesSection />
 						<PopularTours />
 						<AboutUs />
-						<Footer />
 					</div>
 				),
 			},

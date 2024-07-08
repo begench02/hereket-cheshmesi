@@ -1,28 +1,26 @@
+import { Link } from 'react-router-dom'
+import { textShortener } from 'src/utils'
+import { Tour } from 'pages/tours/tours.data'
 import { TourCard as TourCardType } from '../popular-tours'
 import { TourCardModal } from './tour-card-modal/tour-card-modal'
 import { useState } from 'react'
 import styles from './tour-card.module.sass'
-import { textShortener } from 'src/utils'
-import clsx from 'clsx'
 
 export const TourCard = (props: TourCardPropsType) => {
-	const { image, header, id } = props.article
-	const [isModalOpen, setModalOpen] = useState(false)
+	const { image, title, id } = props.tour
 
 	return (
-		<>
-			<div className={styles.main} onClick={() => setModalOpen(true)}>
-				<div className={clsx(styles.image_block, id === props.index && styles.image_block__current)}>
-					<img src={image} alt='header' className={styles.image} />
-					<p className={styles.header}>{header}</p>
+		<Link to={`tours/${id}`}>
+			<div className={styles.main}>
+				<div className={styles.image_block}>
+					<img src={image} alt={title} className={styles.image} />
+					<p className={styles.header}>{title}</p>
 				</div>
 			</div>
-			<TourCardModal isOpen={isModalOpen} close={() => setModalOpen(false)} article={props.article} />
-		</>
+		</Link>
 	)
 }
 
 export type TourCardPropsType = {
-	article: TourCardType
-	index: string
+	tour: Tour
 }
