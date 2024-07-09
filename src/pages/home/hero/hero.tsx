@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
-import styles from './hero-section.module.sass'
+import styles from './hero.module.sass'
 
-export const HeroSection = () => {
+export const Hero = () => {
 	const { t } = useTranslation()
 
 	return (

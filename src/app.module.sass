@@ -8,9 +8,9 @@ html
 
 body
     font-family: "Quicksand", "MPLUSRounded1c", sans-serif
-    font-optical-sizing: auto
-    font-style: normal
     background-color: #F9FAFC
+    font-style: normal
+    font-optical-sizing: auto
     -webkit-font-smoothing: antialiased
     &::webkit-scrollbar
         width: 15px
@@ -26,6 +26,10 @@ ul
 .content
     min-height: 100vh
 
+section
+    display: grid
+    min-height: 100vh
+
 ::-webkit-scrollbar
     width: 10px
 
@@ -35,11 +39,3 @@ ul
 ::-webkit-scrollbar-thumb
     border-radius: 10px
     background: #48A626
-
-section
-    display: grid
-    min-height: 100vh
-
-.line
-    background-color: #000
-    height: 2px

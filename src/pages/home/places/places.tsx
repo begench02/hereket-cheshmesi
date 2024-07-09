@@ -1,12 +1,12 @@
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import { Button } from 'components/button/button'
 import { Carousel } from 'react-responsive-carousel'
-import { CITY, places } from './places-section.data'
+import { CITY, places } from './places.data'
 import { Link } from 'react-router-dom'
 import { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import Modal from 'react-modal'
-import styles from './places-section.module.sass'
+import styles from './places.module.sass'
 
 const modalStyles = {
 	content: {
@@ -23,7 +23,7 @@ const modalStyles = {
 	},
 }
 
-export const PlacesSection = () => {
+export const Places = () => {
 	const { t, i18n } = useTranslation()
 	const [currentCity, setCurrentCity] = useState<CITY>('Ashgabat')
 	const [openModal, setModalOpen] = useState('')

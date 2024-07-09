@@ -10,6 +10,7 @@
 	"address": "Address",
 	"email": "Email",
 	"phone": "Phone number",
+	"explore": "Explore",
 	"inputs": {
 		"name": "What is your name? *",
 		"email": "What is your email? *"

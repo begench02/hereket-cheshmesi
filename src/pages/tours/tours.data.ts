@@ -33,7 +33,13 @@ export const tours: Tour[] = [
 		id: 408897,
 		image: ashgabat1,
 		title: 'Ashgabat Adventure',
+		title_ru: 'Путишествие в Ашхабад',
 		duration: '4 days / 3 nights',
+		duration_ru: '4 дня / 3 ночи',
+		description:
+			'City tour, including visit to Nisa fortress and Kipchak complex. After fly to Turkmenbashy, to explore Yangykala Canyon. Back to Ashgabat, visit Kove Ata lake.',
+		description_ru:
+			'Обзорная экскурсия по городу, включающая посещение крепости Ниса и Кипчакского комплекса. После перелета в Туркменбаши, осмотр каньона Янгыкала. Возвращение в Ашхабад, посещение озера Кове.',
 		days: [
 			{
 				description:
@@ -82,14 +88,18 @@ export const tours: Tour[] = [
 				],
 			},
 		],
-		description:
-			'City tour, including visit to Nisa fortress and Kipchak complex. After fly to Turkmenbashy, to explore Yangykala Canyon. Back to Ashgabat, visit Kove Ata lake.',
 	},
 	{
 		id: 568405,
 		image: Darvaza,
 		title: 'Darvaza Gaz Crater',
+		title_ru: 'Газовый кратер Дарваза',
 		duration: '4 days / 3 nights',
+		duration_ru: '4 дня / 3 ночи',
+		description:
+			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, aliquid doloribus veritatis quis aperiam beatae?',
+		description_ru:
+			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, aliquid doloribus veritatis quis aperiam beatae?',
 		days: [
 			{
 				description:
@@ -135,15 +145,17 @@ export const tours: Tour[] = [
 				places: [{ name: 'Berkarar', image: Berkarar }],
 			},
 		],
-		description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, aliquid doloribus veritatis quis aperiam beatae?',
 	},
 	{
 		id: 111507,
 		image: Yangykala,
 		title: 'Yangykala Adventure',
+		title_ru: 'Путишествие в Янгыкалу',
 		duration: '5 days / 4 nights',
+		duration_ru: '5 дней / 4 ночи',
 		description:
+			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, aliquid doloribus veritatis quis aperiam beatae?',
+		description_ru:
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, aliquid doloribus veritatis quis aperiam beatae?',
 		days: [
 			{
@@ -204,8 +216,12 @@ export const tours: Tour[] = [
 		id: 974522,
 		image: Margush,
 		title: 'Ancient beauty',
+		title_ru: 'Древняя красота',
 		duration: '5 days / 4 nights',
+		duration_ru: '5 дней / 4 ночи',
 		description:
+			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, aliquid doloribus veritatis quis aperiam beatae?',
+		description_ru:
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, aliquid doloribus veritatis quis aperiam beatae?',
 		days: [
 			{
@@ -274,8 +290,12 @@ export const tours: Tour[] = [
 		id: 518559,
 		image: Awaza,
 		title: 'Awaza',
+		title_ru: 'Аваза',
 		duration: '6 days / 5 nights',
+		duration_ru: '6 дней / 5 ночей',
 		description:
+			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, aliquid doloribus veritatis quis aperiam beatae?',
+		description_ru:
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, aliquid doloribus veritatis quis aperiam beatae?',
 		days: [
 			{
@@ -353,8 +373,12 @@ export const tours: Tour[] = [
 		id: 605070,
 		image: Koytendag,
 		title: 'In the footsteps of dinosaurs',
+		title_ru: 'По следам динозавров',
 		duration: '6 days / 5 nights',
+		duration_ru: '6 дней / 5 ночей',
 		description:
+			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, aliquid doloribus veritatis quis aperiam beatae?',
+		description_ru:
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, aliquid doloribus veritatis quis aperiam beatae?',
 		days: [
 			{
@@ -394,8 +418,11 @@ export type Tour = {
 	id: number
 	image: string
 	title: string
+	title_ru: string
 	duration: string
+	duration_ru: string
 	description: string
+	description_ru: string
 	days: Day[]
 }
 

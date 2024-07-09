@@ -1,11 +1,9 @@
-import { AboutUs } from 'pages/about-us/abous-us'
+import { AboutUs } from 'pages/home/about-us/abous-us'
 import { ContactUs } from 'pages/contact-us/contact-us'
-import { Footer } from 'components/footer/footer'
-import { Gallery } from 'pages/gallery/gallery'
-import { HeroSection } from 'pages/home/hero-section/hero-section'
+import { Hero } from 'pages/home/hero/hero'
 import { MainLayout } from 'components/main-layout/main-layout'
-import { PlacesSection } from 'pages/places-section/places-section'
-import { PopularTours } from 'pages/popular-tours/popular-tours'
+import { Places } from 'pages/home/places/places'
+import { PopularTours } from 'pages/home/popular-tours/popular-tours'
 import { RouteObject } from 'react-router-dom'
 import { Tour } from 'pages/tours/tour/tour'
 import { Tours } from 'pages/tours/tours'
@@ -20,8 +18,8 @@ export const PagesRouter: RouteObject[] = [
 				path: '/',
 				Component: () => (
 					<div className={styles.content}>
-						<HeroSection />
-						<PlacesSection />
+						<Hero />
+						<Places />
 						<PopularTours />
 						<AboutUs />
 					</div>
@@ -38,11 +36,6 @@ export const PagesRouter: RouteObject[] = [
 			{
 				path: '/contact-us',
 				element: <ContactUs />,
-			},
-
-			{
-				path: '/gallery',
-				element: <Gallery />,
 			},
 		],
 	},

@@ -2,7 +2,59 @@
 
 .accordion
     width: auto
-    .accordion_content
+    &__input
+        display: none
+        &:checked + .accordion__label
+            span
+                transform: rotate(90deg)
+            span:last-child
+                left: 50%
+                right: 50%
+        &:checked + .accordion__label + .accordion__content
+            max-height: 600px
+            padding: 10px
+
+    &__label
+        display: flex
+        align-items: center
+        padding: 10px
+        font-size: 18px
+        font-weight: 500
+        cursor: pointer
+        font-size: 22px
+        &:hover span
+            transform: rotate(90deg)
+        &:hover span:last-child
+            left: 50%
+            right: 50%
+    &__toggle
+        background: transparent
+        width: 50px
+        height: 50px
+        border: 0
+        font-size: 1.5em
+        position: relative
+        span
+            position: absolute
+            transition: 300ms
+            background: white
+            border-radius: 2px
+            background-color: s.$color-green
+            &:first-child
+                top: 25%
+                bottom: 25%
+                width: 10%
+                left: 45%
+            &:last-child
+                left: 25%
+                right: 25%
+                height: 10%
+                top: 45%
+        &--error
+            span
+                background-color: s.$color-error !important
+
+    &__content
         color: s.$color-gray
         padding: 0 10px
         line-height: 26px
@@ -20,75 +72,9 @@
         margin: 10px
         margin-left: 0
         border-radius: 8px
-        // box-shadow: -10px 10px 23px 9px rgba(0, 0, 0, 0.17)
         box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33)
         background-color: transparent
     p
         text-indent: 20px
         color: #979B9B
         margin: 10px 0
-
-.accordion li label
-    display: flex
-    align-items: center
-    padding: 10px
-    font-size: 18px
-    font-weight: 500
-    cursor: pointer
-    font-size: 22px
-    &:hover span
-        transform: rotate(90deg)
-    &:hover span:last-child
-        left: 50%
-        right: 50%
-
-.accordion input[type="checkbox"]:checked + label + .accordion_content
-    max-height: 600px
-    padding: 10px
-
-.accordion input[type="checkbox"]:checked + label
-    span
-        transform: rotate(90deg)
-    span:last-child
-        left: 50%
-        right: 50%
-
-input[type="checkbox"]
-    display: none
-
-.accordion_header
-    display: flex
-    cursor: pointer
-
-.accordion_header_input
-    position: absolute
-
-.accordion_button
-    background: transparent
-    width: 50px
-    height: 50px
-    border: 0
-    font-size: 1.5em
-    position: relative
-    &--error
-        span
-            background-color: s.$color-red !important
-
-.accordion_button span
-    position: absolute
-    transition: 300ms
-    background: white
-    border-radius: 2px
-    background-color: s.$color-green
-
-.accordion_button span:first-child
-    top: 25%
-    bottom: 25%
-    width: 10%
-    left: 45%
-
-.accordion_button span:last-child
-    left: 25%
-    right: 25%
-    height: 10%
-    top: 45%

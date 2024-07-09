@@ -6,11 +6,13 @@ import { tours } from './tours.data'
 import { useMemo, useState } from 'react'
 import ArrowRight from 'assets/imgs/icons/arrow-right.svg'
 import styles from './tours.module.sass'
+import { useTranslation } from 'react-i18next'
 
 export const Tours = () => {
 	const [imageIndex, setImageIndex] = useState(0)
+	const { t, i18n } = useTranslation()
 
-	const { title, duration, description, id } = useMemo(() => {
+	const { title, title_ru, duration, duration_ru, description, description_ru, id } = useMemo(() => {
 		return tours.find((tour, index) => index === imageIndex)
 	}, [imageIndex])
 
@@ -26,13 +28,17 @@ export const Tours = () => {
 					animate={{ opacity: 1, scale: '100%' }}
 					className={styles.tour_description}
 				>
-					<h1 className={styles.tour_description__title}>{title}</h1>
-					<p className={styles.tour_description__duration}>{duration}</p>
-					<p className={styles.tour_description__subtitle}>{description}</p>
+					<h1 className={styles.tour_description__title}>{i18n.language === 'en' ? title : title_ru}</h1>
+					<p className={styles.tour_description__duration}>
+						{i18n.language === 'en' ? duration : duration_ru}
+					</p>
+					<p className={styles.tour_description__subtitle}>
+						{i18n.language === 'en' ? description : description_ru}
+					</p>
 
 					<Link to={`/tours/${id}`} className={styles.tour_description__button}>
 						<Button variant='contained'>
-							Explore <ArrowRight style={{ marginLeft: '15px' }} />
+							{t('explore')} <ArrowRight style={{ marginLeft: '15px' }} />
 						</Button>
 					</Link>
 				</motion.div>

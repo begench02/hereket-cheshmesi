@@ -15,8 +15,8 @@ export const Footer = () => {
 					<Phone /> Contacts:
 				</h4>
 				<ul>
-					<p className={styles.text}>- 993 65 553461</p>
-					<p className={styles.text}>- 993 62 277213</p>
+					<p className={styles.text}>+ 993 65 553461</p>
+					<p className={styles.text}>+ 993 62 277213</p>
 				</ul>
 			</div>
 			<div>

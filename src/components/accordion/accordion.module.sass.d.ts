@@ -2,11 +2,11 @@
 // Please do not change this file!
 interface CssExports {
   'accordion': string;
-  'accordion_button': string;
-  'accordion_button--error': string;
-  'accordion_content': string;
-  'accordion_header': string;
-  'accordion_header_input': string;
+  'accordion__content': string;
+  'accordion__input': string;
+  'accordion__label': string;
+  'accordion__toggle': string;
+  'accordion__toggle--error': string;
 }
 export const cssExports: CssExports;
 export default cssExports;

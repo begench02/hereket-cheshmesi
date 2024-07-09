@@ -1,14 +1,13 @@
 import { Accordion } from 'components/accordion/accordion'
 import { Timeline } from 'components/timeline/timeline'
 import { Tour as TourType, getTour } from '../tours.data'
+import { TourEnroll } from './tour-enroll/tour-enroll'
 import { useLayoutEffect, useMemo } from 'react'
 import { useParams } from 'react-router-dom'
-import styles from './tour.module.sass'
-import Clock from 'assets/imgs/icons/clock.svg'
 import Calendar from 'assets/imgs/icons/calendar.svg'
+import Clock from 'assets/imgs/icons/clock.svg'
 import Group from 'assets/imgs/icons/group.svg'
-import { Button } from 'components/button/button'
-import { TourEnroll } from './tour-enroll/tour-enroll'
+import styles from './tour.module.sass'
 
 const IncludedServices = [
 	'Visa support (Invitation) and registration in Turkmenistan on arrival.',
@@ -60,11 +59,8 @@ export const Tour = () => {
 				</div>
 				<div className={styles.line} />
 				<div className={styles.accordions}>
-					<Accordion options={{ title: 'Included services', elements: IncludedServices }} />
-					<Accordion
-						options={{ title: 'Not included services', elements: NotIncludedServices }}
-						variant='error'
-					/>
+					<Accordion title='Included services' elements={IncludedServices} />
+					<Accordion title='Not included services' elements={NotIncludedServices} variant='error' />
 				</div>
 				<div className={styles.line} />
 

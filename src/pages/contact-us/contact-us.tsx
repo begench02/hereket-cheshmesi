@@ -3,7 +3,7 @@ import { api } from 'src/api'
 import { Button } from 'components/button/button'
 import { Controller, FormProvider, useForm } from 'react-hook-form'
 import { DateInput } from 'components/input/date-input/date-input'
-import { is_phone_valid } from 'src/utils'
+import { copy_text, is_phone_valid } from 'src/utils'
 import { NumberInput } from 'components/input/number-input/number-input'
 import { PhoneInput } from 'react-international-phone'
 import { Radio } from 'components/radio/radio'
@@ -80,11 +80,7 @@ export const ContactUs = () => {
 						<div className={styles.contact__text}>
 							<p>{t('address')}: </p>
 							<p
-								onClick={(event: any) => {
-									const address = event.target.innerText.trim().substring(1)
-									navigator.clipboard.writeText(address)
-									toast.success('Address copied', { position: 'bottom-right' })
-								}}
+								onClick={(event: any) => copy_text(event.target.innerText, 'address')}
 								className={styles.text_copy}
 							>
 								- 744000, Туркменистан, город Ашхабад, улица Гарашсызлык 62
@@ -96,21 +92,13 @@ export const ContactUs = () => {
 						<div className={styles.contact__text}>
 							<p>{t('email')}: </p>
 							<p
-								onClick={(event: any) => {
-									const email = event.target.innerText.replace(/\s/g, '').substring(1)
-									navigator.clipboard.writeText(email)
-									toast.success('Email copied', { position: 'bottom-right' })
-								}}
+								onClick={(event: any) => copy_text(event.target.innerText, 'email')}
 								className={styles.text_copy}
 							>
 								- info@cheshme@mail.ru
 							</p>
 							<p
-								onClick={(event: any) => {
-									const email = event.target.innerText.replace(/\s/g, '').substring(1)
-									navigator.clipboard.writeText(email)
-									toast.success('Email copied', { position: 'bottom-right' })
-								}}
+								onClick={(event: any) => copy_text(event.target.innerText, 'email')}
 								className={styles.text_copy}
 							>
 								- bgeldyev7@gmail.com
@@ -122,21 +110,13 @@ export const ContactUs = () => {
 						<div className={styles.contact__text}>
 							<p>{t('phone')}: </p>
 							<p
-								onClick={(event: any) => {
-									const phone = event.target.innerText.replace(/\s/g, '')
-									navigator.clipboard.writeText(phone)
-									toast.success('Phone copied', { position: 'bottom-right' })
-								}}
+								onClick={(event: any) => copy_text(event.target.innerText, 'phone')}
 								className={styles.text_copy}
 							>
 								+993 65 553461
 							</p>
 							<p
-								onClick={(event: any) => {
-									const phone = event.target.innerText.replace(/\s/g, '')
-									navigator.clipboard.writeText(phone)
-									toast.success('Phone copied', { position: 'bottom-right' })
-								}}
+								onClick={(event: any) => copy_text(event.target.innerText, 'phone')}
 								className={styles.text_copy}
 							>
 								+993 62 277213

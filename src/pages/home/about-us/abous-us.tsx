@@ -17,10 +17,10 @@ export const AboutUs = () => {
 					</Link>
 				</motion.div>
 				<motion.div
-					// initial={{ x: '100%', opacity: 0 }}
-					// whileInView={{ x: 0, opacity: 1 }}
-					// viewport={{ once: true }}
-					// transition={{ duration: 1.5 }}
+					initial={{ x: '100%', opacity: 0 }}
+					whileInView={{ x: 0, opacity: 1 }}
+					viewport={{ once: true }}
+					transition={{ duration: 1.5 }}
 					className={styles.content__img}
 				></motion.div>
 			</div>
