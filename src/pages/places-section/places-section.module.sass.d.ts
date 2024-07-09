@@ -11,11 +11,10 @@ interface CssExports {
   'gallery': string;
   'gallery_image': string;
   'main': string;
-  'modal_history': string;
-  'modal_image': string;
-  'modal_main': string;
-  'modal_text': string;
-  'modal_title': string;
+  'modal': string;
+  'modal__history': string;
+  'modal__image': string;
+  'modal__title': string;
   'place': string;
   'place__image': string;
   'place__legend': string;

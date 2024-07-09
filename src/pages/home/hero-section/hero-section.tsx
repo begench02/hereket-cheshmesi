@@ -13,13 +13,6 @@ export const HeroSection = () => {
 					initial={{ opacity: 0, y: '-300%' }}
 					animate={{ opacity: 1, y: '0' }}
 					transition={{ duration: 0.5, delay: 1 }}
-					drag
-					dragConstraints={{
-						top: -10,
-						left: -10,
-						right: 10,
-						bottom: 10,
-					}}
 				>
 					{t('turkmenistan')}
 				</motion.div>
@@ -29,7 +22,8 @@ export const HeroSection = () => {
 					transition={{ duration: 0.5, delay: 1 }}
 					className={styles.content__subtitle}
 				>
-					Hereket cheshmesi (HCh) <br />travel agency
+					Hereket cheshmesi (HCh) <br />
+					travel agency
 				</motion.div>
 			</div>
 		</section>

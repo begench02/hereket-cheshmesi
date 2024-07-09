@@ -1,28 +1,30 @@
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
+import { Button } from 'components/button/button'
 import { Carousel } from 'react-responsive-carousel'
 import { CITY, places } from './places-section.data'
+import { Link } from 'react-router-dom'
 import { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import Modal from 'react-modal'
 import styles from './places-section.module.sass'
-import { Link } from 'react-router-dom'
-import { Button } from 'components/button/button'
 
 const modalStyles = {
 	content: {
-		height: '500px',
-		width: '600px',
+		height: '700px',
+		width: '650px',
 		top: '50%',
 		left: '50%',
 		right: 'auto',
+		padding: '0',
 		bottom: 'auto',
 		marginRight: '-50%',
 		transform: 'translate(-50%, -50%)',
+		boxShadow: '-10px 10px 23px 9px rgba(0, 0, 0, 0.17)',
 	},
 }
 
 export const PlacesSection = () => {
-	const { t } = useTranslation()
+	const { t, i18n } = useTranslation()
 	const [currentCity, setCurrentCity] = useState<CITY>('Ashgabat')
 	const [openModal, setModalOpen] = useState('')
 
@@ -64,9 +66,11 @@ export const PlacesSection = () => {
 			</div>
 			<div className={styles.gallery}>
 				{currentPlace.places.map((place) => (
-					<div key={place.id}>
-						<div onClick={() => setModalOpen(place.id)} className={styles.place}>
-							<p className={styles.place__legend}>{place.name}</p>
+					<div key={place.id} className={styles.place}>
+						<div onClick={() => setModalOpen(place.id)}>
+							<p className={styles.place__legend}>
+								{i18n.language === 'en' ? place.name : place.name_ru}
+							</p>
 							<img src={place.img} alt={place.name} className={styles.place__image} />
 						</div>
 						<Modal
@@ -75,11 +79,15 @@ export const PlacesSection = () => {
 							style={modalStyles}
 							ariaHideApp={false}
 						>
-							<div className={styles.modal_main}>
-								<h1 className={styles.modal_title}>{place.name}</h1>
-								<img src={place.img} className={styles.modal_image} />
+							<div className={styles.modal}>
+								<img src={place.img} className={styles.modal__image} />
+								<h1 className={styles.modal__title}>
+									{i18n.language === 'en' ? place.name : place.name_ru}
+								</h1>
 								<br />
-								<p className={styles.modal_text}>{place.history}</p>
+								<p className={styles.modal__history}>
+									{i18n.language === 'en' ? place.history : place.history_ru}
+								</p>
 								<br />
 							</div>
 						</Modal>
