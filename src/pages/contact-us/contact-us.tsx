@@ -2,9 +2,8 @@ import 'react-international-phone/style.css'
 import { api } from 'src/api'
 import { Button } from 'components/button/button'
 import { Controller, FormProvider, useForm } from 'react-hook-form'
-import { DateInput } from 'components/input/date-input/date-input'
 import { copy_text, is_phone_valid } from 'src/utils'
-import { NumberInput } from 'components/input/number-input/number-input'
+import { DateInput } from 'components/input/date-input/date-input'
 import { PhoneInput } from 'react-international-phone'
 import { Radio } from 'components/radio/radio'
 import { Select } from 'components/select/select'
@@ -18,20 +17,10 @@ import email from 'assets/imgs/icons/email.png'
 import locationMarker from 'assets/imgs/icons/location-marker.png'
 import phoneImg from 'assets/imgs/icons/phone.png'
 import styles from './contact-us.module.sass'
-import toast from 'react-hot-toast'
 
 const mapLocation = {
 	center: [37.9869, 58.3608],
 	zoom: 8,
-}
-
-type ContactValues = {
-	name: string
-	homeCountry: string
-	email: string
-	phone: string
-	enterFrom: string
-	exitFrom: string
 }
 
 const entranceOptions = [
@@ -209,72 +198,25 @@ export const ContactUs = () => {
 							/>
 						</div>
 						<div>
-							<p className={styles.label}>{t('page.contact_us.accommodation_type')}</p>
-							<Radio
-								options={[
-									t('page.contact_us.hotel'),
-									t('page.contact_us.camping'),
-									t('page.contact_us.combination'),
-								]}
-								name='accommodationType'
-							/>
-						</div>
-						<div>
-							<p className={styles.label}>{t('page.contact_us.hotel_category')}</p>
-							<Radio
-								options={[
-									t('page.contact_us.budget'),
-									t('page.contact_us.standard'),
-									t('page.contact_us.comfort'),
-								]}
-								name='hotelCategory'
-							/>
-						</div>
-						<div>
-							<p className={styles.label}>{t('page.contact_us.hotel_rooms')}</p>
-							<Radio
-								options={[
-									t('page.contact_us.single'),
-									t('page.contact_us.double'),
-									t('page.contact_us.triple'),
-								]}
-								name='hotelRooms'
-							/>
-						</div>
-						<div>
-							<p className={styles.label}>{t('page.contact_us.meal')}</p>
-							<Radio
-								options={[
-									t('page.contact_us.lunch_only'),
-									t('page.contact_us.dinner_only'),
-									t('page.contact_us.full_board'),
-								]}
-								name='mealPlan'
-							/>
-						</div>
-						<div>
-							<p className={styles.label}>{t('page.contact_us.transport_type')}</p>
-							<Radio
-								options={[
-									t('page.contact_us.road'),
-									t('page.contact_us.air'),
-									t('page.contact_us.off_road'),
-									t('page.contact_us.train'),
-									t('page.contact_us.combination'),
-								]}
-								name='transport'
-							/>
-						</div>
-
-						<div>
 							<Textarea placeholder={t('page.contact_us.message')} />
 						</div>
 						<div className={styles.send_btn__container}>
-							<Button variant='contained'>Send</Button>
+							<Button variant='contained' fullWidth>
+								{t('send')}
+							</Button>
 						</div>
 					</form>
 				</FormProvider>
 			</div>
 		</div>
 	)
+}
+
+type ContactValues = {
+	name: string
+	homeCountry: string
+	email: string
+	phone: string
+	enterFrom: string
+	exitFrom: string
 }

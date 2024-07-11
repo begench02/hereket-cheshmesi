@@ -2,12 +2,13 @@
 // Please do not change this file!
 interface CssExports {
   'header': string;
-  'image': string;
-  'image_block': string;
   'image_block__current': string;
   'main': string;
   'read_more': string;
-  'text': string;
+  'tour': string;
+  'tour--scale': string;
+  'tour__heading': string;
+  'tour__image': string;
 }
 export const cssExports: CssExports;
 export default cssExports;

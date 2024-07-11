@@ -14,7 +14,8 @@ export const Hero = () => {
 					animate={{ opacity: 1, y: '0' }}
 					transition={{ duration: 0.5, delay: 1 }}
 				>
-					{t('turkmenistan')}
+					Hereket cheshmesi <br />
+					travel agency
 				</motion.div>
 				<motion.div
 					initial={{ opacity: 0, y: '300px' }}
@@ -22,8 +23,7 @@ export const Hero = () => {
 					transition={{ duration: 0.5, delay: 1 }}
 					className={styles.content__subtitle}
 				>
-					Hereket cheshmesi (HCh) <br />
-					travel agency
+					{t('turkmenistan')}
 				</motion.div>
 			</div>
 		</section>

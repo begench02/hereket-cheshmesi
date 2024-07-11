@@ -1,29 +1,52 @@
+import { Button } from 'components/button/button'
+import { FormProvider, useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { TextInput } from 'components/input/text-input/text-input'
 import { useTranslation } from 'react-i18next'
 import styles from './about-us.module.sass'
 
+const onFormSubmit = (data: any) => {
+	console.log('Data: ', data)
+}
+
 export const AboutUs = () => {
 	const { t } = useTranslation()
+	const methods = useForm<FormType>()
 
 	return (
 		<section id='about-us' className={styles.main}>
 			<div className={styles.content}>
-				<motion.div className={styles.content__text}>
+				<div className={styles.about_us}>
 					<h2 className={styles.title}>{t('about_us')}</h2>
 					<p className={styles.subtitle}>{t('section.about_us.subtitle')}</p>
-					<Link to='/contact-us'>
-						<button className={styles.btn}>{t('contact_us')}</button>
+					<Link to='/tours' className={styles.button}>
+						<Button fullWidth>{t('view_tours')}</Button>
 					</Link>
-				</motion.div>
-				<motion.div
-					initial={{ x: '100%', opacity: 0 }}
-					whileInView={{ x: 0, opacity: 1 }}
-					viewport={{ once: true }}
-					transition={{ duration: 1.5 }}
-					className={styles.content__img}
-				></motion.div>
+				</div>
+				<div className={styles.vertical_line} />
+				<div>
+					<FormProvider {...methods}>
+						<h2 className={styles.title}>{t('leave_contacts')}</h2>
+						<p className={styles.subtitle}>{t('contact_later')}</p>
+						<br />
+						<form onSubmit={methods.handleSubmit(onFormSubmit)} className={styles.form}>
+							<div>
+								<TextInput placeholder='Name' name='name' />
+							</div>
+							<div>
+								<TextInput placeholder='Email' name='email' />
+							</div>
+							<Button className={styles.button}>{t('send')}</Button>
+						</form>
+					</FormProvider>
+				</div>
 			</div>
 		</section>
 	)
+}
+
+type FormType = {
+	name: string
+	email: string
 }

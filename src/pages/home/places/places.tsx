@@ -41,6 +41,8 @@ export const Places = () => {
 						onChange={(index) => setCurrentCity(places[index].cityName)}
 						emulateTouch={true}
 						infiniteLoop={true}
+						autoPlay={true}
+						interval={10000}
 						showIndicators={false}
 						showStatus={false}
 						showThumbs={false}

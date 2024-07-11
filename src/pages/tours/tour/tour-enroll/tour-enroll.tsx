@@ -5,6 +5,7 @@ import styles from './tour-enroll.module.sass'
 import { Button } from 'components/button/button'
 import { FC } from 'react'
 import { api } from 'src/api'
+import { Textarea } from 'components/input/textarea/textarea'
 
 export const TourEnroll: FC<TourEnrollProps> = (props) => {
 	const { tourId } = props
@@ -28,7 +29,12 @@ export const TourEnroll: FC<TourEnrollProps> = (props) => {
 				<div className={styles.input}>
 					<TextInput placeholder={t('inputs.email')} name='email' />
 				</div>
-				<Button fullWidth={true}>Enroll</Button>
+				<div className={styles.input}>
+					<Textarea placeholder={t('page.contact_us.message')} />
+				</div>
+				<Button variant='contained' fullWidth>
+					Enroll
+				</Button>
 			</form>
 		</FormProvider>
 	)

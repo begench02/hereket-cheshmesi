@@ -1,3 +1,5 @@
+@use 'styles' as s
+
 *
     margin: 0
     padding: 0
@@ -26,9 +28,10 @@ ul
 .content
     min-height: 100vh
 
-section
-    display: grid
-    min-height: 100vh
+.line
+    margin: 1rem 0
+    height: 3px
+    background-color: s.$color-green
 
 ::-webkit-scrollbar
     width: 10px

@@ -8,6 +8,7 @@ import Calendar from 'assets/imgs/icons/calendar.svg'
 import Clock from 'assets/imgs/icons/clock.svg'
 import Group from 'assets/imgs/icons/group.svg'
 import styles from './tour.module.sass'
+import { useTranslation } from 'react-i18next'
 
 const IncludedServices = [
 	'Visa support (Invitation) and registration in Turkmenistan on arrival.',
@@ -27,6 +28,7 @@ const NotIncludedServices = [
 
 export const Tour = () => {
 	const { id } = useParams()
+	const { i18n, t } = useTranslation()
 
 	const tour = useMemo(() => {
 		return getTour(+id)
@@ -42,19 +44,20 @@ export const Tour = () => {
 				<Timeline tour={tour} />
 			</div>
 			<div className={styles.tour_description}>
-				<h2 className={styles.title}>{tour.title}</h2>
+				<h2 className={styles.title}>{i18n.language === 'en' ? tour.title : tour.title_ru}</h2>
 				<div className={styles.line} />
 				<div className={styles.tour_description__details}>
 					<div>
 						<Clock width={40} />
-						Duration: {tour.duration}
+						{t('duration')}: {i18n.language === 'en' ? tour.duration : tour.title_ru}
 					</div>
 					<div>
 						<Calendar width={40} />
 						Pediod: Year routed
 					</div>
 					<div>
-						<Group width={40} /> Group size: 1 to 12 people
+						<Group width={40} />
+						{t('group_size')}: 1 to 12 people
 					</div>
 				</div>
 				<div className={styles.line} />

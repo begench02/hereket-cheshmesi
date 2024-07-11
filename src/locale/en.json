@@ -1,6 +1,7 @@
 {
 	"places": "Places",
 	"tours": "Tours",
+	"view_tours": "Explore Tours",
 	"contact_us": "Contact Us",
 	"about_us": "About Us",
 	"turkmenistan": "Turkmenistan",
@@ -11,6 +12,12 @@
 	"email": "Email",
 	"phone": "Phone number",
 	"explore": "Explore",
+	"send": "Send",
+	"duration": "Duration",
+	"group_size": "Group size",
+	"popular_tours": "Popular tours",
+	"leave_contacts": "Leave your contacts",
+	"contact_later": "And we will contact you soon",
 	"inputs": {
 		"name": "What is your name? *",
 		"email": "What is your email? *"

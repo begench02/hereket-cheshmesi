@@ -1,17 +1,10 @@
 .main
+    margin: 4rem 0
     display: grid
     justify-content: center
-    text-align: center
     gap: 1rem
-    justify-items: center
-    margin: 4rem 0
-    .header
-        font-size: 28px
-    .text
-        font-size: 17px
-        width: 45ch
 
-.image_block
+.tour
     position: relative
     display: grid
     justify-content: center
@@ -23,15 +16,14 @@
     border-radius: 15px
     box-shadow: -10px 10px 23px 9px rgba(0, 0, 0, 0.17)
     width: 100%
-    .image
-        display: block
-        max-height: 450px
-        max-width: 100%
-        aspect-ratio: 16/9
-        cursor: pointer
-        transition: 0.4s
-        border-radius: 15px
-    .header
+    &--scale
+        transform: scale(107%)
+    &:hover &
+
+        &__image
+            filter: brightness(50%)
+            border-radius: 10px
+    &__heading
         position: absolute
         top: 13px
         left: calc(50% - 250px)
@@ -40,23 +32,19 @@
         font-size: 30px
         font-weight: 500
         color: #000
+    &__image
+        display: block
+        max-height: 450px
+        max-width: 100%
+        aspect-ratio: 16/9
+        cursor: pointer
+        transition: 0.4s
+        border-radius: 15px
 
 .image_block__current
     transform: scale(110.5%)
 
     .read_more
-        display: none
-        position: absolute
-        top: 45%
-        left: 36%
-        font-size: 25px
-        color: #fff
-
-    &:hover
-        .image
-            filter: brightness(50%)
-            border-radius: 10px
-        .read_more
-            display: block
+        display: block
         .header
             display: block

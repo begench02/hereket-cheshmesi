@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import clsx from 'clsx'
-import Logo from 'assets/imgs/logo.png'
+import Logo from 'assets/imgs/logo2.png'
 import styles from './header.module.sass'
 
 export const Header = () => {
@@ -28,7 +28,7 @@ export const Header = () => {
 			</nav>
 			<div className={styles.header__logo}>
 				<Link to='/'>
-					<img src={Logo} alt='Logo' width={140} height={100} />
+					<img src={Logo} alt='Logo' width={100} />
 				</Link>
 			</div>
 			<nav className={clsx(styles.nav, styles.nav__right)}>

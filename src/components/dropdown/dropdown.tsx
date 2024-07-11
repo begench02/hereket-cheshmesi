@@ -28,18 +28,21 @@ export const Dropdown = () => {
 				width='40px'
 			/>
 			<ul className={styles.menu}>
-				<li
-					onClick={() => changeLanguage('ru')}
-					className={clsx(styles.menu__item, styles['menu__item--first'])}
-				>
-					<img src={russia} alt='Russian flag' className={styles.menu__image} />
-				</li>
-				<li
-					onClick={() => changeLanguage('en')}
-					className={clsx(styles.menu__item, styles['menu__item--last'])}
-				>
-					<img src={unitedStates} alt='United States flag' className={styles.menu__image} />
-				</li>
+				{i18n.language === 'ru' ? (
+					<li
+						onClick={() => changeLanguage('en')}
+						className={clsx(styles.menu__item, styles['menu__item--last'])}
+					>
+						<img src={unitedStates} alt='United States flag' className={styles.menu__image} />
+					</li>
+				) : (
+					<li
+						onClick={() => changeLanguage('ru')}
+						className={clsx(styles.menu__item, styles['menu__item--first'])}
+					>
+						<img src={russia} alt='Russian flag' className={styles.menu__image} />
+					</li>
+				)}
 			</ul>
 		</div>
 	)

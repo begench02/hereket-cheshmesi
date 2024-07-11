@@ -7,7 +7,7 @@ import { PopularTours } from 'pages/home/popular-tours/popular-tours'
 import { RouteObject } from 'react-router-dom'
 import { Tour } from 'pages/tours/tour/tour'
 import { Tours } from 'pages/tours/tours'
-import styles from './app.module.sass'
+import './app.sass'
 
 export const PagesRouter: RouteObject[] = [
 	{
@@ -17,10 +17,12 @@ export const PagesRouter: RouteObject[] = [
 			{
 				path: '/',
 				Component: () => (
-					<div className={styles.content}>
+					<div className='content'>
 						<Hero />
 						<Places />
+						<div className='line' />
 						<PopularTours />
+						<div className='line' />
 						<AboutUs />
 					</div>
 				),

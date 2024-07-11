@@ -22,6 +22,8 @@ export const Timeline: FC<TimelineProps> = (props) => {
 						<Carousel
 							emulateTouch={true}
 							infiniteLoop={true}
+							autoPlay={true}
+							interval={5000}
 							showIndicators={false}
 							showStatus={false}
 							showThumbs={false}
