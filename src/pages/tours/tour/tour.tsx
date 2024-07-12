@@ -45,6 +45,7 @@ export const Tour = () => {
 			</div>
 			<div className={styles.tour_description}>
 				<h2 className={styles.title}>{i18n.language === 'en' ? tour.title : tour.title_ru}</h2>
+				<p className={styles['title--dimmed']}>* {t('tour_adjust')}</p>
 				<div className={styles.line} />
 				<div className={styles.tour_description__details}>
 					<div>

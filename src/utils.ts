@@ -28,13 +28,16 @@ export const copy_text = (text: string, type: 'address' | 'phone' | 'email') => 
 		case 'email':
 			const email = text.replace(/\s/g, '').substring(1)
 			navigator.clipboard.writeText(email)
+			break
 		case 'phone':
 			const phone = text.replace(/\s/g, '')
+			console.log(`Phone: ${phone}`)
 			navigator.clipboard.writeText(phone)
+			break
 		case 'address':
 			const address = text.trim().substring(1)
 			navigator.clipboard.writeText(address)
-		default:
-			toast.success(`${type} copied`)
+			break
 	}
+	toast.success(`${type} copied`)
 }

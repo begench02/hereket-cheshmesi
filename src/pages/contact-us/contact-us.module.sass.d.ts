@@ -4,6 +4,7 @@ interface CssExports {
   'contact': string;
   'contact__icon': string;
   'contact__text': string;
+  'contact__text--bold': string;
   'contacts': string;
   'email__icon': string;
   'flex': string;

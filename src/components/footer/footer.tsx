@@ -2,8 +2,11 @@ import Location from 'assets/imgs/icons/location.svg'
 import Phone from 'assets/imgs/icons/phone.svg'
 import styles from './footer.module.sass'
 import { copy_text } from 'src/utils'
+import { useTranslation } from 'react-i18next'
 
 export const Footer = () => {
+	const { t } = useTranslation()
+
 	return (
 		<footer className={styles.main}>
 			<div>
@@ -21,10 +24,10 @@ export const Footer = () => {
 				</h4>
 				<ul>
 					<p className={styles.text} onClick={(e: any) => copy_text(e.target.innerText, 'phone')}>
-						+ 993 65 553461
+						+993 65 553461
 					</p>
 					<p className={styles.text} onClick={(e: any) => copy_text(e.target.innerText, 'phone')}>
-						+ 993 62 277213
+						+993 62 277213
 					</p>
 				</ul>
 			</div>
@@ -34,8 +37,7 @@ export const Footer = () => {
 				</h4>
 				<ul>
 					<p className={styles.text} onClick={(e: any) => copy_text(e.target.innerText, 'address')}>
-						744000, Туркменистан, город Ашхабад,
-						<br /> улица Гарашсызлык 62
+						{t('location')}
 					</p>
 				</ul>
 			</div>

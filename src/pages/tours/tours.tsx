@@ -3,14 +3,18 @@ import { Carousel } from 'components/carousel/carousel'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { tours } from './tours.data'
-import { useMemo, useState } from 'react'
+import { useLayoutEffect, useMemo, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import ArrowRight from 'assets/imgs/icons/arrow-right.svg'
 import styles from './tours.module.sass'
-import { useTranslation } from 'react-i18next'
 
 export const Tours = () => {
 	const [imageIndex, setImageIndex] = useState(0)
 	const { t, i18n } = useTranslation()
+
+	useLayoutEffect(() => {
+		window.scrollTo(0, 0)
+	})
 
 	const { title, title_ru, duration, duration_ru, description, description_ru, id } = useMemo(() => {
 		return tours.find((tour, index) => index === imageIndex)

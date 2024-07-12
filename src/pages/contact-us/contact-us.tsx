@@ -3,13 +3,14 @@ import { api } from 'src/api'
 import { Button } from 'components/button/button'
 import { Controller, FormProvider, useForm } from 'react-hook-form'
 import { copy_text, is_phone_valid } from 'src/utils'
+import { crossingBorders } from './crossing-borders'
 import { DateInput } from 'components/input/date-input/date-input'
 import { PhoneInput } from 'react-international-phone'
 import { Radio } from 'components/radio/radio'
 import { Select } from 'components/select/select'
 import { Textarea } from 'components/input/textarea/textarea'
 import { TextInput } from 'components/input/text-input/text-input'
-import { useLayoutEffect, useState } from 'react'
+import { useLayoutEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps'
 import clsx from 'clsx'
@@ -23,27 +24,8 @@ const mapLocation = {
 	zoom: 8,
 }
 
-const entranceOptions = [
-	{ value: 'Ashgabat Airport', label: 'Ashgabat Airport' },
-	{ value: 'Farap border post (Turkmen-Uzbek border)', label: 'Farap border post (Turkmen-Uzbek border)' },
-	{ value: 'Garabogaz border post (Turkmen-Kazakh border)', label: 'Garabogaz border post (Turkmen-Kazakh border)' },
-	{ value: 'Gaudan border post (Turkmen-Iranian border)', label: 'Gaudan border post (Turkmen-Iranian border)' },
-	{
-		value: 'Gudurolum border post (Turkmen-Iranian border)',
-		label: 'Gudurolum border post (Turkmen-Iranian border)',
-	},
-	{ value: 'Khojeyli border post (Turkmen-Uzbek border)', label: 'Khojeyli border post (Turkmen-Uzbek border)' },
-	{ value: 'Serags border post (Turkmen-Iranian border)', label: 'Serags border post (Turkmen-Iranian border)' },
-	{ value: 'Shavat border bost (Turkmen-Uzbek border)', label: 'Shavat border bost (Turkmen-Uzbek border)' },
-	{
-		value: 'Turkmenbashi harbor (Turkmen-Azerbaijan border)',
-		label: 'Turkmenbashi harbor (Turkmen-Azerbaijan border)',
-	},
-]
-
 export const ContactUs = () => {
 	const { t } = useTranslation()
-	const [phone, setPhone] = useState('')
 	const methods = useForm<ContactValues>()
 
 	useLayoutEffect(() => {
@@ -67,19 +49,19 @@ export const ContactUs = () => {
 					<div className={styles.contact}>
 						<img src={locationMarker} alt='Location Marker' className={styles.contact__icon} />
 						<div className={styles.contact__text}>
-							<p>{t('address')}: </p>
+							<p className={styles['contact__text--bold']}>{t('address')}: </p>
 							<p
 								onClick={(event: any) => copy_text(event.target.innerText, 'address')}
 								className={styles.text_copy}
 							>
-								- 744000, Туркменистан, город Ашхабад, улица Гарашсызлык 62
+								- {t('location')}
 							</p>
 						</div>
 					</div>
 					<div className={styles.contact}>
 						<img src={email} alt='Email' className={clsx(styles.contact__icon, styles.email__icon)} />
 						<div className={styles.contact__text}>
-							<p>{t('email')}: </p>
+							<p className={styles['contact__text--bold']}>{t('email')}: </p>
 							<p
 								onClick={(event: any) => copy_text(event.target.innerText, 'email')}
 								className={styles.text_copy}
@@ -97,7 +79,7 @@ export const ContactUs = () => {
 					<div className={styles.contact}>
 						<img src={phoneImg} alt='Phone' className={clsx(styles.contact__icon, styles.phone__icon)} />
 						<div className={styles.contact__text}>
-							<p>{t('phone')}: </p>
+							<p className={styles['contact__text--bold']}>{t('phone')}: </p>
 							<p
 								onClick={(event: any) => copy_text(event.target.innerText, 'phone')}
 								className={styles.text_copy}
@@ -119,11 +101,11 @@ export const ContactUs = () => {
 					<form onSubmit={methods.handleSubmit(onFormSubmit)} className={styles.form}>
 						<h3 className={styles.form__title}>{t('contact_us')}</h3>
 						<div className={styles.flex}>
-							<TextInput placeholder={t('page.contact_us.name')} name='name' required />
+							<TextInput placeholder={t('inputs.name')} name='name' required />
 							<TextInput placeholder={t('page.contact_us.country')} name='homeCountry' />
 						</div>
 						<div className={styles.flex}>
-							<TextInput placeholder={t('page.contact_us.email')} name='email' />
+							<TextInput placeholder={t('inputs.email')} name='email' />
 
 							<div className={styles.test_block}>
 								<Controller
@@ -160,15 +142,9 @@ export const ContactUs = () => {
 							<Radio options={[t('yes'), t('no')]} name='visitedBefore' />
 						</div>
 						<div>
-							<p className={styles.label}></p>
+							<p className={styles.label}>{t('page.contact_us.visit_time')}</p>
 							<DateInput name='visitTime' required placeholder={t('page.contact_us.date')} />
 						</div>
-						{/* <div>
-							<NumberInput
-								placeholder='2'
-								label='How many days do you wish to spend in Turkmenistan? *'
-							/>
-						</div> */}
 						<div>
 							<p className={styles.label}>{t('page.contact_us.enter')}</p>
 							<Controller
@@ -176,8 +152,8 @@ export const ContactUs = () => {
 								name='enterFrom'
 								render={({ field: { onChange, value } }) => (
 									<Select
-										options={entranceOptions}
-										value={entranceOptions.find((c) => c.value === value)}
+										options={crossingBorders}
+										value={crossingBorders.find((c) => c.value === value)}
 										onChange={onChange}
 									/>
 								)}
@@ -190,8 +166,8 @@ export const ContactUs = () => {
 								name='exitFrom'
 								render={({ field: { onChange, value } }) => (
 									<Select
-										options={entranceOptions}
-										value={entranceOptions.find((c) => c.value === value)}
+										options={crossingBorders}
+										value={crossingBorders.find((c) => c.value === value)}
 										onChange={onChange}
 									/>
 								)}

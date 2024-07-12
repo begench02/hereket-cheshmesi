@@ -8,6 +8,7 @@ import { RouteObject } from 'react-router-dom'
 import { Tour } from 'pages/tours/tour/tour'
 import { Tours } from 'pages/tours/tours'
 import './app.sass'
+import { Loader } from 'components/loader/loader'
 
 export const PagesRouter: RouteObject[] = [
 	{
@@ -40,5 +41,9 @@ export const PagesRouter: RouteObject[] = [
 				element: <ContactUs />,
 			},
 		],
+	},
+	{
+		path: 'loader',
+		element: <Loader />,
 	},
 ]

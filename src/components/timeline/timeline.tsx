@@ -23,7 +23,7 @@ export const Timeline: FC<TimelineProps> = (props) => {
 							emulateTouch={true}
 							infiniteLoop={true}
 							autoPlay={true}
-							interval={5000}
+							interval={4000}
 							showIndicators={false}
 							showStatus={false}
 							showThumbs={false}

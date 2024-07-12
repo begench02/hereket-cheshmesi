@@ -1,6 +1,7 @@
 @use 'styles' as s
 
 .main
+    margin-bottom: 4rem
     display: grid
     grid-template-columns: 3fr 1.5fr
     padding-top: 18vh
@@ -25,7 +26,8 @@
 
 .title
     font-size: 35px
-    margin-bottom: 1rem
+    &--dimmed
+        color: s.$color-gray
 
 .line
     margin: 1rem 0

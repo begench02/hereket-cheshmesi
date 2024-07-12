@@ -7,6 +7,7 @@ interface CssExports {
   'main': string;
   'timeline': string;
   'title': string;
+  'title--dimmed': string;
   'tour_description': string;
   'tour_description__details': string;
 }

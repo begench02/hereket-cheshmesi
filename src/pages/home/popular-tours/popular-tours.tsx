@@ -20,7 +20,7 @@ export const PopularTours = () => {
 				onChange={(id) => setCurrentTourId(tours[id].id)}
 				centerMode={true}
 				showArrows={true}
-				interval={10000}
+				interval={4000}
 				infiniteLoop={true}
 				autoPlay={true}
 				autoFocus={false}

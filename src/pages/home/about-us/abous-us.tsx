@@ -32,10 +32,10 @@ export const AboutUs = () => {
 						<br />
 						<form onSubmit={methods.handleSubmit(onFormSubmit)} className={styles.form}>
 							<div>
-								<TextInput placeholder='Name' name='name' />
+								<TextInput placeholder={t('inputs.name')} name='name' />
 							</div>
 							<div>
-								<TextInput placeholder='Email' name='email' />
+								<TextInput placeholder={t('inputs.email')} name='email' />
 							</div>
 							<Button className={styles.button}>{t('send')}</Button>
 						</form>

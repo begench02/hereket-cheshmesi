@@ -42,7 +42,7 @@ export const Places = () => {
 						emulateTouch={true}
 						infiniteLoop={true}
 						autoPlay={true}
-						interval={10000}
+						interval={4000}
 						showIndicators={false}
 						showStatus={false}
 						showThumbs={false}

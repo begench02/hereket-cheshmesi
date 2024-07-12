@@ -9,6 +9,7 @@
 	"no": "No",
 	"combination": "Combination",
 	"address": "Address",
+	"location": "744000, Turkmenistan, city Ashgabat, st. Galkynysh 62",
 	"email": "Email",
 	"phone": "Phone number",
 	"explore": "Explore",
@@ -17,9 +18,10 @@
 	"group_size": "Group size",
 	"popular_tours": "Popular tours",
 	"leave_contacts": "Leave your contacts",
+	"tour_adjust": "Tour can be adjusted by your request",
 	"contact_later": "And we will contact you soon",
 	"inputs": {
-		"name": "What is your name? *",
+		"name": "What is your name?*",
 		"email": "What is your email? *"
 	},
 	"section": {
