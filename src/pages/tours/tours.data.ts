@@ -42,6 +42,7 @@ export const tours: Tour[] = [
 			'Обзорная экскурсия по городу, включающая посещение крепости Ниса и Кипчакского комплекса. После перелета в Туркменбаши, осмотр каньона Янгыкала. Возвращение в Ашхабад, посещение озера Кове.',
 		days: [
 			{
+				id: v4(),
 				description:
 					'Meeting of the group at the airport Ashgabat. Transfer to the hotel. Early accommodation. Rest.',
 				places: [
@@ -52,6 +53,7 @@ export const tours: Tour[] = [
 				],
 			},
 			{
+				id: v4(),
 				description:
 					'City tour Ashgabat. Familiarity with the sights of the capital, the main architectural structures of the city, the National Museum, historical monuments. After that, the group will go to the town of Bagir, to visit the Parthian fortress of Nisa, an excursion to the Kipchak memorial complex. Return to Ashgabat. Rest.',
 				places: [
@@ -70,6 +72,7 @@ export const tours: Tour[] = [
 				],
 			},
 			{
+				id: v4(),
 				description:
 					'After breakfast, the group will go on a tour, to an equestrian base, to get acquainted with the pride of the Turkmen people - the Akhal-Teke horse, where you can try yourself in horse riding. Then we will make an excursion to the Geok Tepe mosque. We will visit the underground lake “Kov-Ata”, where we can take a hot bath (water temperature, 36-37 degrees C year-round). Return to Ashgabat. Rest.',
 				places: [
@@ -102,6 +105,7 @@ export const tours: Tour[] = [
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, aliquid doloribus veritatis quis aperiam beatae?',
 		days: [
 			{
+				id: v4(),
 				description:
 					'Meeting of the group at the airport Ashgabat. Transfer to the hotel. Early accommodation. Rest.',
 				places: [
@@ -112,6 +116,7 @@ export const tours: Tour[] = [
 				],
 			},
 			{
+				id: v4(),
 				description:
 					'City tour Ashgabat. Acquaintance with the sights of the capital, the main architectural structures of the city, historical monuments. After that, the group will go to the town of Bagir, to visit the Parthian fortress of Nisa, an excursion to the Kipchak memorial complex. Return to Ashgabat. Rest. ',
 				places: [
@@ -130,6 +135,7 @@ export const tours: Tour[] = [
 				],
 			},
 			{
+				id: v4(),
 				description:
 					'After breakfast, the group will go to the Tolkuchka Eastern Market (days of work Wednesday, Thursday, Saturday, Sunday), where in reality they will be able to feel the beauty of Turkmen carpets and silver jewelry, and purchase souvenirs. After lunch, the group will go from Ashgabat to the north to visit the fire crater in Darvaza, traveling by Jeep. On the way we will visit the mud and water craters, the village of Erbent, where we can get acquainted with the life of the Turkmen village. Dinner in nature. Overnight in tents. ',
 				// TODO: ADD Tolkuchka
@@ -140,6 +146,7 @@ export const tours: Tour[] = [
 				],
 			},
 			{
+				id: v4(),
 				description:
 					'Early in the morning our group will go back to the capital Ashgabat. Hotel accommodation. Rest. We can visit shops, buy souvenirs.',
 				places: [{ name: 'Berkarar', image: Berkarar }],
@@ -159,6 +166,7 @@ export const tours: Tour[] = [
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, aliquid doloribus veritatis quis aperiam beatae?',
 		days: [
 			{
+				id: v4(),
 				description:
 					'Meeting of the group at the airport Ashgabat. Transfer to the hotel. Early accommodation. Rest.',
 				places: [
@@ -169,6 +177,7 @@ export const tours: Tour[] = [
 				],
 			},
 			{
+				id: v4(),
 				description:
 					'City tour Ashgabat. Acquaintance with the sights of the capital, the main architectural structures of the city, historical monuments. After that, the group will go to the town of Bagir, to visit the Parthian fortress of Nisa, an excursion to the Kipchak memorial complex. Return to Ashgabat. Rest',
 				places: [
@@ -187,6 +196,7 @@ export const tours: Tour[] = [
 				],
 			},
 			{
+				id: v4(),
 				description:
 					'Early in the morning we will fly Ashgabat-Turkmenbashy and go to the Yangykala Canyon, on the way we will visit the holy place Gozli-Ata, set up our tent camp or settle in yurts, from which a magnificent view of the limestone deposits. Dinner in nature.',
 				places: [
@@ -201,6 +211,7 @@ export const tours: Tour[] = [
 				],
 			},
 			{
+				id: v4(),
 				description:
 					'In the early morning, after breakfast in nature, we will go back to Ashgabat. On the way we will visit the underground lake Kove Ata, where we can take a hot bath (water temperature, 36-37 degrees C year-round). Return to Ashgabat. Accommodation hotel. Rest.',
 				places: [
@@ -225,6 +236,7 @@ export const tours: Tour[] = [
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, aliquid doloribus veritatis quis aperiam beatae?',
 		days: [
 			{
+				id: v4(),
 				description:
 					'Meeting of the group at the airport Ashgabat. Transfer to the hotel.  Early accommodation.  Rest.',
 				places: [
@@ -235,6 +247,7 @@ export const tours: Tour[] = [
 				],
 			},
 			{
+				id: v4(),
 				description:
 					'City tour Ashgabat. Acquaintance with the sights of the capital, the main architectural structures of the city, historical monuments. After that, the group will go to the town of Bagir, to visit the Parthian fortress of Nisa, an excursion to the Kipchak memorial complex. Return to Ashgabat. Rest',
 				places: [
@@ -253,6 +266,7 @@ export const tours: Tour[] = [
 				],
 			},
 			{
+				id: v4(),
 				description:
 					'This afternoon we fly Ashgabat - Mary. Accommodation in a hotel in the city of Mary.  Afterwards, we will go on a tour of Ancient Merv, explore its five cities, the largest mausoleum of the 12th century - the mausoleum of Sultan Sanjar, the mausoleum of Mohammed Ibn Zeid, as well as other significant objects. Excursion Museum of Mary. City tour of Mary. Return to the hotel. Rest.',
 				places: [
@@ -271,6 +285,7 @@ export const tours: Tour[] = [
 				],
 			},
 			{
+				id: v4(),
 				description:
 					'Early in the morning our group will go to the excavations of the ancient country of Margush in the sands of the Karakum. We will spend the whole day looking around the Necropolis, the palace, the temples and enjoying the 5000th history of Margiana. After a magnificent excursion a little tired, but happy, we return to Mary, where we will make a flight to Ashgabat. Accommodation at the hotel Ashgabat. Rest.',
 				places: [
@@ -299,6 +314,7 @@ export const tours: Tour[] = [
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, aliquid doloribus veritatis quis aperiam beatae?',
 		days: [
 			{
+				id: v4(),
 				description:
 					'Meeting of the group at the airport Ashgabat. Transfer to the hotel.  Early accommodation.  Rest.',
 				places: [
@@ -309,6 +325,7 @@ export const tours: Tour[] = [
 				],
 			},
 			{
+				id: v4(),
 				description:
 					'City tour Ashgabat. Acquaintance with the sights of the capital, the main architectural structures of the city, historical monuments. After that, the group will go to the town of Bagir, to visit the Parthian fortress of Nisa, an excursion to the Kipchak memorial complex. Return to Ashgabat. Rest',
 				places: [
@@ -327,6 +344,7 @@ export const tours: Tour[] = [
 				],
 			},
 			{
+				id: v4(),
 				description:
 					'After breakfast, if desired, the group can go on an independent trip to the Russian bazaar, where we can purchase souvenirs and textile products Altyn Asyr. After lunch, the group will leave from Ashgabat to the north to visit the fire crater in Darvaza. On the way we will visit the mud and water craters, the village of Erbent, where we can get acquainted with the life of the Turkmen village. Return to Ashgabat. Rest in the hotel.',
 				places: [
@@ -353,6 +371,7 @@ export const tours: Tour[] = [
 				],
 			},
 			{
+				id: v4(),
 				description:
 					'Early in the morning we will fly Ashgabat-Turkmenbashy. Transfer to Avaza. Accommodation in one of the 5 * hotels on the coast. Rest. .',
 				places: [
@@ -363,6 +382,7 @@ export const tours: Tour[] = [
 				],
 			},
 			{
+				id: v4(),
 				description:
 					'Walking along the coast of the Caspian Sea. According to the season, swimming in the Caspian Sea. Flight Turkmenbashy - Ashgabat. Hotel accommodation. Rest',
 				places: [{ name: 'Caspian Sea', image: CaspianSea }],
@@ -382,6 +402,7 @@ export const tours: Tour[] = [
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, aliquid doloribus veritatis quis aperiam beatae?',
 		days: [
 			{
+				id: v4(),
 				description:
 					'Meeting of the group at the airport Ashgabat. Transfer to the hotel.  Early accommodation.  Rest. ',
 				places: [
@@ -392,6 +413,7 @@ export const tours: Tour[] = [
 				],
 			},
 			{
+				id: v4(),
 				description:
 					'After breakfast we will fly Ashgabat -Turkmenabad. Meeting the group at the airport Turkmenabad. Transfer to the tour. base. Duration 8-10 hours. On the way we look Alamberdar, Astana Baba. Accommodation at the tour base. Rest. After dinner, walk through the magnificent park with millennial chinars.',
 				places: [
@@ -429,6 +451,7 @@ export type Tour = {
 export type Day = {
 	description: string
 	places: Place[]
+	id: string
 }
 
 export type Place = {

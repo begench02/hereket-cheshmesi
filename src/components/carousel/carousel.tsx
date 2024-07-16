@@ -58,9 +58,9 @@ const Images: FC<ImageProps> = (props) => {
 
 	return (
 		<>
-			{tours.map(({ image }, index) => (
+			{tours.map(({ image, id }, index) => (
 				<motion.div
-					key={index}
+					key={id}
 					animate={{ scale: imageIndex === index ? 0.95 : 0.85 }}
 					transition={{ duration: { type: 'spring', mass: 3, stiffness: 400, damping: 50 } }}
 					style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}

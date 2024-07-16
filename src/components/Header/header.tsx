@@ -1,10 +1,11 @@
-import { Dropdown } from 'components/dropdown/dropdown'
+import { LanguageDropdown } from './language-dropdown'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import clsx from 'clsx'
 import Logo from 'assets/imgs/logo2.png'
 import styles from './header.module.sass'
+import { ToursDropdown } from './tours-dropdown/tours-dropdown'
 
 export const Header = () => {
 	const [currentLink, setCurrentLink] = useState(window.location.hash)
@@ -14,16 +15,7 @@ export const Header = () => {
 		<header className={styles.header}>
 			<nav className={clsx(styles.nav, styles.nav__left)}>
 				<div className={styles.link}>
-					<Link
-						to='/tours'
-						className={clsx(
-							styles.link__text,
-							currentLink == '#popular-tours' && styles['link__text--active'],
-						)}
-						onClick={(e: any) => setCurrentLink(e.target.hash)}
-					>
-						{t('tours')}
-					</Link>
+					<ToursDropdown />
 				</div>
 			</nav>
 			<div className={styles.header__logo}>
@@ -41,7 +33,7 @@ export const Header = () => {
 						{t('contact_us')}
 					</Link>
 				</div>
-				<Dropdown />
+				<LanguageDropdown />
 			</nav>
 		</header>
 	)

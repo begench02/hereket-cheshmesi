@@ -1,10 +1,10 @@
-import airplane from 'assets/imgs/gifs/airplane.gif'
+import loader from 'assets/imgs/gifs/loader.gif'
 import styles from './loader.module.sass'
 
 export const Loader = () => {
 	return (
 		<div className={styles.main}>
-			<img src={airplane} alt='Airplane' />
+			<img src={loader} alt='Loader' />
 		</div>
 	)
 }

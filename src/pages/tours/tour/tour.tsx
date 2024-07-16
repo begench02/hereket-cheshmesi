@@ -32,7 +32,7 @@ export const Tour = () => {
 
 	const tour = useMemo(() => {
 		return getTour(+id)
-	}, [useParams])
+	}, [id])
 
 	useLayoutEffect(() => {
 		window.scrollTo(0, 0)

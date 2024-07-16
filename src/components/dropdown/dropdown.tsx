@@ -1,49 +1,18 @@
-import { useTranslation } from 'react-i18next'
-import clsx from 'clsx'
-import Cookie from 'js-cookie'
-import russia from 'assets/imgs/icons/russia.png'
+import { FC, ReactNode } from 'react'
 import styles from './dropdown.module.sass'
-import unitedStates from 'assets/imgs/icons/united-states.png'
 
-type Language = 'en' | 'ru'
-const languages: Record<Language, string> = {
-	en: unitedStates,
-	ru: russia,
-}
-
-export const Dropdown = () => {
-	const { i18n } = useTranslation()
-
-	const changeLanguage = (newLanguage: Language) => {
-		Cookie.set('lang', newLanguage)
-		i18n.changeLanguage(newLanguage)
-	}
+export const Dropdown: FC<DropdownProps> = (props) => {
+	const { title, children } = props
 
 	return (
 		<div className={styles.dropdown}>
-			<img
-				src={languages[i18n.resolvedLanguage]}
-				alt='Current Language'
-				className={styles.dropdown__image}
-				width='40px'
-			/>
-			<ul className={styles.menu}>
-				{i18n.language === 'ru' ? (
-					<li
-						onClick={() => changeLanguage('en')}
-						className={clsx(styles.menu__item, styles['menu__item--last'])}
-					>
-						<img src={unitedStates} alt='United States flag' className={styles.menu__image} />
-					</li>
-				) : (
-					<li
-						onClick={() => changeLanguage('ru')}
-						className={clsx(styles.menu__item, styles['menu__item--first'])}
-					>
-						<img src={russia} alt='Russian flag' className={styles.menu__image} />
-					</li>
-				)}
-			</ul>
+			{title}
+			<ul className={styles.menu}>{children}</ul>
 		</div>
 	)
+}
+
+type DropdownProps = {
+	children: ReactNode
+	title: ReactNode
 }

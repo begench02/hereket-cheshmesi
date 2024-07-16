@@ -49,6 +49,7 @@ export const Places = () => {
 					>
 						{places.map((place) => (
 							<img
+								key={place.id}
 								src={place.cityImg}
 								alt={place.cityName}
 								width={600}

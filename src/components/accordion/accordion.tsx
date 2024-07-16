@@ -22,8 +22,8 @@ export const Accordion: FC<AccordionProps> = (props) => {
 					{title}
 				</label>
 				<div className={styles.accordion__content}>
-					{elements.map((element) => (
-						<p>- {element}</p>
+					{elements.map((element, index) => (
+						<p key={`${element}_${index}`}>- {element}</p>
 					))}
 				</div>
 			</li>

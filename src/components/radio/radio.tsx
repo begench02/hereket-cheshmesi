@@ -9,8 +9,8 @@ export const Radio: FC<RadioProps> = (props) => {
 
 	return (
 		<div className={styles.visited_before}>
-			{options.map((option) => (
-				<div>
+			{options.map((option, index) => (
+				<div key={`${option}-${index}`}>
 					<input
 						type='radio'
 						id={option}

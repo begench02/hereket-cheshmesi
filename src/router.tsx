@@ -30,11 +30,16 @@ export const PagesRouter: RouteObject[] = [
 			},
 			{
 				path: 'tours',
-				Component: Tours,
-			},
-			{
-				path: 'tours/:id',
-				Component: Tour,
+				children: [
+					{
+						element: <Tours />,
+						index: true,
+					},
+					{
+						path: ':id',
+						element: <Tour />,
+					},
+				],
 			},
 			{
 				path: '/contact-us',

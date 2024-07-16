@@ -17,7 +17,7 @@ export const Tours = () => {
 	})
 
 	const { title, title_ru, duration, duration_ru, description, description_ru, id } = useMemo(() => {
-		return tours.find((tour, index) => index === imageIndex)
+		return tours.find((_, index) => index === imageIndex)
 	}, [imageIndex])
 
 	return (
