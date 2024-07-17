@@ -24,7 +24,7 @@ export const Tours = () => {
 		<AnimatePresence>
 			<div className={styles.main}>
 				<motion.div className={styles.tour_image}>
-					<Carousel imageIndex={imageIndex} setImageIndex={setImageIndex} />
+					<Carousel imageIndex={imageIndex} setImageIndex={setImageIndex} autoPlay />
 				</motion.div>
 				<motion.div
 					initial={{ opacity: 0, scale: 0 }}

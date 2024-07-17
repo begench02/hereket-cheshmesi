@@ -8,6 +8,7 @@ interface CssExports {
   'left_container_arrow': string;
   'movedown': string;
   'moveline': string;
+  'program_time': string;
   'right_container': string;
   'right_container_arrow': string;
   'text_box': string;

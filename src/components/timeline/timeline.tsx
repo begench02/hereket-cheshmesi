@@ -34,7 +34,13 @@ export const Timeline: FC<TimelineProps> = (props) => {
 					<p className={styles.day}>Day {index + 1}</p>
 					<div className={styles.text_box}>
 						<h2>{concat_places_name(day.places)}</h2>
-						<p>{day.description}</p>
+						<div>
+							{day.description.map(({ time, program }) => (
+								<p>
+									<span className={styles.program_time}>{time}</span>: {program}
+								</p>
+							))}
+						</div>
 					</div>
 					<span
 						className={clsx(index % 2 === 0 ? styles.left_container_arrow : styles.right_container_arrow)}

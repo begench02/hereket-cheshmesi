@@ -1,4 +1,4 @@
-import { Dispatch, FC, SetStateAction, useState } from 'react'
+import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react'
 import { motion, useMotionValue } from 'framer-motion'
 import { tours } from 'pages/tours/tours.data'
 import ArrowLeft from 'assets/imgs/icons/arrow-left.svg'
@@ -8,10 +8,24 @@ import styles from './carousel.module.sass'
 
 const DRAG_BUFFER = 50
 export const Carousel: FC<CarouselProps> = (props) => {
-	const { imageIndex, setImageIndex } = props
+	const { imageIndex, setImageIndex, autoPlay = false } = props
 	const [dragging, setDragging] = useState(false)
 
 	const dragX = useMotionValue(0)
+
+	// useEffect(() => {
+	// 	if (!autoPlay) return
+
+	// 	const interval = setInterval(() => {
+	// 		if (imageIndex < tours.length - 1) {
+	// 			setImageIndex((prev) => prev + 1)
+	// 		} else {
+	// 			setImageIndex((prev) => prev - 1)
+	// 		}
+	// 	}, 4000)
+
+	// 	return () => clearInterval(interval)
+	// }, [dragging])
 
 	const onDragStart = () => {
 		setDragging(true)
@@ -51,6 +65,7 @@ export const Carousel: FC<CarouselProps> = (props) => {
 type CarouselProps = {
 	imageIndex: number
 	setImageIndex: Dispatch<SetStateAction<number>>
+	autoPlay?: boolean
 }
 
 const Images: FC<ImageProps> = (props) => {

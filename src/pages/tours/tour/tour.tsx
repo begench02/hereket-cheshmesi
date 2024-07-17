@@ -4,11 +4,11 @@ import { Tour as TourType, getTour } from '../tours.data'
 import { TourEnroll } from './tour-enroll/tour-enroll'
 import { useLayoutEffect, useMemo } from 'react'
 import { useParams } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import Calendar from 'assets/imgs/icons/calendar.svg'
 import Clock from 'assets/imgs/icons/clock.svg'
 import Group from 'assets/imgs/icons/group.svg'
 import styles from './tour.module.sass'
-import { useTranslation } from 'react-i18next'
 
 const IncludedServices = [
 	'Visa support (Invitation) and registration in Turkmenistan on arrival.',

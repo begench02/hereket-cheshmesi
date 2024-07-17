@@ -44,7 +44,7 @@ import SoltanSanjar from 'assets/imgs/mary/soltan-sanjar-mausoleum.jpg'
 import SoltanTekeshMausoleum from 'assets/imgs/dashoguz/sultan-tekesh-mausoleum.jpg'
 import TombOfKhojaYusufHamadani from 'assets/imgs/mary/tomb-of-khoja-yusuf-hamadani.jpg'
 import turabekKhanumMausoleum from 'assets/imgs/dashoguz/turabek-khanum-mausoleum.jpg'
-import TurkmenCarpetMuseum from 'assets/imgs/ashgabat/turkmen-carpet-museum.jpg'
+import CarpetMuseum from 'assets/imgs/ashgabat/carpet-museum.jpg'
 import UmbarWaterfall from 'assets/imgs/lebap/umbar.jpg'
 import YangykalaCanyon from 'assets/imgs/balkan/yangykala-canyon.jpg'
 
@@ -80,7 +80,7 @@ export const places: Places[] = [
 				id: uuidv4(),
 				name: 'Turkmen Carpet Museum',
 				name_ru: 'Музей туркменского ковра',
-				img: TurkmenCarpetMuseum,
+				img: CarpetMuseum,
 				history:
 					'The carpet in Turkmenistan is a state symbol. In order to preserve, revive and creatively develop the ancient traditions of Turkmen carpet weaving, in 1993, by decree of the President of Turkmenistan, the National Carpet Museum was created. It is located in the center of Ashgabat. The total area of ​​the museum is 15,000 sq.m. A third of this area – 5000 sq.m. – is allocated for exhibition halls. The exhibition consists of 8,000 exhibits, the main part of which dates back to the 17th-19th centuries. The collection is replenished annually. It presents the smallest carpet, in the form of a key holder, and the largest, with an area of ​​301 sq.m., which is included in the Guinness Book of Records.',
 				history_ru:
