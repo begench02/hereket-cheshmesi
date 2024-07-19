@@ -2,9 +2,9 @@ import { PhoneNumberUtil } from 'google-libphonenumber'
 import { Place } from 'pages/tours/tours.data'
 import toast from 'react-hot-toast'
 
-const phoneUtil = PhoneNumberUtil.getInstance()
-
 export const is_phone_valid = (phone: string) => {
+	const phoneUtil = PhoneNumberUtil.getInstance()
+
 	try {
 		return phoneUtil.isValidNumber(phoneUtil.parseAndKeepRawInput(phone))
 	} catch (error) {
@@ -31,7 +31,6 @@ export const copy_text = (text: string, type: 'address' | 'phone' | 'email') => 
 			break
 		case 'phone':
 			const phone = text.replace(/\s/g, '')
-			console.log(`Phone: ${phone}`)
 			navigator.clipboard.writeText(phone)
 			break
 		case 'address':

@@ -13,19 +13,19 @@ export const Carousel: FC<CarouselProps> = (props) => {
 
 	const dragX = useMotionValue(0)
 
-	// useEffect(() => {
-	// 	if (!autoPlay) return
+	useEffect(() => {
+		if (!autoPlay) return
 
-	// 	const interval = setInterval(() => {
-	// 		if (imageIndex < tours.length - 1) {
-	// 			setImageIndex((prev) => prev + 1)
-	// 		} else {
-	// 			setImageIndex((prev) => prev - 1)
-	// 		}
-	// 	}, 4000)
+		const interval = setInterval(() => {
+			if (imageIndex < tours.length - 1) {
+				setImageIndex((prev) => prev + 1)
+			} else {
+				setImageIndex(0)
+			}
+		}, 4000)
 
-	// 	return () => clearInterval(interval)
-	// }, [dragging])
+		return () => clearInterval(interval)
+	}, [dragging, imageIndex])
 
 	const onDragStart = () => {
 		setDragging(true)
