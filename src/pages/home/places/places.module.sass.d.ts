@@ -9,7 +9,6 @@ interface CssExports {
   'contact_us__subtitle': string;
   'contact_us__title': string;
   'gallery': string;
-  'gallery_image': string;
   'main': string;
   'modal': string;
   'modal__history': string;

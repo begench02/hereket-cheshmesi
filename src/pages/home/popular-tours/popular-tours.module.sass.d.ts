@@ -4,8 +4,9 @@ interface CssExports {
   'arrow': string;
   'arrow__left': string;
   'arrow__right': string;
-  'heading': string;
+  'arrow_right': string;
   'main': string;
+  'title': string;
 }
 export const cssExports: CssExports;
 export default cssExports;

@@ -40,11 +40,11 @@ export const ContactUs = () => {
 	return (
 		<div className={styles.main}>
 			<div>
-				<YMaps>
+				{/* <YMaps>
 					<Map defaultState={mapLocation} width='100%' height='600px'>
 						<Placemark geometry={mapLocation.center} />
 					</Map>
-				</YMaps>
+				</YMaps> */}
 				<div className={styles.contacts}>
 					<div className={styles.contact}>
 						<img src={locationMarker} alt='Location Marker' className={styles.contact__icon} />
@@ -102,11 +102,10 @@ export const ContactUs = () => {
 						<h3 className={styles.form__title}>{t('contact_us')}</h3>
 						<div className={styles.flex}>
 							<TextInput placeholder={t('inputs.name')} name='name' required />
-							<TextInput placeholder={t('page.contact_us.country')} name='homeCountry' />
+							<TextInput placeholder={t('inputs.email')} name='email' />
 						</div>
 						<div className={styles.flex}>
-							<TextInput placeholder={t('inputs.email')} name='email' />
-
+							<TextInput placeholder={t('page.contact_us.country')} name='home' />
 							<div className={styles.test_block}>
 								<Controller
 									name='phone'
@@ -143,7 +142,7 @@ export const ContactUs = () => {
 						</div>
 						<div>
 							<p className={styles.label}>{t('page.contact_us.visit_time')}</p>
-							<DateInput name='visitTime' required placeholder={t('page.contact_us.date')} />
+							<DateInput name='visitTime' required />
 						</div>
 						<div>
 							<p className={styles.label}>{t('page.contact_us.enter')}</p>
@@ -174,7 +173,7 @@ export const ContactUs = () => {
 							/>
 						</div>
 						<div>
-							<Textarea placeholder={t('page.contact_us.message')} />
+							<Textarea name='message' placeholder={t('page.contact_us.message')} />
 						</div>
 						<div className={styles.send_btn__container}>
 							<Button variant='contained' fullWidth>

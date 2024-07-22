@@ -33,11 +33,13 @@ export const Tours = () => {
 					className={styles.tour_description}
 				>
 					<h1 className={styles.tour_description__title}>{i18n.language === 'en' ? title : title_ru}</h1>
+					<div className='line'></div>
+					<p className={styles.tour_description__subtitle}>
+						<b>Destinations:</b> {i18n.language === 'en' ? description : description_ru}
+					</p>
+					<div className='line'></div>
 					<p className={styles.tour_description__duration}>
 						{i18n.language === 'en' ? duration : duration_ru}
-					</p>
-					<p className={styles.tour_description__subtitle}>
-						{i18n.language === 'en' ? description : description_ru}
 					</p>
 
 					<Link to={`/tours/${id}`} className={styles.tour_description__button}>

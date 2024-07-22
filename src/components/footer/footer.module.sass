@@ -2,19 +2,23 @@
 
 .main
     padding: 1rem 0
-    display: grid
-    grid-template-columns: repeat(3, 1fr)
-    justify-items: center
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    gap: 1rem
+    justify-content: space-around
     background-color: #D4D5D6
+    text-align: center
 
-h4
-    font-size: 20px
+.info
+    flex: 0 0 30%
+    justify-self: center
 
 .icon
-    display: flex
-    align-items: center
+    // display: flex
+    // align-items: center
     font-size: 24px
-    gap: 6px
+    // gap: 6px
     margin: 10px 0
 
 .text
@@ -24,3 +28,12 @@ h4
 
 .contacts
     gap: 1rem
+
+@media (max-width: s.$DESKTOP)
+    .main
+        text-align: center
+        flex-direction: column
+
+@media (max-width: s.$MOBILE)
+    .main
+        text-align: start

@@ -1,5 +1,7 @@
+@use 'styles' as s
+
 .main
-    margin: 4rem 0
+    margin: 3rem
     display: grid
     justify-content: center
     gap: 1rem
@@ -9,6 +11,7 @@
     display: grid
     justify-content: center
     align-items: center
+    gap: 1rem
     transition: 0.4s
     padding: 2rem
     padding-top: 4rem
@@ -19,7 +22,6 @@
     &--scale
         transform: scale(107%)
     &:hover &
-
         &__image
             filter: brightness(50%)
             border-radius: 10px
@@ -43,8 +45,22 @@
 
 .image_block__current
     transform: scale(110.5%)
-
     .read_more
         display: block
         .header
             display: block
+
+
+@media (max-width: s.$DESKTOP)
+    .main
+        margin: 1rem
+        padding-bottom: 2rem
+    .tour__heading
+        font-size: 20px
+
+@media (max-width: s.$TABLET)
+    .tour
+        padding: 1rem
+        &__heading
+            display: none
+    

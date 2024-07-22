@@ -1,15 +1,15 @@
+import { copy_text } from 'src/utils'
+import { useTranslation } from 'react-i18next'
 import Location from 'assets/imgs/icons/location.svg'
 import Phone from 'assets/imgs/icons/phone.svg'
 import styles from './footer.module.sass'
-import { copy_text } from 'src/utils'
-import { useTranslation } from 'react-i18next'
 
 export const Footer = () => {
 	const { t } = useTranslation()
 
 	return (
 		<footer className={styles.main}>
-			<div>
+			<div className={styles.info}>
 				<h4 className={styles.icon}>Hereket Cheshmesi: </h4>
 				<p className={styles.text} onClick={(e: any) => copy_text(e.target.innerText, 'email')}>
 					- info@cheshme@mail.ru
@@ -18,7 +18,7 @@ export const Footer = () => {
 					- bgeldyev7@gmail.com
 				</p>
 			</div>
-			<div>
+			<div className={styles.info}>
 				<h4 className={styles.icon}>
 					<Phone /> Contacts:
 				</h4>
@@ -31,7 +31,7 @@ export const Footer = () => {
 					</p>
 				</ul>
 			</div>
-			<div>
+			<div className={styles.info}>
 				<h4 className={styles.icon}>
 					<Location /> Location:
 				</h4>

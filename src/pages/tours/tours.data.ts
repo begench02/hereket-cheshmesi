@@ -451,12 +451,14 @@ export const tours: Tour[] = [
 	{
 		id: 9957483,
 		image: Koytendag,
-		title: 'Program 1',
-		title_ru: 'Программа 1',
+		title: 'Turkmenistan Highlights',
+		title_ru: 'Туркменистан - основные места',
 		duration: '5 days / 4 nights',
 		description_ru: '5 дней / 4 ночи',
-		description: '(Shawat-Dashoguz-Koneurgench-Darvaza-Ashgabat-Mary-Ashgabat-Geokdepe-Ashgabat-Bajgiran)',
-		duration_ru: '(Shawat-Dashoguz-Koneurgench-Darvaza-Ashgabat-Mary-Ashgabat-Geokdepe-Ashgabat-Bajgiran)',
+		description:
+			'Shawat - Dashoguz - Koneurgench - Darvaza - Ashgabat - Mary - Ashgabat - Geokdepe - Ashgabat - Bajgiran',
+		duration_ru:
+			'Шават - Дашогуз - Кёнеургенч - Дарваза - Ашхабад - Мары - Ашхабад - Гёкдепе - Ашхабад - Баджгиран',
 		days: [
 			{
 				id: v4(),
@@ -673,12 +675,12 @@ export const tours: Tour[] = [
 	{
 		id: 568405,
 		image: Koytendag,
-		title: 'Program 2',
-		title_ru: 'Программа 2',
+		title: 'Turkmenistan Northern Heritage',
+		title_ru: 'Северное наследие Туркменистана',
 		duration: '3 days / 2 nights',
 		duration_ru: '3 дня / 2 ночи',
-		description: '(Shawat-Dashoguz-Koneurgench-Darvaza-Ashgabat- -Bajgiran)',
-		description_ru: '(Shawat-Dashoguz-Koneurgench-Darvaza-Ashgabat- -Bajgiran)',
+		description: 'Shawat - Dashoguz - Koneurgench - Darvaza - Ashgabat - Bajgiran',
+		description_ru: 'Шават - Дашогуз - Кёнеургенч - Дарваза - Ашхабад - Баджгиран',
 		days: [
 			{
 				id: v4(),
@@ -771,12 +773,12 @@ export const tours: Tour[] = [
 	{
 		id: 6657493,
 		image: Koytendag,
-		title: 'Program 3',
-		title_ru: 'Программа 3',
+		title: 'Central Turkmenistan Exploration',
+		title_ru: 'Путешествие в Центральном Туркменистане',
 		duration: '4 days / 3 nights',
 		duration_ru: '4 дня / 3 ночи',
-		description: '(Bajgiran-Ashgabat-Darvaza-Dashoguz)',
-		description_ru: '(Bajgiran-Ashgabat-Darvaza-Dashoguz)',
+		description: 'Bajgiran - Ashgabat - Darvaza - Dashoguz',
+		description_ru: 'Баджгиран - Ашхабад - Дарваза - Дашогуз',
 		days: [
 			{
 				id: v4(),
@@ -902,12 +904,12 @@ export const tours: Tour[] = [
 	{
 		id: 3304929,
 		image: Koytendag,
-		title: 'Program 4',
-		title_ru: 'Программа 4',
+		title: 'Turkmen Odyssey',
+		title_ru: 'Туркменская одиссея',
 		duration: '4 days / 3 nights',
 		duration_ru: '4 дня / 3 ночи',
-		description: 'Shawat/Dashoguz-Koneurgench-Darvaza-Ashgabat-Mary-Turkmenabat-Farap/Alat',
-		description_ru: 'Shawat/Dashoguz-Koneurgench-Darvaza-Ashgabat-Mary-Turkmenabat-Farap/Alat',
+		description: 'Shawat - Dashoguz - Koneurgench - Darvaza - Ashgabat - Mary - Turkmenabat - Farap',
+		description_ru: 'Дашогуз - Дашогуз - Кёнеургенч - Дарваза - Ашхабад - Мары - Туркменабат - Фарап',
 		days: [
 			{
 				id: v4(),
@@ -1118,12 +1120,12 @@ export const tours: Tour[] = [
 	{
 		id: 7722241,
 		image: Koytendag,
-		title: 'Program 5',
-		title_ru: 'Программа 5',
+		title: 'Dashoguz Loop ',
+		title_ru: 'Дашогузская петля Дашогуз - Конеургенч - Дарваза - Дашогуз',
 		duration: '2 days / 1 night',
 		duration_ru: '2 дня / 1 ночь',
-		description: 'Dashoguz-Koneurgench-Darvaza-Dashoguz',
-		description_ru: 'Dashoguz-Koneurgench-Darvaza-Dashoguz',
+		description: 'Dashoguz - Koneurgench - Darvaza - Dashoguz',
+		description_ru: 'Дашогуз - Кёнеургенч - Дарваза - Дашогуз',
 		days: [
 			{
 				id: v4(),

@@ -14,7 +14,7 @@ export const TextInput: FC<InputProps> = (props) => {
 		<input
 			placeholder={placeholder}
 			className={clsx(styles.text_input, errors[name] && styles['text_input--error'], className)}
-			style={style}
+			style={{ ...style, width: fullWidth && '100%' }}
 			{...register(name, { required })}
 			{...rest}
 		/>

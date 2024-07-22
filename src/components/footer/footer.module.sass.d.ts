@@ -3,6 +3,7 @@
 interface CssExports {
   'contacts': string;
   'icon': string;
+  'info': string;
   'main': string;
   'text': string;
 }

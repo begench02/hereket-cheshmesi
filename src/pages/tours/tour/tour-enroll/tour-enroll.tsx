@@ -30,7 +30,7 @@ export const TourEnroll: FC<TourEnrollProps> = (props) => {
 					<TextInput placeholder={t('inputs.email')} name='email' />
 				</div>
 				<div className={styles.input}>
-					<Textarea placeholder={t('page.contact_us.message')} />
+					<Textarea name='message' placeholder={t('page.contact_us.message')} />
 				</div>
 				<Button variant='contained' fullWidth>
 					Enroll
