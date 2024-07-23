@@ -33,8 +33,8 @@ export const Header = () => {
 						{t('contact_us')}
 					</Link>
 				</div>
-				<LanguageDropdown />
 			</nav>
+			<LanguageDropdown />
 		</header>
 	)
 }

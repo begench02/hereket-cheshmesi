@@ -10,6 +10,10 @@
     margin-top: 10px
     min-height: 320px
 
+.map
+    width: auto !important
+    height: 50vh
+
 .contact
     display: flex
     align-items: center
@@ -41,7 +45,7 @@
 
 .flex
     display: grid
-    grid-template-columns: 1fr 1fr
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
     gap: 10px
 
 .label
@@ -76,6 +80,13 @@
 .text_copy
     @include s.hover-text(s.$color-green)
 
+@media (max-width: s.$DESKTOP)
+    .main
+        grid-template-columns: 1fr
+    .contact_form
+        grid-row-start: 1
+        margin-top: 2rem
 
-// @media (max-width: s.$DESKTOP)
-    
+@media (max-width: s.$LAPTOP)
+    .main
+        margin: 14rem 0

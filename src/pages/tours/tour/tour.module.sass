@@ -11,10 +11,9 @@
     justify-self: center
 
 .tour_description
+    max-width: 1200px
     margin: 2rem 2rem 0 0
-    align-items: center
     justify-items: center
-    justify-content: center
     &__details
         margin: 1rem 0
         font-size: 26px
@@ -40,3 +39,14 @@
 
 .enroll
     margin-top: 1rem
+
+@media (max-width: 1890px)
+    .main
+        grid-template-columns: 1fr
+    .tour_description
+        margin: 2rem auto
+        width: 100%
+
+@media (max-width: s.$TABLET)
+    .tour_description
+        padding: 2rem

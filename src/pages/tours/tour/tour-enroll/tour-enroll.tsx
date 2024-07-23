@@ -1,11 +1,11 @@
+import { api } from 'src/api'
+import { Button } from 'components/button/button'
+import { FC } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
+import { Textarea } from 'components/input/textarea/textarea'
 import { TextInput } from 'components/input/text-input/text-input'
 import { useTranslation } from 'react-i18next'
 import styles from './tour-enroll.module.sass'
-import { Button } from 'components/button/button'
-import { FC } from 'react'
-import { api } from 'src/api'
-import { Textarea } from 'components/input/textarea/textarea'
 
 export const TourEnroll: FC<TourEnrollProps> = (props) => {
 	const { tourId } = props

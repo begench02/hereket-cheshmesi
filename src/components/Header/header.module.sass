@@ -27,10 +27,22 @@
 
 .link
     color: #fff
-    font-size: 20px
     &__text
         color: #fff
-        font-size: 30px
+        font-size: clamp(10px, 5vw, 3rem)
         text-decoration: none
         &--active
             color: #48A626
+
+@media (max-width: s.$TABLET)
+    .header__logo
+        grid-row-start: 1
+        grid-row-end: 3
+        grid-column-start: 1
+    .header
+        grid-template-columns: 1fr 1fr
+        justify-items: start
+    .nav
+        gap: 1rem
+    .link
+        text-align: center

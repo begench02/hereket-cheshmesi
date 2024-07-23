@@ -8,16 +8,20 @@
     background-size: cover
 
 .content
-    margin-bottom: 40%
+    margin-bottom: 30%
     text-align: center
     &__title
-        font-size: 70px
+        font-size: clamp(3rem, 6vw, 5rem)
         font-weight: 700
         text-transform: uppercase
         color: #1F427C
         text-shadow: 1px 1px 4px #EBA503
     &__subtitle
-        font-size: 60px
+        font-size: clamp(2rem, 4vw, 3.5rem)
         font-weight: 600
         color: #1F427C
         text-shadow: 1px 1px 2px #EBA503
+
+@media (max-width: 1800px)
+    .content
+        margin-bottom: 50%

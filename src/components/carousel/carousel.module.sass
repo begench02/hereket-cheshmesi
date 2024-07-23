@@ -2,8 +2,7 @@
 
 .main
     position: relative
-    height: 600px
-    width: 800px
+    width: 40vw
     overflow: hidden
 
 .content
@@ -16,7 +15,7 @@
 .image
     aspect-ratio: 16 / 9
     height: 500px
-    width: 800px
+    width: 100%
     flex-shrink: 0
     border-radius: 20px
     background-color: #777
@@ -50,3 +49,7 @@
         background: linear-gradient(rgba(169, 169, 169, 0.8), rgba(169, 169, 169, 0.8))
         font-size: 30px
         cursor: pointer
+
+@media (max-width: 1800px)
+    .main
+        width: 60vw

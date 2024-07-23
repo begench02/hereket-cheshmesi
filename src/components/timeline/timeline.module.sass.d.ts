@@ -13,6 +13,7 @@ interface CssExports {
   'right_container_arrow': string;
   'text_box': string;
   'timeline': string;
+  'tour_day': string;
 }
 export const cssExports: CssExports;
 export default cssExports;

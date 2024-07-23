@@ -5,6 +5,7 @@ interface CssExports {
   'contact__icon': string;
   'contact__text': string;
   'contact__text--bold': string;
+  'contact_form': string;
   'contacts': string;
   'email__icon': string;
   'flex': string;
@@ -17,6 +18,7 @@ interface CssExports {
   'input_phone__input-error': string;
   'label': string;
   'main': string;
+  'map': string;
   'phone__icon': string;
   'row': string;
   'send_btn__container': string;

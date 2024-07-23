@@ -34,17 +34,16 @@ export const ContactUs = () => {
 
 	const onFormSubmit = (formData: ContactValues) => {
 		api.post('user', formData)
-		console.log('Form data: ', formData)
 	}
 
 	return (
 		<div className={styles.main}>
 			<div>
-				{/* <YMaps>
-					<Map defaultState={mapLocation} width='100%' height='600px'>
+				<YMaps>
+					<Map defaultState={mapLocation} className={styles.map}>
 						<Placemark geometry={mapLocation.center} />
 					</Map>
-				</YMaps> */}
+				</YMaps>
 				<div className={styles.contacts}>
 					<div className={styles.contact}>
 						<img src={locationMarker} alt='Location Marker' className={styles.contact__icon} />
@@ -96,7 +95,7 @@ export const ContactUs = () => {
 					</div>
 				</div>
 			</div>
-			<div>
+			<div className={styles.contact_form}>
 				<FormProvider {...methods}>
 					<form onSubmit={methods.handleSubmit(onFormSubmit)} className={styles.form}>
 						<h3 className={styles.form__title}>{t('contact_us')}</h3>
