@@ -44,7 +44,7 @@ export const Tours = () => {
 
 					<Link to={`/tours/${id}`} className={styles.tour_description__button}>
 						<Button variant='contained'>
-							{t('explore')} <ArrowRight style={{ marginLeft: '15px' }} />
+							{t('explore')} <ArrowRight className={styles.tour_description__arrow} />
 						</Button>
 					</Link>
 				</motion.div>

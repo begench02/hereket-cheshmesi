@@ -1,10 +1,10 @@
 @use 'styles' as s
 
 .main
-    margin: 3rem
+    margin: 5rem
     display: grid
     justify-content: center
-    gap: 1rem
+    gap: 2rem
 
 .tour
     position: relative
@@ -38,7 +38,7 @@
         display: block
         max-height: 450px
         max-width: 100%
-        aspect-ratio: 16/9
+        aspect-ratio: 16 / 9
         cursor: pointer
         transition: 0.4s
         border-radius: 15px
@@ -49,7 +49,6 @@
         display: block
         .header
             display: block
-
 
 @media (max-width: s.$DESKTOP)
     .main
@@ -63,4 +62,6 @@
         padding: 1rem
         &__heading
             display: none
-    
+        &__image
+            width: 500px
+            height: 200px

@@ -3,6 +3,7 @@
 interface CssExports {
   'main': string;
   'tour_description': string;
+  'tour_description__arrow': string;
   'tour_description__button': string;
   'tour_description__duration': string;
   'tour_description__subtitle': string;

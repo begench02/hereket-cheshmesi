@@ -1,15 +1,14 @@
 @use 'styles' as s
 
 .accordion
-    width: auto
     &__input
         display: none
         &:checked + .accordion__label
             span
                 transform: rotate(90deg)
-            span:last-child
-                left: 50%
-                right: 50%
+                &:last-child
+                    left: 50%
+                    right: 50%
         &:checked + .accordion__label + .accordion__content
             max-height: 600px
             padding: 10px

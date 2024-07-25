@@ -26,6 +26,7 @@ interface CssExports {
   'test_block--error': string;
   'test_block-error': string;
   'text_copy': string;
+  'yandex_map': string;
 }
 export const cssExports: CssExports;
 export default cssExports;

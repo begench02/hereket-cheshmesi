@@ -15,10 +15,7 @@ export const Timeline: FC<TimelineProps> = (props) => {
 					<div className={styles.tour_day}>
 						<div
 							key={day.id}
-							className={clsx(
-								styles.container,
-								index % 2 === 0 ? styles.left_container : styles.right_container,
-							)}
+							className={clsx(styles.day_gallery, index % 2 !== 0 && styles.right)}
 							style={{ animationDelay: `${index + 1}s` }}
 						>
 							<Carousel
@@ -32,24 +29,15 @@ export const Timeline: FC<TimelineProps> = (props) => {
 							>
 								{day.places.map((place) => (
 									<div key={`${place.name}_${place.image}`}>
-										<img src={place.image} alt={place.name} width={600} height={300} />
+										<img src={place.image} alt={place.name} />
 									</div>
 								))}
 							</Carousel>
-							<p className={styles.day}>Day {index + 1}</p>
+							<p className={styles.day_number}>Day {index + 1}</p>
 
-							<span
-								className={clsx(
-									index % 2 === 0 ? styles.left_container_arrow : styles.right_container_arrow,
-								)}
-							></span>
+							<span className={clsx(index % 2 === 0 ? styles.left_arrow : styles.right_arrow)}></span>
 						</div>
-						<div
-							className={clsx(
-								styles.text_box,
-								index % 2 === 0 ? styles.right_container : styles.left_container,
-							)}
-						>
+						<div className={clsx(styles.day_description, index % 2 === 0 && styles.right)}>
 							<h2>{concat_places_name(day.places)}</h2>
 							<div>
 								{day.description.map(({ time, program }) => (

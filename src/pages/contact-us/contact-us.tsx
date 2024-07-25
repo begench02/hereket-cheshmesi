@@ -39,11 +39,13 @@ export const ContactUs = () => {
 	return (
 		<div className={styles.main}>
 			<div>
-				<YMaps>
-					<Map defaultState={mapLocation} className={styles.map}>
-						<Placemark geometry={mapLocation.center} />
-					</Map>
-				</YMaps>
+				<div className={styles.yandex_map}>
+					<YMaps>
+						<Map defaultState={mapLocation} className={styles.map}>
+							<Placemark geometry={mapLocation.center} />
+						</Map>
+					</YMaps>
+				</div>
 				<div className={styles.contacts}>
 					<div className={styles.contact}>
 						<img src={locationMarker} alt='Location Marker' className={styles.contact__icon} />
@@ -116,7 +118,7 @@ export const ContactUs = () => {
 											value={value}
 											onChange={onChange}
 											required={true}
-											style={{ width: '100%', height: '100%' }}
+											style={{ width: '100%', height: '100%', minHeight: '50px' }}
 											inputStyle={{ width: '100%', height: '100%', boxSizing: 'border-box' }}
 											className={styles.input_phone__container}
 											inputClassName={clsx(

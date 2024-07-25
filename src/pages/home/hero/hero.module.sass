@@ -1,3 +1,5 @@
+@use 'styles' as s
+
 .main
     min-height: 100vh
     display: grid
@@ -8,7 +10,8 @@
     background-size: cover
 
 .content
-    margin-bottom: 30%
+    margin-bottom: auto
+    margin-top: 10vh
     text-align: center
     &__title
         font-size: clamp(3rem, 6vw, 5rem)
@@ -22,6 +25,7 @@
         color: #1F427C
         text-shadow: 1px 1px 2px #EBA503
 
-@media (max-width: 1800px)
+@media (width < s.$TABLET)
     .content
-        margin-bottom: 50%
+        margin-bottom: auto
+        margin-top: 5rem

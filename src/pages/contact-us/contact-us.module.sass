@@ -1,18 +1,24 @@
 @use 'styles' as s
 
 .main
-    margin: 12em 4em 4em
+    margin: 2rem 4em 4em
     min-height: 80vh
     display: grid
     grid-template-columns: 1fr 1fr
 
 .contacts
     margin-top: 10px
-    min-height: 320px
+    // min-height: 320px
 
 .map
-    width: auto !important
     height: 50vh
+    width: auto
+    // margin: 1rem auto
+    // display: grid
+    background-color: gray
+
+.yandex_map
+    width: auto
 
 .contact
     display: flex
@@ -67,6 +73,7 @@
 
 .input_phone__country_btn
     height: 100%
+    padding: 10px
     border: 1px solid s.$color-green !important
     outline-color: s.$color-green !important
 
@@ -89,4 +96,8 @@
 
 @media (max-width: s.$LAPTOP)
     .main
-        margin: 14rem 0
+        margin: 0 0
+
+@media (width < s.$TABLET)
+    .contacts
+        display: none

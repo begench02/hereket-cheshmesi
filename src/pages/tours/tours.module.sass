@@ -1,8 +1,8 @@
 @use 'styles' as s
 
 .main
-    min-height: 100vh
     padding: 0 6rem
+    min-height: 100vh
     display: grid
     grid-template-columns: 1fr 1fr
     align-items: center
@@ -13,6 +13,7 @@
 .tour_description
     display: grid
     text-align: end
+    align-items: start
     color: #fff
     text-shadow: 2px 2px #000000
     &__title
@@ -34,11 +35,31 @@
 .tour_image
     margin-top: 4rem
     justify-self: center
+    flex-basis: 50%
+
+.tour_description__arrow
+    margin-left: 15px
 
 @media (max-width: 1800px)
     .main
+        min-height: 60vh
         grid-template-columns: 1fr
+        padding: 0 2rem 2rem 2rem
+    .tour_description
+        margin-top: 2rem
+
     .tour_description
         text-align: center
         &__button
             justify-self: start
+
+@media (width < s.$TABLET)
+
+    .tour_description__title
+        font-size: 40px
+    .tour_description__button
+        width: 100%
+        button
+            width: 100% !important
+    .tour_description__arrow
+        display: none

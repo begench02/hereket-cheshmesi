@@ -10,6 +10,7 @@ interface CssExports {
   'title--dimmed': string;
   'tour_description': string;
   'tour_description__details': string;
+  'tour_details__icon': string;
 }
 export const cssExports: CssExports;
 export default cssExports;

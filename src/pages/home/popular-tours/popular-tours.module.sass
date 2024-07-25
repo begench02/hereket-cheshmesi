@@ -9,7 +9,7 @@
 
 .arrow
     position: absolute
-    bottom: -6px
+    bottom: 0px
     z-index: 1
     &:hover
         cursor: pointer
@@ -27,4 +27,10 @@
     .arrow__left
         left: 40%
     .arrow_right
+        right: 40%
+
+@media (width < s.$TABLET)
+    .arrow__left
+        left: 40%
+    .arrow__right
         right: 40%

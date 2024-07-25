@@ -49,15 +49,15 @@ export const Tour = () => {
 				<div className={styles.line} />
 				<div className={styles.tour_description__details}>
 					<div>
-						<Clock width={40} />
+						<Clock width={40} className={styles.tour_details__icon} />
 						{t('duration')}: {i18n.language === 'en' ? tour.duration : tour.title_ru}
 					</div>
 					<div>
-						<Calendar width={40} />
-						Pediod: Year routed
+						<Calendar width={40} className={styles.tour_details__icon} />
+						Period: Year routed
 					</div>
 					<div>
-						<Group width={40} />
+						<Group width={40} className={styles.tour_details__icon} />
 						{t('group_size')}: 1 to 12 people
 					</div>
 				</div>

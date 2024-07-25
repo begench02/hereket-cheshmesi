@@ -48,7 +48,7 @@ export const Carousel: FC<CarouselProps> = (props) => {
 				drag='x'
 				dragConstraints={{ left: 0, right: 0 }}
 				style={{ x: dragX }}
-				animate={{ translateX: `-${imageIndex * 40}vw` }}
+				animate={{ translateX: `-${imageIndex * 100}%` }}
 				onDragStart={onDragStart}
 				onDragEnd={onDragEnd}
 				className={styles.content}

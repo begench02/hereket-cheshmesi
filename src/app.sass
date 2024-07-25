@@ -25,8 +25,28 @@ a
 ul
     list-style: none
 
+img
+    max-width: 100%
+    height: auto
+    vertical-align: middle
+    font-style: italic
+    background-repeat: no-repeat
+    background-size: cover
+    shape-margin: 0.75rem
+
 .content
     min-height: 100vh
+    min-height: 100svh
+
+.content-grid
+    display: grid
+    grid-template-columns: [full-width-start] 100px [breakout-start] 100px [content-start] 1fr [content-end] 100px [breakout-end] 100px [full-width-end]
+    & > *
+        grid-column: content
+    & > .breakout
+        grid-column: breakout
+    & > .full_width
+        grid-column: full-width
 
 .line
     margin: 1rem 0

@@ -1,4 +1,4 @@
-@use 'styles' as c
+@use 'styles' as s
 
 .main
     margin: 2rem
@@ -24,7 +24,7 @@
 .vertical_line
     width: 3px
     height: 100%
-    background-color: c.$color-green
+    background-color: s.$color-green
 
 .form
     margin-right: 20px
@@ -36,3 +36,9 @@
         font-size: 40px
     .content__subtitle
         font-size: 20px
+
+@media (width < s.$TABLET)
+    .main
+        row-gap: 2rem
+    .content
+        row-gap: 1rem

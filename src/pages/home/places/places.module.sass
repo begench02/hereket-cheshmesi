@@ -70,12 +70,7 @@
 
 .modal
     display: grid
-    justify-content: center
     justify-items: center
-    align-items: center
-    z-index: 9999999
-    overflow-x: hidden
-    scroll: none
     &__title
         margin: 1rem 0
         font-size: 2rem
@@ -93,6 +88,7 @@
 // Media queries
 @media (max-width: 1280px)
     .main
+        min-height: 220vh
         margin: 4rem 2rem
 
 @media (max-width: 1024px)
@@ -106,3 +102,7 @@
             width: 100%
             button
                 width: 100% !important
+
+@media (width < s.$TABLET)
+    .contact_us
+        order: -1
