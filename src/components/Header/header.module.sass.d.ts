@@ -13,6 +13,8 @@ interface CssExports {
   'menu_bar__header': string;
   'menu_bar__items': string;
   'nav': string;
+  'nav_left': string;
+  'nav_toggle': string;
   'x': string;
 }
 export const cssExports: CssExports;

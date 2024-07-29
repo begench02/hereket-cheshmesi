@@ -11,20 +11,15 @@ import styles from './header.module.sass'
 
 export const Header = () => {
 	const [currentLink, setCurrentLink] = useState(window.location.hash)
+	const [isMenuOpen, setMenuOpen] = useState(false)
+	console.log({ isMenuOpen })
 	const { t } = useTranslation()
 
 	return (
 		<header className={styles.header}>
-			<input type='checkbox' id='check' className={styles.check} />
-			<label htmlFor='check' className={styles.header__menu}>
-				<Bars />
-			</label>
-
-			<nav className={styles.nav}>
-				<div className={styles.link}>
-					<ToursDropdown />
-				</div>
-			</nav>
+			{/* <nav>
+				<ul id='navigation' className={clsx(styles.nav, styles.nav_left)} data-visible={isMenuOpen}></ul>
+			</nav> */}
 
 			<div className={styles.header__logo}>
 				<Link to='/'>
@@ -32,22 +27,38 @@ export const Header = () => {
 				</Link>
 			</div>
 
-			<nav className={styles.nav}>
-				<div className={styles.link}>
-					<Link
-						to='contact-us'
-						className={clsx(styles.link__text, currentLink == 'contact-us' && styles['link--active'])}
-						onClick={(e: any) => setCurrentLink(e.target.hash)}
-					>
-						{t('contact_us')}
-					</Link>
-				</div>
-				<div className={clsx(styles.nav, styles.language_dropdown)}>
-					<LanguageDropdown />
-				</div>
+			<button
+				aria-controls='navigation'
+				aria-expanded='false'
+				className={styles.nav_toggle}
+				onClick={() => setMenuOpen((prev) => !prev)}
+			>
+				{isMenuOpen ? <X width='100%' height='100%' /> : <Bars width='100%' height='100%' />}
+			</button>
+
+			<nav className={clsx(styles.nav, styles.nav_left)} data-visible={isMenuOpen}>
+				<ul id='navigation'>
+					<li className={styles.link}>
+						<ToursDropdown />
+					</li>
+				</ul>
+				<ul>
+					<li className={styles.link}>
+						<Link
+							to='contact-us'
+							className={clsx(styles.link__text, currentLink == 'contact-us' && styles['link--active'])}
+							onClick={(e: any) => setCurrentLink(e.target.hash)}
+						>
+							{t('contact_us')}
+						</Link>
+					</li>
+					<li className={styles.language_dropdown}>
+						<LanguageDropdown />
+					</li>
+				</ul>
 			</nav>
 
-			<div className={styles.menu_bar}>
+			{/* <div className={styles.menu_bar}>
 				<div className={styles.menu_bar__header}>
 					<Link to='/'>
 						<img src={Logo} alt='Logo' />
@@ -74,7 +85,7 @@ export const Header = () => {
 						<LanguageDropdown />
 					</div>
 				</div>
-			</div>
+			</div> */}
 		</header>
 	)
 }

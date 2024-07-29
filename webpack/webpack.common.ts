@@ -41,6 +41,7 @@ export const webpackCommon: Configuration = {
 					{
 						loader: 'sass-loader',
 						options: {
+							sourceMap: true,
 							sassOptions: {
 								includePaths: [path.resolve(__dirname, '../src/')],
 							},

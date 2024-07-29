@@ -3,27 +3,54 @@
 .header
     min-height: 15vh
     position: sticky
+    // position: relative
     top: 0
     left: 0
     width: 100%
-    padding: 1rem 2rem
-    display: grid
-    grid-template-columns: 40% 20% 40%
-    justify-content: center
+    padding: 1rem 4rem
+    display: flex
+    justify-content: space-around
     align-items: center
+    // grid-template-columns: 40% 20% 40%
+    // justify-content: center
+    // align-items: center
     background-color: rgba(0, 0, 0, 0.15)
     z-index: 10
     &__logo
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
         text-align: center
         justify-self: center
         img
-            width: 30%
+            width: 20%
 
 .nav
     display: flex
-    justify-self: center
-    align-items: center
-    gap: 2rem
+    width: 100%
+    justify-content: space-between
+    // justify-content: center
+    // gap: 2rem
+    align-items: start
+    color: #fff
+    & > ul
+        display: flex
+        align-items: center
+        gap: 2rem
+
+.nav_left
+    margin-right: auto
+    justify-self: start
+
+    // display: flex
+    // justify-self: center
+    // align-items: center
+    // gap: 2rem
+
+// ul
+//     position: fixed
+//     inset: 0 0 0 30%
 
 .link
     color: #fff
@@ -77,9 +104,55 @@
 .check
     display: none
 
+.nav_toggle
+    display: none
+
 @media (max-width: s.$TABLET)
+    .header
+        grid-template-columns: 1fr 100px
     .nav
-        display: none
+        display: block
+        position: fixed
+        inset: 0 0 0 30%
+        justify-content: start
+        justify-items: start
+        z-index: 1000
+        align-items: start
+        align-content: start
+        text-align: start
+        padding: min(30vh, 10rem) 2rem
+        gap: 2em
+        background-color: hsl(0 0% 0% / 0.5)
+
+        transition: 350ms ease-in
+        transform: translateX(100%)
+        & > ul
+            display: block
+        li
+            text-align: start
+        &[data-visible="true"]
+            transform: translateX(0%)
+
+    @supports (backdrop-filter: blur(1rem))
+        .nav
+            background-color: hsl(0 0% 100% / 0.1)
+            backdrop-filter: blur(1rem)
+
+    .nav_toggle
+        display: block
+        position: absolute
+        border: 0
+        background-repeat: no-repeat
+        width: 3rem
+        align-self: center
+        background-color: transparent
+        aspect-ratio: 1
+        // top: 2rem
+        right: 2rem
+        z-index: 9999
+
+    .link__text
+        text-align: start !important
     .header__menu
         display: block
 
@@ -88,14 +161,6 @@
         align-content: center
         align-items: center
         transition: 0.5s
-        &__logo
-            display: flex
-            align-items: center
-            text-align: center
-            transform: translateX(25px)
-            grid-row: 1
-            img
-                width: 20%
 
     .check:checked
         ~ .menu_bar
