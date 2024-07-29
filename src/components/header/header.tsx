@@ -6,8 +6,8 @@ import { useTranslation } from 'react-i18next'
 import Bars from 'assets/imgs/icons/bars.svg'
 import clsx from 'clsx'
 import Logo from 'assets/imgs/logo2.png'
-import X from 'assets/imgs/icons/x.svg'
 import styles from './header.module.sass'
+import X from 'assets/imgs/icons/x.svg'
 
 export const Header = () => {
 	const [currentLink, setCurrentLink] = useState(window.location.hash)
