@@ -12,7 +12,6 @@ import X from 'assets/imgs/icons/x.svg'
 export const Header = () => {
 	const [currentLink, setCurrentLink] = useState(window.location.hash)
 	const [isMenuOpen, setMenuOpen] = useState(false)
-	console.log({ isMenuOpen })
 	const { t } = useTranslation()
 
 	return (

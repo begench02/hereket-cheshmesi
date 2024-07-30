@@ -1,4 +1,4 @@
-import { AboutUs } from 'pages/home/about-us/abous-us'
+import { AboutUs } from 'pages/home/about-us/about-us'
 import { ContactUs } from 'pages/contact-us/contact-us'
 import { Hero } from 'pages/home/hero/hero'
 import { MainLayout } from 'components/main-layout/main-layout'

@@ -1,17 +1,20 @@
 @use 'styles' as s
 
 .main
+    position: relative
     margin: 2rem
+
     display: flex
-    justify-content: center
     flex-wrap: wrap
+    justify-content: center
     gap: 1rem
     text-align: center
 
 .content
     display: flex
     flex-direction: column
-    flex: 1 1 48%
+    padding-inline: 2rem
+    flex: 1
     container: content-text / inline-size
     &__title
         font-size: 60px
@@ -22,6 +25,10 @@
         margin-top: auto
 
 .vertical_line
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
     width: 3px
     height: 100%
     background-color: s.$color-green

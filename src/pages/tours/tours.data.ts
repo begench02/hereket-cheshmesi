@@ -1,50 +1,42 @@
 import { v4 } from 'uuid'
-import Dashoguz from 'assets/imgs/dashoguz/dashoguz.jpg'
-import GreenBazaar from 'assets/imgs/mary/green-bazaar.jpg'
-// import To from 'assets/imgs/ashgabat/'
-import AkAltynHotel from 'assets/imgs/ashgabat/ak-altyn-hotel.jpg'
+import TurkmenistanNorthernHeritage from 'assets/imgs/turkmenistan-northern-heritage.webp'
+import TurkmenOdyssey from 'assets/imgs/turkmen-odyssey.jpg'
 import AkhalTeke from 'assets/imgs/ashgabat/akhal-teke.jpg'
-import AlamberdarMausoleum from 'assets/imgs/lebap/alamberdar-mausoleum.jpg'
-import AltynAsyr from 'assets/imgs/ashgabat/altyn-asyr.jpg'
 import ashgabat1 from 'assets/imgs/ashgabat.jpg'
-import AstanaBaba from 'assets/imgs/lebap/astana-baba.jpg'
-import LeninStatue from 'assets/imgs/ashgabat/lenin-status.jpg'
-import Awaza from 'assets/imgs/balkan/awaza.jpg'
-import Berkarar from 'assets/imgs/ashgabat/berkarar2.jpg'
-import CaspianSea from 'assets/imgs/balkan/caspian-sea.jpg'
+import BagtKoshgi from 'assets/imgs/ashgabat/bagt-koshgi.jpg'
+import CarpetMuseum from 'assets/imgs/ashgabat/carpet-museum.jpg'
+import CentralTurkmenistanExploration from 'assets/imgs/central-turkmenistan-exploration.jpg'
+import ConstitutionMonument from 'assets/imgs/ashgabat/constitution-monument.jpg'
 import Darvaza from 'assets/imgs/ahal/darvaza-gas-crater.jpg'
-import TolkuchkaBazaar1 from 'assets/imgs/ashgabat/tolkuchka-bazaar1.jpg'
-import TolkuchkaBazaar2 from 'assets/imgs/ashgabat/tolkuchka-bazaar1.jpg'
-import DarvazaWaterCrater from 'assets/imgs/ahal/darvaza-water-crater.jpg'
-import Erbent from 'assets/imgs/ahal/erbent.jpg'
-import GeokTepe from 'assets/imgs/ahal/geok-tepe.jpg'
-import GozliAta from 'assets/imgs/ahal/gozli-ata.jpg'
-import Kipchak from 'assets/imgs/ashgabat/kipchak.jpg'
+import Dashoguz from 'assets/imgs/dashoguz/dashoguz.jpg'
+import DashoguzLoop from 'assets/imgs/dashoguz-loop.jpg'
+import GreenBazaar from 'assets/imgs/mary/green-bazaar.jpg'
+import IndependenceMonument from 'assets/imgs/ashgabat/independence-monument.jpg'
+import KonyeUrgench from 'assets/imgs/dashoguz/konye-urgench.jpg'
 import KowAta from 'assets/imgs/ahal/kow-ata.png'
 import Koytendag from 'assets/imgs/lebap/dinosaur-plateau.jpg'
-import CarpetMuseum from 'assets/imgs/ashgabat/carpet-museum.jpg'
-import KonyeUrgench from 'assets/imgs/dashoguz/konye-urgench.jpg'
-import IndependenceMonument from 'assets/imgs/ashgabat/independence-monument.jpg'
+import LeninStatue from 'assets/imgs/ashgabat/lenin-status.jpg'
+import Margiana from 'assets/imgs/mary/margiana.jpg'
+import Margush from 'assets/imgs/mary/margush.jpg'
 import MaryMuseum1 from 'assets/imgs/mary/mary-museum1.jpg'
 import MaryMuseum2 from 'assets/imgs/mary/mary-museum2.jpg'
 import MaryMuseum3 from 'assets/imgs/mary/mary-museum3.jpg'
-import Margiana from 'assets/imgs/mary/margiana.jpg'
-import Margush from 'assets/imgs/mary/margush.jpg'
 import Merv from 'assets/imgs/mary/merv.jpeg'
 import MuhammadIbnZaydMausoleum from 'assets/imgs/mary/muhammad-ibn-zayd-mausoleum.jpg'
 import NationalMuseum from 'assets/imgs/ashgabat/national-museum.jpg'
-import OlympicCity from 'assets/imgs/ashgabat/olympic-city.jpg'
 import NeutralityMonument from 'assets/imgs/ashgabat/neutrality-monument.jpg'
-import ConstitutionMonument from 'assets/imgs/ashgabat/constitution-monument.jpg'
 import Nisa from 'assets/imgs/ahal/nisa.png'
+import OguzhanMonument from 'assets/imgs/ashgabat/oguzhan-monument.jpg'
+import OlympicCity from 'assets/imgs/ashgabat/olympic-city.jpg'
 import RussianBaazar from 'assets/imgs/ashgabat/russian-baazar.jpg'
+import SoltanSanjarMousoleum from 'assets/imgs/mary/soltan-sanjar-mausoleum.jpg'
+import TolkuchkaBazaar1 from 'assets/imgs/ashgabat/tolkuchka-bazaar1.jpg'
+import TolkuchkaBazaar2 from 'assets/imgs/ashgabat/tolkuchka-bazaar1.jpg'
+import Turkmenabat from 'assets/imgs/lebap/turkmenabat.jpg'
+import TurkmenistanHighlights from 'assets/imgs/turkmenistan-highlights.jpeg'
+import Yangykala from 'assets/imgs/balkan/yangykala-canyon.jpg'
 import YyldyzHotel1 from 'assets/imgs/ashgabat/yyldyz-hotel1.jpg'
 import YyldyzHotel2 from 'assets/imgs/ashgabat/yyldyz-hotel2.jpg'
-import OguzhanMonument from 'assets/imgs/ashgabat/oguzhan-monument.jpg'
-import BagtKoshgi from 'assets/imgs/ashgabat/bagt-koshgi.jpg'
-import SoltanSanjarMousoleum from 'assets/imgs/mary/soltan-sanjar-mausoleum.jpg'
-import Turkmenabat from 'assets/imgs/lebap/turkmenabat.jpg'
-import Yangykala from 'assets/imgs/balkan/yangykala-canyon.jpg'
 
 export const tours: Tour[] = [
 	// {
@@ -450,7 +442,7 @@ export const tours: Tour[] = [
 	// },
 	{
 		id: 9957483,
-		image: Koytendag,
+		image: TurkmenistanHighlights,
 		title: 'Turkmenistan Highlights',
 		title_ru: 'Туркменистан - основные места',
 		duration: '5 days / 4 nights',
@@ -674,7 +666,7 @@ export const tours: Tour[] = [
 	},
 	{
 		id: 568405,
-		image: Koytendag,
+		image: TurkmenistanNorthernHeritage,
 		title: 'Turkmenistan Northern Heritage',
 		title_ru: 'Северное наследие Туркменистана',
 		duration: '3 days / 2 nights',
@@ -772,7 +764,7 @@ export const tours: Tour[] = [
 	},
 	{
 		id: 6657493,
-		image: Koytendag,
+		image: CentralTurkmenistanExploration,
 		title: 'Central Turkmenistan Exploration',
 		title_ru: 'Путешествие в Центральном Туркменистане',
 		duration: '4 days / 3 nights',
@@ -903,7 +895,7 @@ export const tours: Tour[] = [
 	},
 	{
 		id: 3304929,
-		image: Koytendag,
+		image: TurkmenOdyssey,
 		title: 'Turkmen Odyssey',
 		title_ru: 'Туркменская одиссея',
 		duration: '4 days / 3 nights',
@@ -1119,8 +1111,8 @@ export const tours: Tour[] = [
 	},
 	{
 		id: 7722241,
-		image: Koytendag,
-		title: 'Dashoguz Loop ',
+		image: DashoguzLoop,
+		title: 'Dashoguz Loop',
 		title_ru: 'Дашогузская петля Дашогуз - Конеургенч - Дарваза - Дашогуз',
 		duration: '2 days / 1 night',
 		duration_ru: '2 дня / 1 ночь',

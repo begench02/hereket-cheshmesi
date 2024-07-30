@@ -10,33 +10,33 @@ export const Footer = () => {
 	return (
 		<footer className={styles.main}>
 			<div className={styles.info}>
-				<h4 className={styles.icon}>Hereket Cheshmesi: </h4>
-				<p className={styles.text} onClick={(e: any) => copy_text(e.target.innerText, 'email')}>
+				<h4 className={styles.info__icon}>Hereket Cheshmesi: </h4>
+				<p className={styles.info__text} onClick={(e: any) => copy_text(e.target.innerText, 'email')}>
 					- info@cheshme@mail.ru
 				</p>
-				<p className={styles.text} onClick={(e: any) => copy_text(e.target.innerText, 'email')}>
+				<p className={styles.info__text} onClick={(e: any) => copy_text(e.target.innerText, 'email')}>
 					- bgeldyev7@gmail.com
 				</p>
 			</div>
 			<div className={styles.info}>
-				<h4 className={styles.icon}>
+				<h4 className={styles.info__icon}>
 					<Phone /> Contacts:
 				</h4>
 				<ul>
-					<p className={styles.text} onClick={(e: any) => copy_text(e.target.innerText, 'phone')}>
+					<p className={styles.info__text} onClick={(e: any) => copy_text(e.target.innerText, 'phone')}>
 						+993 65 553461
 					</p>
-					<p className={styles.text} onClick={(e: any) => copy_text(e.target.innerText, 'phone')}>
+					<p className={styles.info__text} onClick={(e: any) => copy_text(e.target.innerText, 'phone')}>
 						+993 62 277213
 					</p>
 				</ul>
 			</div>
 			<div className={styles.info}>
-				<h4 className={styles.icon}>
+				<h4 className={styles.info__icon}>
 					<Location /> Location:
 				</h4>
 				<ul>
-					<p className={styles.text} onClick={(e: any) => copy_text(e.target.innerText, 'address')}>
+					<p className={styles.info__text} onClick={(e: any) => copy_text(e.target.innerText, 'address')}>
 						{t('location')}
 					</p>
 				</ul>

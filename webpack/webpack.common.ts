@@ -54,7 +54,7 @@ export const webpackCommon: Configuration = {
 				type: 'asset/resource',
 			},
 			{
-				test: /\.(png|jpg|jpeg|gif)$/i,
+				test: /\.(png|jpg|webp|jpeg|gif)$/i,
 				type: 'asset/resource',
 			},
 			{
