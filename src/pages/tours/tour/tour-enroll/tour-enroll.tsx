@@ -22,7 +22,7 @@ export const TourEnroll: FC<TourEnrollProps> = (props) => {
 	return (
 		<FormProvider {...methods}>
 			<form onSubmit={methods.handleSubmit(onFormSubmit)}>
-				<h2 className={styles.heading}>Enroll to Tour</h2>
+				<h2 className={styles.heading}>{t('tour_sign_up')}</h2>
 				<div className={styles.input}>
 					<TextInput placeholder={t('inputs.name')} name='name' />
 				</div>

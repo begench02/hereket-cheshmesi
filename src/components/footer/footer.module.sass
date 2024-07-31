@@ -12,8 +12,15 @@
     text-align: center
 
 .info
+    display: flex
+    flex-direction: column
+    justify-content: center
+    justify-self: center
     flex-basis: 30%
     font-size: clamp(1.25rem, 1.1806rem + 0.3704vw, 1.875rem)
+    & > ul
+        display: grid
+        grid-template-columns: 1fr
     &__icon
         margin-block: 10px
     &__text

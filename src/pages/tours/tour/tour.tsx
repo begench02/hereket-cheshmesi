@@ -10,25 +10,25 @@ import Clock from 'assets/imgs/icons/clock.svg'
 import Group from 'assets/imgs/icons/group.svg'
 import styles from './tour.module.sass'
 
-const IncludedServices = [
-	'Visa support (Invitation) and registration in Turkmenistan on arrival.',
-	'Transport throughout the tour',
-	'Accompanied by an English-speaking tour guide',
-	'Registration in Ashgabat city; Entrance fees: Horse Hippodrome, Nisa Fortress, National Museum, Merv Museum and Kone Urgench Museum Complex; 1.5lt of water per person per day; Tourist Fee',
-]
-
-const NotIncludedServices = [
-	'International flights',
-	'Turkmenistan tourist visa per person (subject to change; depends on nationality) and migration tax per person (subject to change; depends on nationality)',
-	'Payment for video and photos in historical places',
-	'Tips for guides and drivers',
-	'Medical and travel insurance',
-	'Meals: Lunch, Dinner',
-]
-
 export const Tour = () => {
 	const { id } = useParams()
 	const { i18n, t } = useTranslation()
+
+	const IncludedServices = [
+		t('included_services.visa_support'),
+		t('included_services.transport'),
+		t('included_services.guide'),
+		t('included_services.additional'),
+	]
+
+	const NotIncludedServices = [
+		t('not_included_services.international_flights'),
+		t('not_included_services.visa_fees'),
+		t('not_included_services.video_photo'),
+		t('not_included_services.tips'),
+		t('not_included_services.insurance'),
+		t('not_included_services.meals'),
+	]
 
 	const tour = useMemo(() => {
 		return getTour(+id)
@@ -50,21 +50,25 @@ export const Tour = () => {
 				<div className={styles.tour_description__details}>
 					<div>
 						<Clock width={40} className={styles.tour_details__icon} />
-						{t('duration')}: {i18n.language === 'en' ? tour.duration : tour.title_ru}
+						{t('duration')}: {i18n.language === 'en' ? tour.duration : tour.duration_ru}
 					</div>
 					<div>
 						<Calendar width={40} className={styles.tour_details__icon} />
-						Period: Year routed
+						{t('period')}: {t('year_round')}
 					</div>
 					<div>
 						<Group width={40} className={styles.tour_details__icon} />
-						{t('group_size')}: 1 to 12 people
+						{t('group_size')}
 					</div>
 				</div>
 				<div className={styles.line} />
 				<div className={styles.accordions}>
-					<Accordion title='Included services' elements={IncludedServices} />
-					<Accordion title='Not included services' elements={NotIncludedServices} variant='error' />
+					<Accordion title={t('included_services.included_services')} elements={IncludedServices} />
+					<Accordion
+						title={t('not_included_services.not_included_services')}
+						elements={NotIncludedServices}
+						variant='error'
+					/>
 				</div>
 				<div className={styles.line} />
 

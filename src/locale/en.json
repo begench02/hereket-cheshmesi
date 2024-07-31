@@ -4,8 +4,11 @@
 	"view_tours": "Explore Tours",
 	"contact_us": "Contact Us",
 	"about_us": "About Us",
+	"period": "Period",
+	"year_round": "Year Round",
 	"turkmenistan": "Turkmenistan",
 	"yes": "Yes",
+	"tour_sign_up": "Sign up to tour",
 	"no": "No",
 	"combination": "Combination",
 	"address": "Address",
@@ -15,7 +18,7 @@
 	"explore": "Explore",
 	"send": "Send",
 	"duration": "Duration",
-	"group_size": "Group size",
+	"group_size": "Group size: Up to 20 people",
 	"popular_tours": "Popular tours",
 	"leave_contacts": "Leave your contacts",
 	"tour_adjust": "Tour can be adjusted by your request",
@@ -74,13 +77,19 @@
 		}
 	},
 	"included_services": {
+		"included_services": "Included services",
 		"visa_support": "Visa support (Invitation) and registration in Turkmenistan on arrival",
 		"transport": "Transport throughout the tour",
 		"guide": "Accompanied by an English-speaking tour guide",
 		"additional": "Registration in Ashgabat city; Entrance fees: Horse Hippodrome, Nisa Fortress, National Museum, Merv Museum and Kone Urgench Museum Complex; 1.5lt of water per person per day; Tourist Fee"
 	},
 	"not_included_services": {
-		"airline_tickets": "Airline tickets for international flights",
-		"visa_fees": "Turkmenistan tourist visa per person (subject to change; depends on nationality) and migration tax per person (subject to change; depends on nationality);"
+		"not_included_services": "Not included services",
+		"international_flights": "Airline tickets for international flights",
+		"visa_fees": "Turkmenistan tourist visa per person (subject to change; depends on nationality) and migration tax per person (subject to change; depends on nationality);",
+		"video_photo": "Payment for video and photos in historical places",
+		"tips": "Tips for guides and drivers",
+		"insurance": "Medical and travel insurance",
+		"meals": "Meals: Lunch, Dinner"
 	}
 }

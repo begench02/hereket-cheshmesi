@@ -12,15 +12,16 @@ export const is_phone_valid = (phone: string) => {
 	}
 }
 
-export const concat_places_name = (places: Place[]): string => {
-	const joined_names = places.reduce((accumulator, place, index) => {
-		if (index === 0) {
-			return place.name
+export const concat_places_name = (places: Place[], language: 'en' | 'ru'): string => {
+	const joined_names = places.reduce((accumulator, place) => {
+		if (language === 'en') {
+			return accumulator.add(place.name)
+		} else {
+			return accumulator.add(place.name_ru)
 		}
-		return `${accumulator} - ${place.name}`
-	}, places[0].name)
+	}, new Set<string>())
 
-	return joined_names
+	return Array.from(joined_names).join(' - ')
 }
 
 export const copy_text = (text: string, type: 'address' | 'phone' | 'email') => {

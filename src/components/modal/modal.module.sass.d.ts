@@ -3,6 +3,7 @@
 interface CssExports {
   'content': string;
   'main': string;
+  'overlay': string;
 }
 export const cssExports: CssExports;
 export default cssExports;

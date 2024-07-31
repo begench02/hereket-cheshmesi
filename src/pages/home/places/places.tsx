@@ -3,10 +3,10 @@ import { Carousel } from 'react-responsive-carousel'
 import { CITY, places } from './places.data'
 import { Link } from 'react-router-dom'
 import { Modal } from 'components/modal/modal'
-import { useMemo, useRef, useState } from 'react'
+import { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import styles from './places.module.sass'
 import clsx from 'clsx'
+import styles from './places.module.sass'
 
 export const Places = () => {
 	const { t, i18n } = useTranslation()
@@ -67,20 +67,17 @@ export const Places = () => {
 							<img src={place.img} alt={place.name} className={styles.place__image} />
 						</div>
 						<Modal isOpen={place.id === openModal} close={() => setModalOpen('')}>
-							<div className={clsx(styles.modal, 'content-grid')}>
-								<img
-									src={place.img}
-									style={{ width: '100%', maxWidth: '100%p' }}
-									className={'full_width'}
-								/>
-								{/* {styles.modal__image} /> */}
-								<h1 className={styles.modal__title}>
-									{i18n.language === 'en' ? place.name : place.name_ru}
-								</h1>
-								<br />
-								<p className={styles.modal__history}>
-									{i18n.language === 'en' ? place.history : place.history_ru}
-								</p>
+							<div className={styles.modal}>
+								<img src={place.img} style={{ height: '300px', width: '100%' }} />
+								<div className={styles.modal__content}>
+									<h1 className={styles.modal__title}>
+										{i18n.language === 'en' ? place.name : place.name_ru}
+									</h1>
+									<br />
+									<p className={styles.modal__history}>
+										{i18n.language === 'en' ? place.history : place.history_ru}
+									</p>
+								</div>
 								<br />
 							</div>
 						</Modal>

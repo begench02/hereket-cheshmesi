@@ -11,6 +11,7 @@ interface CssExports {
   'gallery': string;
   'main': string;
   'modal': string;
+  'modal__content': string;
   'modal__history': string;
   'modal__image': string;
   'modal__title': string;

@@ -67,7 +67,7 @@ export const ContactUs = () => {
 								onClick={(event: any) => copy_text(event.target.innerText, 'email')}
 								className={styles.text_copy}
 							>
-								- info@cheshme@mail.ru
+								- info.cheshme@mail.ru
 							</p>
 							<p
 								onClick={(event: any) => copy_text(event.target.innerText, 'email')}

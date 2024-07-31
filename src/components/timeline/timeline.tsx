@@ -4,9 +4,11 @@ import { FC } from 'react'
 import { Tour } from 'pages/tours/tours.data'
 import clsx from 'clsx'
 import styles from './timeline.module.sass'
+import { useTranslation } from 'react-i18next'
 
 export const Timeline: FC<TimelineProps> = (props) => {
 	const { tour } = props
+	const { i18n } = useTranslation()
 
 	return (
 		<div className={styles.timeline} style={{ animationDuration: `${tour.days.length}s` }} key={tour.id}>
@@ -38,14 +40,15 @@ export const Timeline: FC<TimelineProps> = (props) => {
 							<span className={clsx(index % 2 === 0 ? styles.left_arrow : styles.right_arrow)}></span>
 						</div>
 						<div className={clsx(styles.day_description, index % 2 === 0 && styles.right)}>
-							<h2>{concat_places_name(day.places)}</h2>
-							<div>
+							<h2>{concat_places_name(day.places, i18n.language as 'en' | 'ru')}</h2>
+
+							{/* <div>
 								{day.description.map(({ time, program }) => (
 									<p>
 										<span className={styles.program_time}>{time}</span>: {program}
 									</p>
 								))}
-							</div>
+							</div> */}
 						</div>
 					</div>
 					<div className='line'></div>

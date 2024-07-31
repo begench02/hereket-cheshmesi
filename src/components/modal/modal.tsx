@@ -1,5 +1,5 @@
 import { createPortal } from 'react-dom'
-import { type FC, ReactNode, useEffect, useRef } from 'react'
+import { type FC, ReactNode } from 'react'
 import { useOutsideClick } from 'hooks/use-outside-click.hook'
 import styles from './modal.module.sass'
 
@@ -12,11 +12,12 @@ export const Modal: FC<ModalProps> = (props) => {
 	}
 
 	return createPortal(
-		<div className={styles.main}>
-			<div className={styles.content} ref={modalRef}>
-				{children}
+		<>
+			<div className={styles.main} ref={modalRef}>
+				<div className={styles.content}>{children}</div>
 			</div>
-		</div>,
+			<div className={styles.overlay}></div>
+		</>,
 		document.getElementById('modal'),
 	)
 }

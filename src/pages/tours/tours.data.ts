@@ -446,10 +446,10 @@ export const tours: Tour[] = [
 		title: 'Turkmenistan Highlights',
 		title_ru: 'Туркменистан - основные места',
 		duration: '5 days / 4 nights',
-		description_ru: '5 дней / 4 ночи',
+		duration_ru: '5 дней / 4 ночи',
 		description:
 			'Shawat - Dashoguz - Koneurgench - Darvaza - Ashgabat - Mary - Ashgabat - Geokdepe - Ashgabat - Bajgiran',
-		duration_ru:
+		description_ru:
 			'Шават - Дашогуз - Кёнеургенч - Дарваза - Ашхабад - Мары - Ашхабад - Гёкдепе - Ашхабад - Баджгиран',
 		days: [
 			{
@@ -488,10 +488,12 @@ export const tours: Tour[] = [
 					{
 						image: KonyeUrgench,
 						name: 'Konye-Urgench',
+						name_ru: 'Кёнеургенч',
 					},
 					{
 						image: Darvaza,
 						name: 'Darvaza Gaz Crater',
+						name_ru: 'Дарваза',
 					},
 				],
 			},
@@ -531,10 +533,12 @@ export const tours: Tour[] = [
 					{
 						image: ashgabat1,
 						name: 'Ashgabat',
+						name_ru: 'Ашхабад',
 					},
 					{
 						image: CarpetMuseum,
 						name: 'Carpet Museum',
+						name_ru: 'Музей туркменского ковра',
 					},
 				],
 			},
@@ -583,18 +587,22 @@ export const tours: Tour[] = [
 					{
 						image: Merv,
 						name: 'Merv',
+						name_ru: 'Мерв',
 					},
 					{
 						image: MaryMuseum1,
-						name: 'Mary Museum 1',
+						name: 'Mary Museum',
+						name_ru: 'Марыйский историко-краеведческий музей',
 					},
 					{
 						image: MaryMuseum2,
-						name: 'Mary Museum 2',
+						name: 'Mary Museum',
+						name_ru: 'Марыйский историко-краеведческий музей',
 					},
 					{
 						image: MaryMuseum3,
-						name: 'Mary Museum 3',
+						name: 'Mary Museum',
+						name_ru: 'Марыйский историко-краеведческий музей',
 					},
 				],
 			},
@@ -646,19 +654,23 @@ export const tours: Tour[] = [
 				places: [
 					{
 						image: NationalMuseum,
-						name: 'National Museum',
+						name: 'Ashgabat National Museum of History',
+						name_ru: 'Ашхабадский национальный исторический музей',
 					},
 					{
 						image: Nisa,
 						name: 'Nisa',
+						name_ru: 'Ниса',
 					},
 					{
 						image: AkhalTeke,
 						name: 'Akhal Teke',
+						name_ru: 'Ахал-Теке',
 					},
 					{
 						image: RussianBaazar,
 						name: 'Russian Baazar',
+						name_ru: 'Гулистан (торговый центр)',
 					},
 				],
 			},
@@ -710,10 +722,12 @@ export const tours: Tour[] = [
 					{
 						image: KonyeUrgench,
 						name: 'Konye-Urgench',
+						name_ru: 'Кёнеургенч',
 					},
 					{
 						image: Darvaza,
 						name: 'Darvaza Gaz Crater',
+						name_ru: 'Дарваза',
 					},
 				],
 			},
@@ -753,10 +767,12 @@ export const tours: Tour[] = [
 					{
 						image: ashgabat1,
 						name: 'Ashgabat',
+						name_ru: 'Ашхабад',
 					},
 					{
 						image: NationalMuseum,
-						name: 'National Museum',
+						name: 'Ashgabat National Museum of History',
+						name_ru: 'Ашхабадский национальный исторический музей',
 					},
 				],
 			},
@@ -801,38 +817,47 @@ export const tours: Tour[] = [
 					{
 						image: IndependenceMonument,
 						name: 'Independence Monument',
+						name_ru: 'Монумент Независимости Туркменистана',
 					},
 					{
 						image: NeutralityMonument,
 						name: 'Neutrality Monument',
+						name_ru: 'Арка нейтралитета',
 					},
 					{
 						image: ConstitutionMonument,
 						name: 'Constitution Monument',
+						name_ru: 'Памятник Конституции',
 					},
 					{
 						image: YyldyzHotel1,
-						name: 'Yyldyz Hotel 1',
+						name: 'Yyldyz Hotel',
+						name_ru: 'Йылдыз (отель)',
 					},
 					{
 						image: YyldyzHotel2,
-						name: 'Yyldyz Hotel 2',
+						name: 'Yyldyz Hotel',
+						name_ru: 'Йылдыз (отель)',
 					},
 					{
 						image: BagtKoshgi,
-						name: 'Bagt Koshgi',
+						name: 'Wedding Palace',
+						name_ru: 'Багт кошги (дворец бракосочетаний)',
 					},
 					{
 						image: OlympicCity,
 						name: 'Olympic City',
+						name_ru: 'Олимпийский город',
 					},
 					{
 						image: LeninStatue,
 						name: 'Lenin Status',
+						name_ru: 'Статуя Ленину',
 					},
 					{
 						image: OguzhanMonument,
 						name: 'Oguzhan Monument',
+						name_ru: 'Памятник Огузхану',
 					},
 				],
 			},
@@ -879,15 +904,18 @@ export const tours: Tour[] = [
 				places: [
 					{
 						image: TolkuchkaBazaar1,
-						name: 'Tolkhuchka Bazaar 1',
+						name: 'Altyn Asyr Bazaar',
+						name_ru: 'Алтын Асыр (базар)',
 					},
 					{
 						image: TolkuchkaBazaar2,
-						name: 'Tolkuchka Bazaar 2',
+						name: 'Altyn Asyr Bazaar',
+						name_ru: 'Алтын Асыр (базар)',
 					},
 					{
 						image: KowAta,
 						name: 'Kov Ata',
+						name_ru: 'Коу-Ата',
 					},
 				],
 			},
@@ -939,10 +967,12 @@ export const tours: Tour[] = [
 					{
 						image: KonyeUrgench,
 						name: 'Konye-Urgench',
+						name_ru: 'Кёнеургенч',
 					},
 					{
 						image: Darvaza,
 						name: 'Darvaza Gas Crater',
+						name_ru: 'Дарваза',
 					},
 				],
 			},
@@ -981,39 +1011,48 @@ export const tours: Tour[] = [
 				places: [
 					{
 						image: NationalMuseum,
-						name: 'National Museum',
+						name: 'Ashgabat National Museum of History',
+						name_ru: 'Ашхабадский национальный исторический музей',
 					},
 					{
 						image: IndependenceMonument,
 						name: 'Independence Monument',
+						name_ru: 'Монумент Независимости Туркменистана',
 					},
 					{
 						image: NeutralityMonument,
 						name: 'Neutrality Monument',
+						name_ru: 'Арка нейтралитета',
 					},
 					{
 						image: ConstitutionMonument,
 						name: 'Constitution Monument',
+						name_ru: 'Памятник Конституции',
 					},
 					{
 						image: YyldyzHotel1,
-						name: 'Yyldyz Hotel 1',
+						name: 'Yyldyz Hotel',
+						name_ru: 'Йылдыз (отель)',
 					},
 					{
 						image: YyldyzHotel2,
-						name: 'Yyldyz Hotel 2',
+						name: 'Yyldyz Hotel',
+						name_ru: 'Йылдыз (отель)',
 					},
 					{
 						image: BagtKoshgi,
 						name: 'Bagt Koshgi',
+						name_ru: 'Багт кошги (дворец бракосочетаний)',
 					},
 					{
 						image: OlympicCity,
 						name: 'Olympic City',
+						name_ru: 'Олимпийский город',
 					},
 					{
 						image: OguzhanMonument,
 						name: 'Oguzhan Monument',
+						name_ru: 'Памятник Огузхану',
 					},
 				],
 			},
@@ -1066,22 +1105,27 @@ export const tours: Tour[] = [
 					{
 						image: Merv,
 						name: 'Merv',
+						name_ru: 'Мерв',
 					},
 					{
 						image: MaryMuseum1,
-						name: 'Mary Museum 1',
+						name: 'Mary Museum',
+						name_ru: 'Марыйский историко-краеведческий музей',
 					},
 					{
 						image: MaryMuseum2,
-						name: 'Mary Museum 2',
+						name: 'Mary Museum',
+						name_ru: 'Марыйский историко-краеведческий музей',
 					},
 					{
 						image: MaryMuseum3,
-						name: 'Mary Museum 3',
+						name: 'Mary Museum',
+						name_ru: 'Марыйский историко-краеведческий музей',
 					},
 					{
 						image: GreenBazaar,
 						name: 'Green Bazaar',
+						name_ru: 'Зеленый базар',
 					},
 				],
 			},
@@ -1105,7 +1149,7 @@ export const tours: Tour[] = [
 						program: 'Transfer to Farap/Alat border. Farewells. The end the tour.',
 					},
 				],
-				places: [{ image: Koytendag, name: 'Koytendag' }],
+				places: [{ image: Koytendag, name: 'Koytendag', name_ru: 'Койтендаг' }],
 			},
 		],
 	},
@@ -1155,10 +1199,12 @@ export const tours: Tour[] = [
 					{
 						image: KonyeUrgench,
 						name: 'KonyeUrgench',
+						name_ru: 'Кёнеургенч',
 					},
 					{
 						image: Darvaza,
 						name: 'Darvaza Gas Crater',
+						name_ru: 'Дарваза',
 					},
 				],
 			},
@@ -1182,7 +1228,7 @@ export const tours: Tour[] = [
 						program: 'Transfer to Dashoguz border. Passing Customs procedures. Farewell',
 					},
 				],
-				places: [{ image: Dashoguz, name: 'Dashoguz' }],
+				places: [{ image: Dashoguz, name: 'Dashoguz', name_ru: 'Дашогуз' }],
 			},
 		],
 	},
@@ -1212,5 +1258,6 @@ export type Day = {
 
 export type Place = {
 	name: string
+	name_ru: string
 	image: string
 }
