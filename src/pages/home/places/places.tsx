@@ -71,7 +71,7 @@ export const Places = () => {
 						</div>
 						<Modal isOpen={place.id === openModal} close={() => setModalOpen('')}>
 							<div className={styles.modal}>
-								<img src={place.img} style={{ height: '300px', width: '100%' }} />
+								<img src={place.img} className={styles.modal__image} />
 								<div className={styles.modal__content}>
 									<h1 className={styles.modal__title}>
 										{i18n.language === 'en' ? place.name : place.name_ru}

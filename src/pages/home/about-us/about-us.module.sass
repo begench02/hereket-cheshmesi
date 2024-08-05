@@ -4,33 +4,33 @@
     position: relative
     margin: 2rem
 
-    display: flex
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr))
     flex-wrap: wrap
     justify-content: center
     gap: 1rem
     text-align: center
 
 .content
-    display: flex
-    flex-direction: column
+    display: grid
     padding-inline: 2rem
-    flex: 1
-    container: content-text / inline-size
     &__title
-        font-size: 60px
+        font-size: clamp(1.2rem, 1.6rem, 10vw)
         text-transform: uppercase
+        font-weight: 500
     &__subtitle
-        font-size: 30px
+        font-size: clamp(1rem, 1.4rem, 4vw)
+        margin-bottom: 1rem
     &__button
-        margin-top: auto
+        align-self: end
 
 .vertical_line
     position: absolute
     top: 50%
     left: 50%
     transform: translate(-50%, -50%)
-    width: 3px
     height: 100%
+    width: 3px
     background-color: s.$color-green
 
 .form
@@ -38,14 +38,10 @@
     display: grid
     gap: 1rem
 
-@container content-text (width < 400px)
-    .content__title
-        font-size: 40px
-    .content__subtitle
-        font-size: 20px
-
 @media (width < s.$TABLET)
     .main
-        row-gap: 2rem
+        margin: 0
     .content
-        row-gap: 1rem
+        padding-inline: 0.5rem
+    .form
+        margin: 0

@@ -27,7 +27,7 @@ export const AboutUs = () => {
 					<Button fullWidth>{t('view_tours')}</Button>
 				</Link>
 			</div>
-			<div className={styles.vertical_line} />
+			{/* <div className={styles.vertical_line} /> */}
 			<div className={styles.content}>
 				<h2 className={styles.content__title}>{t('leave_contacts')}</h2>
 				<p className={styles.content__subtitle}>{t('contact_later')}</p>

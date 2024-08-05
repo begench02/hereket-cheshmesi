@@ -1,38 +1,33 @@
 @use 'styles' as s
 
 .header
-    min-height: 15vh
+    min-height: 15dvh
+    width: 100%
     position: absolute
-    // position: relative
     top: 0
     left: 0
-    width: 100%
     padding: 1rem 4rem
+
     display: flex
     place-items: center
-    // grid-template-columns: 40% 20% 40%
-    // justify-content: center
-    // align-items: center
     background-color: rgba(0, 0, 0, 0.15)
-    // background-color: green
-    // mix-blend-mode: overlay
+
     z-index: 10
     &__logo
         position: absolute
         top: 50%
         left: 50%
         transform: translate(-50%, -50%)
+
         text-align: center
         justify-self: center
         img
             width: 20%
 
 .nav
-    display: flex
     width: 100%
+    display: flex
     justify-content: space-around
-    // justify-content: center
-    // gap: 2rem
     align-items: start
     color: #fff
     & > ul
@@ -43,15 +38,6 @@
 .nav_left
     margin-right: auto
     justify-self: start
-
-    // display: flex
-    // justify-self: center
-    // align-items: center
-    // gap: 2rem
-
-// ul
-//     position: fixed
-//     inset: 0 0 0 30%
 
 .link
     color: #fff
@@ -100,7 +86,6 @@
         display: grid
         grid-template-columns: 1fr
         gap: 2rem
-        // height: 100%
 
 .check
     display: none
@@ -118,7 +103,7 @@
     .nav
         display: block
         position: fixed
-        inset: 0 0 0 30%
+        inset: 0 0 0 0
         place-items: start
         justify-content: start
         justify-items: start
@@ -128,7 +113,8 @@
         text-align: start
         padding: min(30vh, 10rem) 2rem
         gap: 2em
-        background-color: hsl(0 0% 0% / 0.5)
+        background-color: #D4D5D6
+        overflow: hidden
 
         transition: 350ms ease-in
         transform: translateX(100%)
@@ -141,21 +127,28 @@
 
     @supports (backdrop-filter: blur(1rem))
         .nav
-            background-color: hsl(0 0% 100% / 0.1)
+            background-color: #D4D5D6
             backdrop-filter: blur(1rem)
 
     .nav_toggle
+        margin-left: auto
         display: block
-        position: absolute
-        border: 0
-        background-repeat: no-repeat
-        width: 3rem
-        align-self: center
-        background-color: transparent
-        aspect-ratio: 1
-        // top: 2rem
-        right: 2rem
+        position: relative
+        height: 5rem
+        width: 5rem
         z-index: 9999
+        border: none
+        background-color: rgb(255 255 255 / 0)
+        transition: 150ms
+        &:hover
+            background-color: rgb(255 255 255 / 0.2)
+        &__bar
+            position: absolute
+            height: 0.25rem
+            width: 2.5rem
+            background-color: white
+            &--short
+                width: 1.25rem
 
     .link__text
         text-align: start !important

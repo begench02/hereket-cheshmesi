@@ -15,6 +15,8 @@ interface CssExports {
   'nav': string;
   'nav_left': string;
   'nav_toggle': string;
+  'nav_toggle__bar': string;
+  'nav_toggle__bar--short': string;
   'x': string;
 }
 export const cssExports: CssExports;
