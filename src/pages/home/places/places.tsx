@@ -3,15 +3,18 @@ import { Carousel } from 'react-responsive-carousel'
 import { CITY, places } from './places.data'
 import { Link } from 'react-router-dom'
 import { Modal } from 'components/modal/modal'
-import { useMemo, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import clsx from 'clsx'
 import styles from './places.module.sass'
+import { useOnScreen } from 'hooks/use-on-screen.hook'
 
 export const Places = () => {
 	const { t, i18n } = useTranslation()
 	const [currentCity, setCurrentCity] = useState<CITY>('Ashgabat')
 	const [openModal, setModalOpen] = useState('')
+	const ref = useRef<HTMLDivElement>(null)
+	const isVisible = useOnScreen(ref)
 
 	const currentPlace = useMemo(() => {
 		return places.find(({ cityName }) => cityName === currentCity)
@@ -20,13 +23,13 @@ export const Places = () => {
 	return (
 		<section id='places' className={styles.main}>
 			<div className={styles.row}>
-				<div className={styles.carousel}>
+				<div className={styles.carousel} ref={ref}>
 					<p className={styles.carousel__legend}>{currentPlace.cityName}</p>
 					<Carousel
 						onChange={(index) => setCurrentCity(places[index].cityName)}
 						emulateTouch={true}
 						infiniteLoop={true}
-						autoPlay={!openModal}
+						autoPlay={!openModal && isVisible}
 						interval={4000}
 						showIndicators={false}
 						showStatus={false}

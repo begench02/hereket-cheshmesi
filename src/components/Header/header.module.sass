@@ -9,12 +9,13 @@
     width: 100%
     padding: 1rem 4rem
     display: flex
-    justify-content: center
-    align-items: center
+    place-items: center
     // grid-template-columns: 40% 20% 40%
     // justify-content: center
     // align-items: center
     background-color: rgba(0, 0, 0, 0.15)
+    // background-color: green
+    // mix-blend-mode: overlay
     z-index: 10
     &__logo
         position: absolute
@@ -118,6 +119,7 @@
         display: block
         position: fixed
         inset: 0 0 0 30%
+        place-items: start
         justify-content: start
         justify-items: start
         z-index: 1000

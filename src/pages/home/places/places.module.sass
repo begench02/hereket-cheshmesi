@@ -1,8 +1,7 @@
 @use 'styles' as s
 
 .main
-    min-height: 130vh
-    margin: 4em 20em
+    margin: 4rem 20rem
 
 .row
     display: grid
@@ -39,15 +38,13 @@
 
 .gallery
     margin-top: 2rem
-    display: flex
-    flex-wrap: wrap
+    display: grid
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr))
     gap: 2rem
 
 .place
     position: relative
     cursor: pointer
-    flex: 1 0 30%
-    max-width: 500px
     &__legend
         display: none
         position: absolute
@@ -74,27 +71,26 @@
     &__content
         margin-block: 2rem
     &__title
-        font-size: 30px
+        font-size: 2rem
         font-weight: 700
-        margin: 0 1rem
+        margin: 0 auto
+        text-align: center
     &__image
-        width: 650px
         height: 300px
         overflow: hidden
         margin-bottom: 10px
     &__history
-        font-size: 22px
-        margin: 0 1rem
+        font-size: 1.4rem
+        padding-inline: 2rem
 
 // Media queries
 @media (max-width: 1280px)
     .main
-        min-height: 220vh
         margin: 4rem 2rem
 
 @media (max-width: 1024px)
-    .gallery
-        display: flex
+    .main
+        margin: 1rem
     .row
         grid-template-columns: 1fr
     .contact_us
