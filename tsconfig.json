@@ -13,6 +13,7 @@
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
 		"sourceMap": true,
+		"forceConsistentCasingInFileNames": false,
 		"paths": {
 			"assets/*": ["./src/assets/*"],
 			"pages/*": ["./src/pages/*"],
