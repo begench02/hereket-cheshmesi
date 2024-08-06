@@ -1,14 +1,16 @@
 import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react'
 import { motion, useMotionValue } from 'framer-motion'
 import { tours } from 'pages/tours/tours.data'
+import { useTranslation } from 'react-i18next'
 import ArrowLeft from 'assets/imgs/icons/arrow-left.svg'
 import ArrowRight from 'assets/imgs/icons/arrow-right.svg'
 import clsx from 'clsx'
 import styles from './carousel.module.sass'
+import { Link } from 'react-router-dom'
 
 const DRAG_BUFFER = 50
 export const Carousel: FC<CarouselProps> = (props) => {
-	const { imageIndex, setImageIndex, autoPlay = false } = props
+	const { imageIndex, setImageIndex, autoPlay = false, perspective = 1, legend } = props
 	const [dragging, setDragging] = useState(false)
 
 	const dragX = useMotionValue(0)
@@ -48,13 +50,13 @@ export const Carousel: FC<CarouselProps> = (props) => {
 				drag='x'
 				dragConstraints={{ left: 0, right: 0 }}
 				style={{ x: dragX }}
-				animate={{ translateX: `-${imageIndex * 100}%` }}
+				animate={{ translateX: `-${imageIndex * (100 / perspective)}%` }}
 				onDragStart={onDragStart}
 				onDragEnd={onDragEnd}
 				className={styles.content}
 				transition={{ type: 'Tween' }}
 			>
-				<Images imageIndex={imageIndex} />
+				<Images imageIndex={imageIndex} perspective={perspective} />
 			</motion.div>
 			<Dots imageIndex={imageIndex} setImageIndex={setImageIndex} />
 			<NavigationArrows imageIndex={imageIndex} setImageIndex={setImageIndex} />
@@ -66,21 +68,39 @@ type CarouselProps = {
 	imageIndex: number
 	setImageIndex: Dispatch<SetStateAction<number>>
 	autoPlay?: boolean
+	perspective?: number
+	legend?: boolean
 }
 
 const Images: FC<ImageProps> = (props) => {
-	const { imageIndex } = props
+	const { imageIndex, perspective } = props
+	const { i18n } = useTranslation()
 
 	return (
 		<>
-			{tours.map(({ image, id }, index) => (
+			{tours.map(({ title, title_ru, image, id }, index) => (
 				<motion.div
 					key={id}
-					animate={{ scale: imageIndex === index ? 0.95 : 0.85 }}
 					transition={{ duration: { type: 'spring', mass: 3, stiffness: 400, damping: 50 } }}
-					style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-					className={styles.image}
-				/>
+					style={{
+						width: 100 / perspective + '%',
+						x: perspective === 1 ? '0' : '50%',
+					}}
+					className={styles.tour}
+				>
+					<Link to={`/tours/${id}`}>
+						<motion.div
+							animate={{ scale: imageIndex === index ? 0.95 : 0.85 }}
+							style={{
+								backgroundImage: `url(${image})`,
+								backgroundSize: 'cover',
+								backgroundPosition: 'center',
+							}}
+							className={styles.tour__image}
+						/>
+						<p className={styles.tour__legend}>{i18n.language === 'en' ? title : title_ru}</p>
+					</Link>
+				</motion.div>
 			))}
 		</>
 	)
@@ -88,6 +108,7 @@ const Images: FC<ImageProps> = (props) => {
 
 type ImageProps = {
 	imageIndex: number
+	perspective: number
 }
 
 const dotVariants = {

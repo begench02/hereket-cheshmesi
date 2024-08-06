@@ -2,7 +2,7 @@
 
 .main
     position: relative
-    width: 40vw
+    width: 100%
     overflow: hidden
 
 .content
@@ -12,12 +12,32 @@
     &:active
         cursor: grabbing
 
-.image
-    aspect-ratio: 16 / 9
-    width: 100%
+.tour
+    position: relative
     flex-shrink: 0
+    &:hover
+        .tour__image
+            filter: brightness(50%)
+        .tour__legend
+            display: block
+
+.tour__image
+    width: 100%
+    aspect-ratio: 16 / 9
     border-radius: 10px
-    background-color: #777
+    transition: 400ms
+    &:hover
+        filter: brightness(50%)
+
+.tour__legend
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    text-align: center
+    font-size: 2rem
+    color: white
+    display: none
 
 .dots
     margin-top: 5px
@@ -49,7 +69,5 @@
         cursor: pointer
 
 @media (width < s.$TABLET)
-    .main
-        width: 80vw
     .content
         margin-bottom: 2rem

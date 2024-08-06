@@ -5,10 +5,12 @@ interface CssExports {
   'dots': string;
   'dots__dot': string;
   'dots__dot--active': string;
-  'image': string;
   'main': string;
   'navigation': string;
   'navigation__button': string;
+  'tour': string;
+  'tour__image': string;
+  'tour__legend': string;
 }
 export const cssExports: CssExports;
 export default cssExports;

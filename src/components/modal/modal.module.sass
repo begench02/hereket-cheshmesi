@@ -1,11 +1,13 @@
+@use 'styles' as s
+
 .main
     position: fixed
     top: 50%
     left: 50%
     transform: translate(-50%, -50%)
     background-color: white
-    width: 62rem
-    min-height: 40rem
+    width: clamp(20rem, 62rem, 80vw)
+    min-height: clamp(15rem, 60vh, 40rem)
     z-index: 510
     box-shadow: 0 0 60px 10px rgba(0, 0, 0, 0.6)
     border-radius: 0.75rem
