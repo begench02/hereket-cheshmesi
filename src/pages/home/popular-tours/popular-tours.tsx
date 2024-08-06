@@ -1,6 +1,5 @@
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import { Carousel } from 'components/carousel/carousel'
-import { tours } from 'pages/tours/tours.data'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import styles from './popular-tours.module.sass'
@@ -16,7 +15,6 @@ export const PopularTours = () => {
 				imageIndex={imageIndex}
 				setImageIndex={setImageIndex}
 				perspective={window.innerWidth < 1000 ? 1 : 2}
-				legend
 			/>
 		</section>
 	)

@@ -8,7 +8,6 @@ interface CssExports {
   'tour_description__duration': string;
   'tour_description__subtitle': string;
   'tour_description__title': string;
-  'tour_image': string;
 }
 export const cssExports: CssExports;
 export default cssExports;

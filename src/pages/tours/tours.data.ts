@@ -1157,7 +1157,7 @@ export const tours: Tour[] = [
 		id: 7722241,
 		image: DashoguzLoop,
 		title: 'Dashoguz Loop',
-		title_ru: 'Дашогузская петля Дашогуз - Конеургенч - Дарваза - Дашогуз',
+		title_ru: 'Дашогузская петля',
 		duration: '2 days / 1 night',
 		duration_ru: '2 дня / 1 ночь',
 		description: 'Dashoguz - Koneurgench - Darvaza - Dashoguz',

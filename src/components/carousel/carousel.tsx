@@ -1,4 +1,5 @@
 import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { motion, useMotionValue } from 'framer-motion'
 import { tours } from 'pages/tours/tours.data'
 import { useTranslation } from 'react-i18next'
@@ -6,11 +7,10 @@ import ArrowLeft from 'assets/imgs/icons/arrow-left.svg'
 import ArrowRight from 'assets/imgs/icons/arrow-right.svg'
 import clsx from 'clsx'
 import styles from './carousel.module.sass'
-import { Link } from 'react-router-dom'
 
 const DRAG_BUFFER = 50
 export const Carousel: FC<CarouselProps> = (props) => {
-	const { imageIndex, setImageIndex, autoPlay = false, perspective = 1, legend } = props
+	const { imageIndex, setImageIndex, autoPlay = false, perspective = 1 } = props
 	const [dragging, setDragging] = useState(false)
 
 	const dragX = useMotionValue(0)
@@ -53,8 +53,8 @@ export const Carousel: FC<CarouselProps> = (props) => {
 				animate={{ translateX: `-${imageIndex * (100 / perspective)}%` }}
 				onDragStart={onDragStart}
 				onDragEnd={onDragEnd}
-				className={styles.content}
 				transition={{ type: 'Tween' }}
+				className={styles.content}
 			>
 				<Images imageIndex={imageIndex} perspective={perspective} />
 			</motion.div>
@@ -69,7 +69,6 @@ type CarouselProps = {
 	setImageIndex: Dispatch<SetStateAction<number>>
 	autoPlay?: boolean
 	perspective?: number
-	legend?: boolean
 }
 
 const Images: FC<ImageProps> = (props) => {
