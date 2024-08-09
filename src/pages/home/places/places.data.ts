@@ -110,9 +110,9 @@ export const places: Places[] = [
 				name_ru: 'Памятник нейтралитета',
 				img: MonumentOfNeutrality,
 				history:
-					'A monument to neutrality, the three-legged arch, which became known as the "Tripod", was 75 meters (246 ft) high and was built in 1998. by order of the first president of Turkmenistan, SaparmuratNiyazov, to commemorate the country\'s official position: neutrality. Its construction cost 12 million dollars. The monument was topped by a 12-meter (39 ft) gilded statue of Niyazov, which rotated so as to always face the sun.',
+					'A monument to neutrality, the three-legged arch, which became known as the "Tripod", was 75 meters (246 ft) high and was built in 1998 by order of the first president of Turkmenistan, Saparmurat Niyazov, to commemorate the country\'s official position: neutrality. Its construction cost 12 million dollars. The monument was topped by a 12-meter (39 ft) gilded statue of Niyazov, which rotated so as to always face the sun',
 				history_ru:
-					'Памятник нейтралитета трехногая арка, которая стала называться «Тренога», имела высоту 75 метров (246 футов) и была построена в 1998 году. по приказу первого президента Туркменистана Сапармурата Ниязова в ознаменование официальной позиции страны: нейтралитет. Его строительство обошлось в 12 миллионов долларов. Монумент был увенчан позолоченной статуей Ниязова высотой 12 метров (39 футов), которая вращалась так, чтобы всегда смотреть на солнце.',
+					'Памятник нейтралитета трехногая арка, которая стала называться «Трехножка», имеет высоту 75 метров (246 футов) и была построена в 1998 году по приказу первого президента Туркменистана Сапармурата Ниязова в ознаменование официальной позиции страны: нейтралитет. Его строительство обошлось в 12 миллионов долларов. Монумент был увенчан позолоченной статуей Ниязова высотой 12 метров (39 футов), которая вращалась так, чтобы всегда смотрела на солнце',
 			},
 			{
 				id: uuidv4(),

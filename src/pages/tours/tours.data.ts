@@ -1,4 +1,5 @@
 import { v4 } from 'uuid'
+import SeyitJemaletdinMosque from 'assets/imgs/ahal/seyit-jemaletdin-mosque.jpg'
 import TurkmenistanNorthernHeritage from 'assets/imgs/turkmenistan-northern-heritage.webp'
 import TurkmenOdyssey from 'assets/imgs/turkmen-odyssey.jpg'
 import AkhalTeke from 'assets/imgs/ashgabat/akhal-teke.jpg'
@@ -919,6 +920,72 @@ export const tours: Tour[] = [
 					},
 				],
 			},
+			{
+				id: v4(),
+				description: [
+					{
+						time: '08:00-09:00',
+						program: 'Breakfast',
+					},
+					{
+						time: '09:00-09:30',
+						program: 'Drive to Seyid Jemaletdin Mosque',
+					},
+					{
+						time: '09:30-10:30',
+						program: 'Tour to Sevid Jemaleddin Mosque',
+					},
+					{
+						time: '10:30-11:00',
+						program: 'Drive to Bagyr Village',
+					},
+					{
+						time: '11:00-11:30',
+						program: 'Visit Nisa Fortress',
+					},
+					{
+						time: '11:30-12:30',
+						program: 'Tour around Old Nisa (UNESCO site)',
+					},
+					{
+						time: '12:30-13:00',
+						program: 'Drive to Ashgabat',
+					},
+					{
+						time: '13:00-14:00',
+						program: 'Lunch',
+					},
+					{
+						time: '14:00-19:00',
+						program: 'Drive to Darvaza Gas Crater',
+					},
+					{
+						time: '19:00-20:00',
+						program: 'Visit Darvaza Gas Crater',
+					},
+					{
+						time: '20:00-21:00',
+						program: 'Dinner. Overnight',
+					},
+				],
+				places: [
+					{
+						image: SeyitJemaletdinMosque,
+						name: 'Seyit Jemaletdi Mosque',
+						name_ru: 'Мечеть Сейит Джемал ад-Дина',
+					},
+					{
+						image: Nisa,
+						name: 'Nisa',
+						name_ru: 'Ниса',
+					},
+					{
+						image: Darvaza,
+						name: 'Darvaza Gaz Crater',
+						name_ru: 'Газовый Кратер Дарваза',
+					},
+				],
+			},
 		],
 	},
 	{
@@ -1129,28 +1196,28 @@ export const tours: Tour[] = [
 					},
 				],
 			},
-			{
-				id: v4(),
-				description: [
-					{
-						time: '07:00-08:00',
-						program: 'Breakfast',
-					},
-					{
-						time: '08:00-13:00',
-						program: 'Drive to Turkmenistan',
-					},
-					{
-						time: '13:00-14:00',
-						program: 'Lunch',
-					},
-					{
-						time: '14:00-14:40',
-						program: 'Transfer to Farap/Alat border. Farewells. The end the tour.',
-					},
-				],
-				places: [{ image: Koytendag, name: 'Koytendag', name_ru: 'Койтендаг' }],
-			},
+			// {
+			// 	id: v4(),
+			// 	description: [
+			// 		{
+			// 			time: '07:00-08:00',
+			// 			program: 'Breakfast',
+			// 		},
+			// 		{
+			// 			time: '08:00-13:00',
+			// 			program: 'Drive to Turkmenistan',
+			// 		},
+			// 		{
+			// 			time: '13:00-14:00',
+			// 			program: 'Lunch',
+			// 		},
+			// 		{
+			// 			time: '14:00-14:40',
+			// 			program: 'Transfer to Farap/Alat border. Farewells. The end the tour.',
+			// 		},
+			// 	],
+			// 	places: [{ image: Koytendag, name: 'Koytendag', name_ru: 'Койтендаг' }],
+			// },
 		],
 	},
 	{
