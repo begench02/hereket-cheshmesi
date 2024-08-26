@@ -1,14 +1,12 @@
 import { LanguageDropdown } from './language-dropdown'
 import { Link } from 'react-router-dom'
+import { motion, MotionConfig } from 'framer-motion'
 import { ToursDropdown } from './tours-dropdown/tours-dropdown'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import Bars from 'assets/imgs/icons/bars.svg'
 import clsx from 'clsx'
-import Logo from 'assets/imgs/logo2.png'
+import Logo from 'assets/imgs/logo6.png'
 import styles from './header.module.sass'
-import X from 'assets/imgs/icons/x.svg'
-import { motion, MotionConfig } from 'framer-motion'
 
 export const Header = () => {
 	const [currentLink, setCurrentLink] = useState(window.location.hash)

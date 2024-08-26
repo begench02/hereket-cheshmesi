@@ -48,7 +48,12 @@ export const ContactUs = () => {
 				</div>
 				<div className={styles.contacts}>
 					<div className={styles.contact}>
-						<img src={locationMarker} alt='Location Marker' className={styles.contact__icon} />
+						<img
+							src={locationMarker}
+							alt='Location Marker'
+							className={styles.contact__icon}
+							loading='lazy'
+						/>
 						<div className={styles.contact__text}>
 							<p className={styles['contact__text--bold']}>{t('address')}: </p>
 							<p

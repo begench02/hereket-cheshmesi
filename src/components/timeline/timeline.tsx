@@ -31,7 +31,7 @@ export const Timeline: FC<TimelineProps> = (props) => {
 							>
 								{day.places.map((place) => (
 									<div key={`${place.name}_${place.image}`}>
-										<img src={place.image} alt={place.name} />
+										<img src={place.image} alt={place.name} loading='lazy' />
 									</div>
 								))}
 							</Carousel>
