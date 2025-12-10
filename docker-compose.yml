@@ -1,0 +1,134 @@
+version: "3.8"
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hareket-frontend
+    ports:
+      - "8080:80"              # http://localhost:8080
+    restart: unless-stopped
+
+  gitea:
+    image: gitea/gitea:latest
+    container_name: gitea
+    restart: unless-stopped
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+      - GITEA__server__ROOT_URL=http://localhost:3000/
+      - GITEA__database__DB_TYPE=sqlite3
+      - GITEA__database__PATH=/data/gitea/gitea.db
+    volumes:
+      - ./gitea-data:/data
+    ports:
+      - "3000:3000"            # Gitea: http://localhost:3000
+      - "2222:22"              # SSH git
+
+  wikidb:
+    image: postgres:15
+    container_name: wikidb
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=wiki
+      - POSTGRES_USER=wiki
+      - POSTGRES_PASSWORD=wiki-pass
+    volumes:
+      - ./wiki-data/db:/var/lib/postgresql/data
+
+  wiki:
+    image: requarks/wiki:2
+    container_name: wiki
+    restart: unless-stopped
+    depends_on:
+      - wikidb
+    environment:
+      - DB_TYPE=postgres
+      - DB_HOST=wikidb
+      - DB_PORT=5432
+      - DB_USER=wiki
+      - DB_PASS=wiki-pass
+      - DB_NAME=wiki
+    ports:
+      - "3001:3000"            # Wiki.js: http://localhost:3001
+    volumes:
+      - ./wiki-data/content:/wiki/data
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    restart: unless-stopped
+    volumes:
+      - ./monitoring/prometheus.yml:/prometheus.yml
+      - ./prometheus-data:/prometheus
+    command:
+      - "--config.file=/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+    ports:
+      - "9090:9090"
+
+
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    container_name: cadvisor
+    restart: unless-stopped
+    ports:
+      - "8082:8080"            # cAdvisor: http://localhost:8082
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    restart: unless-stopped
+    ports:
+      - "3002:3000"            # Grafana: http://localhost:3002
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - ./grafana-data:/var/lib/grafana
+
+  drone-server:
+    image: drone/drone:2
+    container_name: drone-server
+    restart: unless-stopped
+    ports:
+      - "8081:80"              # Drone UI: http://localhost:8081
+    volumes:
+      - ./drone-data:/data
+    environment:
+      # Gitea как git-провайдер (потом подставишь реальные значения)
+      - DRONE_GITEA_SERVER=http://gitea:3000
+      - DRONE_GITEA_CLIENT_ID=GITEA_OAUTH_CLIENT_ID
+      - DRONE_GITEA_CLIENT_SECRET=GITEA_OAUTH_CLIENT_SECRET
+
+      # Общий секрет для сервера и раннера (ОДНА И ТА ЖЕ СТРОКА)
+      - DRONE_RPC_SECRET=SUPER_SECRET_KEY
+
+      # Адрес Drone сервера (как его видит браузер)
+      - DRONE_SERVER_HOST=localhost:8081
+      - DRONE_SERVER_PROTO=http
+
+      # Создать первого админа (юзер из Gitea)
+      - DRONE_USER_CREATE=username:YOUR_GITEA_USERNAME,admin:true
+    depends_on:
+      - gitea
+
+  drone-runner:
+    image: drone/drone-runner-docker:1
+    container_name: drone-runner
+    restart: unless-stopped
+    environment:
+      - DRONE_RPC_HOST=drone-server
+      - DRONE_RPC_PROTO=http
+      - DRONE_RPC_SECRET=SUPER_SECRET_KEY
+      - DRONE_RUNNER_CAPACITY=2
+      - DRONE_RUNNER_NAME=local-runner
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      - drone-server
